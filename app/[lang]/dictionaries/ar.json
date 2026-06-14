@@ -70,7 +70,8 @@
         "description": "بيع مكائن المصانع القديمة، المولدات الكهربائية، هياكل الحديد، والمعدات الثقيلة المستعملة. نتكفل بالتفكيك والنقل."
       }
     },
-    "readMore": "اقرأ المزيد"
+    "readMore": "اقرأ المزيد",
+    "buyNow": "اتصل للشراء"
   },
   "whyChooseUs": {
     "heading": "لماذا تختار خدمات شراء سكراب",
@@ -273,8 +274,16 @@
     "cols": {
       "scrapTypes": "أنواع السكراب",
       "areas": "مناطق الخدمة",
-      "blogs": "آخر الأخبار"
+      "blogs": "آخر الأخبار",
+      "quickLinks": "روابط سريعة"
     },
+    "quickLinks": [
+      { "label": "خدماتنا", "href": "#services" },
+      { "label": "المعرض", "href": "#gallery" },
+      { "label": "اتصل بنا", "href": "#contact" },
+      { "label": "الاتجاهات", "href": "https://maps.google.com/?q=Riyadh,Saudi+Arabia" },
+      { "label": "اكتب تقييماً", "href": "https://g.page/r/riyadh-scrap-buyer/review" }
+    ],
     "copyright": "© ٢٠٢٦ جميع الحقوق محفوظة لشركة شراء سكراب الرياض.",
     "privacyPolicy": "سياسة الخصوصية",
     "termsOfService": "شروط الخدمة"

@@ -70,7 +70,8 @@
         "description": "Sell your old industrial manufacturing machinery, generators, factory scrap, and heavy equipment. We handle dismantling."
       }
     },
-    "readMore": "Read More"
+    "readMore": "Read More",
+    "buyNow": "Call to Buy"
   },
   "whyChooseUs": {
     "heading": "Why Choose Our Scrap Buyer",
@@ -273,8 +274,16 @@
     "cols": {
       "scrapTypes": "Scrap We Buy",
       "areas": "Service Areas",
-      "blogs": "Latest News"
+      "blogs": "Latest News",
+      "quickLinks": "Quick Links"
     },
+    "quickLinks": [
+      { "label": "Our Services", "href": "#services" },
+      { "label": "Gallery", "href": "#gallery" },
+      { "label": "Contact Us", "href": "#contact" },
+      { "label": "Get Directions", "href": "https://maps.google.com/?q=Riyadh,Saudi+Arabia" },
+      { "label": "Write a Review", "href": "https://g.page/r/riyadh-scrap-buyer/review" }
+    ],
     "copyright": "© 2026 Riyadh Scrap Buyer. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"

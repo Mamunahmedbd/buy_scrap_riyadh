@@ -21,6 +21,7 @@ interface WhatWeBuySectionProps {
       machinery: ScrapCardData;
     };
     readMore: string;
+    buyNow: string;
   };
   locale: string;
 }
@@ -66,6 +67,7 @@ export default function WhatWeBuySection({ dict, locale }: WhatWeBuySectionProps
                 description={cardData.description}
                 image={item.image}
                 readMoreText={dict.readMore}
+                buyNowText={dict.buyNow}
                 locale={locale}
                 slug={item.slug}
               />
