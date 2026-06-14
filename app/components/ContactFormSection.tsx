@@ -63,10 +63,13 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
   };
 
   // Submit Handler
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validations
+    // Reset general errors
+    setErrors({});
+
+    // Client-side quick validation checks
     const newErrors: typeof errors = {};
     if (!formData.name.trim()) {
       newErrors.name = dict.validation.name;
@@ -80,21 +83,52 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
       return;
     }
 
-    // Submit Simulation
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      // Reset Form
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        scrapType: '',
-        location: '',
-        description: '',
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          locale,
+        }),
       });
-    }, 1200);
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setIsSubmitted(true);
+        // Reset Form
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          scrapType: '',
+          location: '',
+          description: '',
+        });
+      } else {
+        if (data.errors) {
+          const serverErrors: typeof errors = {};
+          if (data.errors.name) serverErrors.name = dict.validation.name;
+          if (data.errors.phone) serverErrors.phone = dict.validation.phone;
+          // For other validation errors, map to generic/specific fields
+          if (data.errors.email) serverErrors.generic = data.errors.email;
+          if (data.errors.description) serverErrors.generic = data.errors.description;
+          setErrors(serverErrors);
+        } else {
+          setErrors({ generic: data.error || dict.validation.generic });
+        }
+      }
+    } catch (err) {
+      console.error('Contact Form submit failed:', err);
+      setErrors({ generic: dict.validation.generic });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const formattedPhone = dict.phone.replace(/[^\d+]/g, '');
@@ -307,9 +341,9 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
               </div>
 
               {/* Form Validation Feedback Banner */}
-              {Object.keys(errors).length > 0 && (
+              {(errors.name || errors.phone || errors.generic) && (
                 <div className="text-red-500 text-xs font-semibold py-1">
-                  {dict.validation.generic}
+                  {errors.generic || dict.validation.generic}
                 </div>
               )}
 
