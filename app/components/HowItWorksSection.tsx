@@ -33,7 +33,7 @@ const icons = [
   </svg>
 ];
 
-export default function HowItWorksSection({ dict, locale }: HowItWorksSectionProps) {
+export default function HowItWorksSection({ dict }: HowItWorksSectionProps) {
   return (
     <section 
       className="w-full py-16 md:py-24 px-4 bg-gray-50 border-y border-gray-100" 

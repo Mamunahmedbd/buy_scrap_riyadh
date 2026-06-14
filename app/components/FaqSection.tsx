@@ -17,7 +17,7 @@ interface FaqSectionProps {
   locale: string;
 }
 
-export default function FaqSection({ dict, locale }: FaqSectionProps) {
+export default function FaqSection({ dict }: FaqSectionProps) {
   // State: stores index of active open question (null if all closed)
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -40,8 +40,8 @@ export default function FaqSection({ dict, locale }: FaqSectionProps) {
   };
 
   return (
-    <section 
-      className="w-full py-16 md:py-24 px-4 bg-white" 
+    <section
+      className="w-full py-16 md:py-24 px-4 bg-white"
       id="faq"
       aria-labelledby="faq-heading"
     >
@@ -51,7 +51,7 @@ export default function FaqSection({ dict, locale }: FaqSectionProps) {
       />
 
       <div className="max-w-4xl mx-auto flex flex-col items-center">
-        
+
         {/* Title Header */}
         <h2 id="faq-heading" className="text-3xl md:text-4.5xl font-black text-primary-dark mb-4 text-center">
           {dict.heading} <span className="text-secondary">{dict.headingAccent}</span>
@@ -68,7 +68,7 @@ export default function FaqSection({ dict, locale }: FaqSectionProps) {
             const isOpen = activeIndex === idx;
 
             return (
-              <div 
+              <div
                 key={idx}
                 className="w-full border border-gray-100 rounded-2xl overflow-hidden bg-gray-50 shadow-sm"
               >
@@ -82,11 +82,11 @@ export default function FaqSection({ dict, locale }: FaqSectionProps) {
                 >
                   <span className="text-base md:text-lg select-none leading-snug">{item.question}</span>
                   <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary/5 text-primary shrink-0 transition-transform duration-200">
-                    <svg 
-                      className={`w-4 h-4 transform transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24" 
+                    <svg
+                      className={`w-4 h-4 transform transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                       strokeWidth={2.5}
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
@@ -95,12 +95,11 @@ export default function FaqSection({ dict, locale }: FaqSectionProps) {
                 </button>
 
                 {/* Collapsible Answer Panel */}
-                <div 
+                <div
                   id={`faq-answer-${idx}`}
                   aria-labelledby={`faq-question-${idx}`}
-                  className={`overflow-hidden transition-all duration-300 ${
-                    isOpen ? 'max-h-[300px] opacity-100 border-t border-gray-100' : 'max-h-0 opacity-0'
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[300px] opacity-100 border-t border-gray-100' : 'max-h-0 opacity-0'
+                    }`}
                 >
                   <div className="px-6 py-5 text-text-muted text-sm md:text-base leading-relaxed bg-white text-start">
                     {item.answer}

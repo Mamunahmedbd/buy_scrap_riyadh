@@ -38,8 +38,6 @@ interface ContactFormSectionProps {
 }
 
 export default function ContactFormSection({ dict, locale }: ContactFormSectionProps) {
-  const isRtl = locale === 'ar';
-
   // State Management
   const [formData, setFormData] = useState({
     name: '',

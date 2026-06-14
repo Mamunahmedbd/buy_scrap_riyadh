@@ -7,7 +7,7 @@ interface CtaBannerSectionProps {
   locale: string;
 }
 
-export default function CtaBannerSection({ dict, locale }: CtaBannerSectionProps) {
+export default function CtaBannerSection({ dict }: CtaBannerSectionProps) {
   // Clean phone number format for tel anchor
   const formattedPhone = dict.buttonCall.replace(/[^\d+]/g, '');
 
