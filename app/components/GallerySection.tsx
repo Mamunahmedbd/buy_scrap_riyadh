@@ -1,10 +1,12 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface GallerySectionProps {
   dict: {
     heading: string;
     headingAccent: string;
     subtext: string;
+    viewAll: string;
   };
   locale: string;
 }
@@ -59,6 +61,25 @@ export default function GallerySection({ dict, locale }: GallerySectionProps) {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Link
+            href={`/${locale}/gallery`}
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-extrabold text-white shadow-md transition-colors duration-200 hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
+          >
+            <span>{dict.viewAll}</span>
+            <svg
+              className={`h-4 w-4 ${locale === 'ar' ? 'rotate-180' : ''}`}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2.5}
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Link>
         </div>
 
       </div>

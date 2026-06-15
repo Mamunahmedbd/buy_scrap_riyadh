@@ -19,6 +19,7 @@ const blogSlugs = [
 
 const staticPaths = [
   { path: 'about', priority: 0.6 },
+  { path: 'gallery', priority: 0.7 },
   { path: 'privacy', priority: 0.3 },
   { path: 'terms', priority: 0.3 },
   { path: 'blog', priority: 0.7 },

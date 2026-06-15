@@ -56,7 +56,7 @@ export default function Header({ dict, locale }: HeaderProps) {
             {dict.blog}
           </Link>
           <Link
-            href={`${baseHref}#gallery`}
+            href={`${baseHref}/gallery`}
             className="text-white/95 hover:text-secondary font-bold text-sm lg:text-base transition-colors duration-200"
           >
             {dict.gallery}

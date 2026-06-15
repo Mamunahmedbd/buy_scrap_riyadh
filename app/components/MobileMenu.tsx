@@ -71,7 +71,7 @@ export default function MobileMenu({ dict, locale }: MobileMenuProps) {
             {dict.blog}
           </Link>
           <Link 
-            href={`${baseHref}#gallery`} 
+            href={`${baseHref}/gallery`} 
             onClick={closeMenu} 
             className="text-white hover:text-secondary font-semibold text-sm transition-colors py-1 text-start"
           >

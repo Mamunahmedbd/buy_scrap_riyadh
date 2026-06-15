@@ -215,7 +215,52 @@
   "gallery": {
     "heading": "Our",
     "headingAccent": "Gallery",
-    "subtext": "Real images of scrap materials, loading operations, and scrap collection yards in Riyadh."
+    "subtext": "Real images of scrap materials, loading operations, and scrap collection yards in Riyadh.",
+    "viewAll": "View Full Gallery"
+  },
+  "galleryPage": {
+    "meta": {
+      "title": "Scrap Gallery in Riyadh | Riyadh Scrap Buyer",
+      "description": "Browse real scrap buying, collection, dismantling, and recycling photos from Riyadh. View AC, copper, aluminum, brass, cable, machinery, electrical, battery, steel, and demolition scrap."
+    },
+    "heroTitle": "Scrap [Gallery] in Riyadh",
+    "heroSubtitle": "Explore real photos from our scrap buying, dismantling, loading, and recycling work across Riyadh.",
+    "breadcrumbLabel": "Gallery",
+    "eyebrow": "Real Project Photos",
+    "heading": "Browse Scrap Categories",
+    "subtext": "Filter by material type to view examples of the scrap we buy and collect across Riyadh.",
+    "allCategory": "All",
+    "imageCountLabel": "photos",
+    "viewCategory": "View category",
+    "viewImage": "View image",
+    "close": "Close",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "categories": {
+      "ac-scrap": "AC Scrap",
+      "aluminum-scrap": "Aluminum Scrap",
+      "brass-scrap": "Brass Scrap",
+      "cable-wire-scrap": "Cable & Wire Scrap",
+      "computer-scrap": "Computer Scrap",
+      "copper-scrap": "Copper Scrap",
+      "demolition-scrap": "Demolition Scrap",
+      "electrical-scrap": "Electrical Scrap",
+      "machinery-scrap": "Machinery Scrap",
+      "old-battery-scrap": "Old Battery Scrap",
+      "old-iron-steel-scrap": "Old Iron & Steel Scrap",
+      "stainless-steel-scrap": "Stainless Steel Scrap"
+    },
+    "altTemplates": {
+      "categoryImage": "{category} buying and collection photo in Riyadh",
+      "numberedCategoryImage": "{category} buying and collection photo {number} in Riyadh"
+    },
+    "seoIntro": {
+      "heading": "Real Scrap Buying Photos From Riyadh",
+      "paragraphs": [
+        "Our gallery shows actual examples of scrap materials we buy, sort, dismantle, and collect from residential, commercial, and industrial locations in Riyadh.",
+        "Use the category filters to browse AC scrap, copper, aluminum, brass, cables, computers, machinery, electrical panels, batteries, demolition material, iron, steel, and stainless steel scrap."
+      ]
+    }
   },
   "faq": {
     "heading": "Your Questions",
@@ -283,7 +328,7 @@
       { "label": "About Us", "href": "/about" },
       { "label": "Our Services", "href": "/#services" },
       { "label": "Our Blog", "href": "/blog" },
-      { "label": "Gallery", "href": "/#gallery" },
+      { "label": "Gallery", "href": "/gallery" },
       { "label": "Contact Us", "href": "/#contact" }
     ],
     "copyright": "© 2026 Riyadh Scrap Buyer. All rights reserved.",
