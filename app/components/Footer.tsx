@@ -160,11 +160,36 @@ export default function Footer({ dict, locale }: FooterProps) {
                 {dict.cols.quickLinks}
               </h3>
               <nav className="flex flex-col gap-2.5 text-sm" aria-label="Quick Navigation Footer Links">
-                {dict.quickLinks.map((item, index) => (
-                  <a key={index} href={item.href} className="text-white/80 hover:text-secondary transition-colors duration-150">
-                    {item.label}
-                  </a>
-                ))}
+                {dict.quickLinks.map((item, index) => {
+                  const isExternal = item.href.startsWith('http');
+                  // Prefix internal links with baseHref if not already prefixed
+                  const hrefPath = item.href.startsWith('/') ? item.href : `/${item.href}`;
+                  const finalHref = isExternal ? item.href : `${baseHref}${hrefPath}`;
+
+                  if (isExternal) {
+                    return (
+                      <a
+                        key={index}
+                        href={finalHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white/80 hover:text-secondary transition-colors duration-150"
+                      >
+                        {item.label}
+                      </a>
+                    );
+                  }
+
+                  return (
+                    <Link
+                      key={index}
+                      href={finalHref}
+                      className="text-white/80 hover:text-secondary transition-colors duration-150"
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
               </nav>
             </div>
 

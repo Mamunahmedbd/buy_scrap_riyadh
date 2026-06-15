@@ -15,7 +15,9 @@
     "gallery": "Gallery",
     "contact": "Contact Us",
     "directions": "Get Directions",
-    "buttonCall": "Call Now"
+    "buttonCall": "Call Now",
+    "about": "About Us",
+    "blog": "Blog"
   },
   "hero": {
     "breadcrumb": "Best Scrap Buying Company in Riyadh",
@@ -278,14 +280,455 @@
       "quickLinks": "Quick Links"
     },
     "quickLinks": [
-      { "label": "Our Services", "href": "#services" },
-      { "label": "Gallery", "href": "#gallery" },
-      { "label": "Contact Us", "href": "#contact" },
-      { "label": "Get Directions", "href": "https://maps.google.com/?q=Riyadh,Saudi+Arabia" },
-      { "label": "Write a Review", "href": "https://g.page/r/riyadh-scrap-buyer/review" }
+      { "label": "About Us", "href": "/about" },
+      { "label": "Our Services", "href": "/#services" },
+      { "label": "Our Blog", "href": "/blog" },
+      { "label": "Gallery", "href": "/#gallery" },
+      { "label": "Contact Us", "href": "/#contact" }
     ],
     "copyright": "© 2026 Riyadh Scrap Buyer. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
+  },
+  "services": {
+    "ac-conditioner-scrap": {
+      "meta": {
+        "title": "AC Scrap Buying in Riyadh | Sell Old Air Conditioners",
+        "description": "Get the best price for your old split, window, and central AC scrap in Riyadh. We offer free on-site dismantling, heavy loading, and instant cash!"
+      },
+      "heroTitle": "AC Scrap Buying in [Riyadh]",
+      "heroSubtitle": "Turn your old, damaged, or non-working air conditioning units into instant cash. Professional dismantling and free pickup included.",
+      "overview": {
+        "heading": "Professional AC Scrap Purchasing Services",
+        "paragraphs": [
+          "Do you have old, non-functional, or obsolete air conditioners taking up space in your residential or commercial building in Riyadh? We are the leading AC scrap buyer in Riyadh, offering the most competitive pricing and a completely hassle-free process.",
+          "We buy all kinds of air conditioning units, including window ACs, split AC units, package systems, and heavy-duty industrial central cooling plants. Our team handles everything from safe refrigerant extraction and structure dismantling to loading and site cleanup."
+        ]
+      },
+      "benefits": [
+        { "title": "Free Dismantling", "description": "Our professional crew dismantles heavy window, split, and central AC units safely at no extra charge." },
+        { "title": "Honest Weights", "description": "We weigh units on precise scales to ensure you receive the true market value for every scrap unit." },
+        { "title": "Eco-Friendly Recycling", "description": "Obsolete AC units contain harmful gases and metals. We process them safely according to environmental guidelines." },
+        { "title": "Instant Cash", "description": "No waiting for payment. We count and pay your cash immediately on site once loading is completed." }
+      ],
+      "gallery": [
+        "/images/AC-Scrap-Buying-1.jpg",
+        "/images/AC-Scrap-Buying-2-scaled.jpg",
+        "/images/Scrap-image-10-scaled.jpg",
+        "/images/Scrap-image-4-scaled.jpg"
+      ],
+      "faq": [
+        { "question": "What types of AC units do you buy?", "answer": "We buy all types: window ACs, split systems, tower units, central HVAC systems, and package chillers in any condition." },
+        { "question": "Do you charge for dismantling and removing the units?", "answer": "No, our dismantling and pickup services are 100% free of charge for scrap sales in Riyadh." },
+        { "question": "Do you buy units that are not working?", "answer": "Yes, we buy AC units in any condition—whether they are completely burnt, rusted, broken, or simply too old to run." }
+      ]
+    },
+    "copper-scrap": {
+      "meta": {
+        "title": "Copper Scrap Buying in Riyadh | Top Copper Cash Rates",
+        "description": "Sell copper pipes, wires, busbars, and radiator cores in Riyadh. Get maximum cash payout based on accurate local weights and top market rates."
+      },
+      "heroTitle": "Copper Scrap Buying in [Riyadh]",
+      "heroSubtitle": "Unlock the maximum value of your scrap copper. We offer top-tier weight-based pricing and instant on-site cash payments.",
+      "overview": {
+        "heading": "Riyadh's Premium Copper Scrap Buyer",
+        "paragraphs": [
+          "Copper is one of the most highly valued metals in the recycling industry. If you have leftover copper wiring, pipes, copper busbars, or electric motor windings from renovations or industrial activities, we will purchase them at the highest rates.",
+          "We accept all grades of copper, from shiny bright wire to plumbing tubes and heavy copper plates. Our mobile weighing scales allow us to measure the scrap right in front of you, guaranteeing transparency and honesty."
+        ]
+      },
+      "benefits": [
+        { "title": "Top Market Rates", "description": "We track global and local metal markets to offer you the absolute best scrap copper price per kilogram in Riyadh." },
+        { "title": "Mobile Weighing Scales", "description": "We bring certified scales to your site, ensuring transparent weights and honest calculations." },
+        { "title": "All Grades Accepted", "description": "We buy Millberry copper, clean pipes, burnt wire, brass-copper mixes, and radiators without fuss." },
+        { "title": "Immediate Payout", "description": "Get paid in cash the minute we load the copper scrap into our vehicles. Safe, quick, and secure." }
+      ],
+      "gallery": [
+        "/images/Copper-Scrap-Buying-1-scaled.jpg",
+        "/images/Scrap-image-10-scaled.jpg",
+        "/images/Scrap-image-4-scaled.jpg",
+        "/images/AC-Scrap-Buying-1.jpg"
+      ],
+      "faq": [
+        { "question": "What is the price of copper scrap per kg in Riyadh?", "answer": "Prices fluctuate daily based on global metal markets. Contact us on WhatsApp with photos for today's top cash rate." },
+        { "question": "Do I need to strip the insulation off copper wires before selling?", "answer": "You do not have to, but stripped copper wire gets a higher price per kg than insulated cables. We buy both!" },
+        { "question": "Do you buy old electric motors?", "answer": "Yes, old motors contain valuable copper windings. We buy electric motors of all sizes in Riyadh." }
+      ]
+    },
+    "aluminum-scrap": {
+      "meta": {
+        "title": "Aluminum Scrap Buying in Riyadh | Top Metal Prices",
+        "description": "Sell old aluminum window frames, sheet aluminum, alloy wheels, and industrial scrap in Riyadh. Free commercial loading and instant cash!"
+      },
+      "heroTitle": "Aluminum Scrap Buying in [Riyadh]",
+      "heroSubtitle": "Top cash prices for aluminum frames, sheets, alloy wheels, and industrial profiles. Honest weights and fast on-site collection.",
+      "overview": {
+        "heading": "Reliable Aluminum Scrap Recycling Services",
+        "paragraphs": [
+          "We buy all categories of scrap aluminum from construction sites, fabricators, warehouses, and homes in Riyadh. Aluminum is light but highly recyclable, and we ensure you get the best value for your scrap.",
+          "Whether you have discarded aluminum window frames, commercial siding, aluminum sheets, machinery parts, or old car alloy wheels, our team provides instant quotes and swift loading services."
+        ]
+      },
+      "benefits": [
+        { "title": "Fair Kilogram Rates", "description": "We offer top market value for pure aluminum, sheet aluminum, and alloy profiles." },
+        { "title": "Commercial Clearance", "description": "We specialize in clearing bulk aluminum waste from fabrication shops and construction projects." },
+        { "title": "Free Heavy Transport", "description": "No need to rent trucks. We bring our own fleet to load and transport heavy aluminum scrap." },
+        { "title": "Instant On-Site Cash", "description": "We conclude the deal on-site with an instant cash handover, ensuring a fast business transaction." }
+      ],
+      "gallery": [
+        "/images/Aluminum-Scrap-Buying-1-scaled.jpg",
+        "/images/Scrap-image-10-scaled.jpg",
+        "/images/Scrap-image-4-scaled.jpg",
+        "/images/AC-Scrap-Buying-1.jpg"
+      ],
+      "faq": [
+        { "question": "What kind of aluminum scrap do you accept?", "answer": "We accept aluminum window frames, sliding door channels, engine blocks, cast aluminum, beverage cans, and alloy rims." },
+        { "question": "Is there a minimum volume for free pickup?", "answer": "We provide pickup services for commercial volumes or larger residential scrap piles. Smaller loads can also be arranged." },
+        { "question": "Do you buy aluminum cables?", "answer": "Yes, we purchase aluminum electrical cables and wires at competitive weight rates." }
+      ]
+    },
+    "brass-scrap": {
+      "meta": {
+        "title": "Brass Scrap Buying in Riyadh | Sell Brass Valves & Ornaments",
+        "description": "Turn old brass valves, plumbing fixtures, and ornaments into instant cash in Riyadh. Best scrap brass rates and weight transparency."
+      },
+      "heroTitle": "Brass Scrap Buying in [Riyadh]",
+      "heroSubtitle": "Top rates for brass scrap, valves, piping, radiators, and industrial turnings. Accurate evaluation and cash paid on the spot.",
+      "overview": {
+        "heading": "Riyadh's Trusted Brass Scrap Buyer",
+        "paragraphs": [
+          "Brass is a dense and highly valued alloy. We buy old brass ornaments, sanitary plumbing fixtures, valves, fittings, gear components, and workshop turnings from residential and industrial clients.",
+          "Our team makes the selling process simple: send us photos, schedule a visit, and watch our team weigh and buy your brass scrap for a premium cash payout."
+        ]
+      },
+      "benefits": [
+        { "title": "Premium Brass Pricing", "description": "Brass holds excellent recycling value. We provide top-tier cash offers for clean and mixed brass." },
+        { "title": "Honest Weighing Scales", "description": "We weigh all items transparently using calibrated industrial scales on-site." },
+        { "title": "Plumbing Scrap Purchase", "description": "We buy bulky sanitary fixtures, bronze valves, and copper-brass alloy fittings in bulk." },
+        { "title": "Instant On-Site Payout", "description": "Get paid immediately in cash upon weight confirmation. Simple and fully transparent." }
+      ],
+      "gallery": [
+        "/images/Brass-Scrap-Buying-1-scaled.jpg",
+        "/images/Scrap-image-10-scaled.jpg",
+        "/images/Scrap-image-4-scaled.jpg",
+        "/images/AC-Scrap-Buying-1.jpg"
+      ],
+      "faq": [
+        { "question": "Do you buy copper and brass mixtures?", "answer": "Yes, we accept mixed metal scraps. Our experts will grade them on-site to give you the most accurate pricing." },
+        { "question": "What are the common types of brass scrap you buy?", "answer": "We commonly buy brass plumbing valves, water meters, condenser tubes, brass turnings, keys, and decorative ornaments." },
+        { "question": "Can you collect brass scrap from construction sites?", "answer": "Yes, we specialize in collecting site waste, including brass valves and copper piping, directly from construction areas." }
+      ]
+    },
+    "cables-wires-scrap": {
+      "meta": {
+        "title": "Cable & Wire Scrap Buying in Riyadh | Best Wire Prices",
+        "description": "We buy electrical wire scrap, copper cables, insulated wiring, and armored cables in Riyadh. Get top cash rates on weight measurements."
+      },
+      "heroTitle": "Cable & Wire Scrap in [Riyadh]",
+      "heroSubtitle": "Turn insulated copper cables, industrial wires, and demolition cabling into cash. High weight-based rates and free pickup.",
+      "overview": {
+        "heading": "Bulk Cable & Wire Scrap Recycling",
+        "paragraphs": [
+          "Are you a contractor, developer, or homeowner with scrap electrical wires and cables? We buy all categories of wiring scrap, including insulated copper wires, aluminum cables, thick armored power cables, and network wires.",
+          "Our team uses industrial scales to weigh the scrap at your premises, subtracting insulation tare weight fairly to give you the best possible net copper cash payouts."
+        ]
+      },
+      "benefits": [
+        { "title": "Excellent Contractor Rates", "description": "We offer specialized bulk rates for electrical contractors and demolition companies." },
+        { "title": "All Cable Types accepted", "description": "We buy house wiring, power cables, telephone wires, armored cables, and coaxial wire." },
+        { "title": "Honest Tare Deductions", "description": "Our team uses fair, industry-standard calculations to grade insulated cables based on copper recovery." },
+        { "title": "On-Site Clearance Crew", "description": "We do all the heavy lifting, loading, and cleanup. Sit back and collect your instant cash." }
+      ],
+      "gallery": [
+        "/images/Cable-Wire-Scrap-Buying-1-scaled.jpg",
+        "/images/Scrap-image-10-scaled.jpg",
+        "/images/Scrap-image-4-scaled.jpg",
+        "/images/AC-Scrap-Buying-1.jpg"
+      ],
+      "faq": [
+        { "question": "Do you buy aluminum cables as well as copper?", "answer": "Yes, we buy both copper and aluminum electrical cables at their respective market scrap rates." },
+        { "question": "How do you calculate the price of insulated cables?", "answer": "We estimate the percentage of copper metal inside the cable (recovery rate) and apply the copper market price to the net weight." },
+        { "question": "Can you provide continuous pickup from project sites?", "answer": "Yes, we can arrange regular scrap bin placements and collections for ongoing commercial construction sites in Riyadh." }
+      ]
+    },
+    "computer-electronic-scrap": {
+      "meta": {
+        "title": "Computer & Electronic Scrap Buying in Riyadh | E-Waste",
+        "description": "Dispose of old computers, servers, motherboards, and IT e-waste in Riyadh. Professional recycling services with instant cash payments."
+      },
+      "heroTitle": "Computer Scrap Buying in [Riyadh]",
+      "heroSubtitle": "Sell obsolete IT equipment, server racks, motherboards, and electronic waste. Safe, certified recycling and immediate payment.",
+      "overview": {
+        "heading": "Certified E-Waste & Computer Scrap Buying",
+        "paragraphs": [
+          "Electronic waste is one of the fastest-growing scrap categories. If your company or institution in Riyadh is upgrading its IT infrastructure, do not throw away old computers and servers. Sell them to us for green recycling and instant cash.",
+          "We purchase obsolete desktops, server units, networking switches, green motherboards, RAM, CPUs, and power supplies. We ensure all electronics are processed in an environmentally friendly manner."
+        ]
+      },
+      "benefits": [
+        { "title": "IT Asset Disposal", "description": "We help companies safely clear obsolete IT rooms, storage warehouses, and server closets." },
+        { "title": "Eco-Responsible E-Waste", "description": "We process e-waste to recover precious metals and prevent toxic chemicals from reaching landfills." },
+        { "title": "Data Security Minded", "description": "We handle old servers and hard drives with care, routing them to certified shredding and recycling channels." },
+        { "title": "Bulk Cash Payment", "description": "We provide a single, lump-sum cash payment for all your old office computing equipment." }
+      ],
+      "gallery": [
+        "/images/Computer-Scrap-Buying-2.jpg",
+        "/images/Scrap-image-10-scaled.jpg",
+        "/images/Scrap-image-4-scaled.jpg",
+        "/images/AC-Scrap-Buying-1.jpg"
+      ],
+      "faq": [
+        { "question": "Do you buy individual old laptops and monitors?", "answer": "We specialize in bulk e-waste collection from offices, schools, and companies, but we accept individual items if brought in with other scrap." },
+        { "question": "What parts of the computer are valuable?", "answer": "Motherboards, RAM slots, processors (CPUs), power supply units, and copper heat-sinks are highly recyclable and valuable." },
+        { "question": "Do you issue certificates of recycling for businesses?", "answer": "Yes, for commercial bulk e-waste disposal, we can provide documentation verifying safe recycling." }
+      ]
+    },
+    "electrical-panels-scrap": {
+      "meta": {
+        "title": "Electrical Scrap Buying in Riyadh | Transformers & Panels",
+        "description": "We buy industrial electrical panels, switchboards, generators, and copper transformers in Riyadh. Safe dismantling and top cash rates."
+      },
+      "heroTitle": "Electrical Scrap Buying in [Riyadh]",
+      "heroSubtitle": "Sell heavy electrical panels, industrial generators, transformers, and copper switchboards. We handle the heavy loading and rigging.",
+      "overview": {
+        "heading": "Commercial & Industrial Electrical Scrap Buyer",
+        "paragraphs": [
+          "Demolition projects and factory retrofits generate substantial amounts of heavy-duty electrical scrap. We purchase heavy-duty transformers, electrical panel boards, high-voltage switchgear, copper busbars, and old backup generators.",
+          "Our experienced heavy-lifting crew visits your site in Riyadh with cranes, trucks, and specialized tools to safely dismantle and load heavy electrical installations."
+        ]
+      },
+      "benefits": [
+        { "title": "Heavy Rigging Crew", "description": "No electrical scrap is too heavy. We bring cranes and heavy trucks to lift and load transformers and generator units." },
+        { "title": "Top Copper Busbar Rates", "description": "We pay high cash prices for copper plates, busbars, and heavy transformer windings." },
+        { "title": "Demolition Site Clearance", "description": "We clear obsolete electrical rooms from commercial buildings under renovation or demolition." },
+        { "title": "Instant Cash Handover", "description": "Once weighed and loaded, we pay you immediately in cash. Fully transparent transaction." }
+      ],
+      "gallery": [
+        "/images/Electrical-Scrap-Buying-1-scaled.jpg",
+        "/images/Scrap-image-10-scaled.jpg",
+        "/images/Scrap-image-4-scaled.jpg",
+        "/images/AC-Scrap-Buying-1.jpg"
+      ],
+      "faq": [
+        { "question": "Do you buy old electrical circuit breakers?", "answer": "Yes, we buy circuit breakers, electrical switchboards, panels, and heavy wiring boxes." },
+        { "question": "Can you dismantle old industrial generators?", "answer": "Yes, our technical crew can safely disconnect, dismantle, and hoist heavy industrial generator sets from any building." },
+        { "question": "Are you buying copper-wound transformers?", "answer": "Absolutely. Copper transformers are highly valuable, and we offer top market cash pricing based on copper recovery." }
+      ]
+    },
+    "industrial-machinery-scrap": {
+      "meta": {
+        "title": "Industrial Machinery Scrap Buying in Riyadh | Factory Clearance",
+        "description": "Turn old factory machinery, decommissioned equipment, and heavy scrap steel into cash. We provide cranes, dismantling, and instant cash payouts."
+      },
+      "heroTitle": "Machinery Scrap Buying in [Riyadh]",
+      "heroSubtitle": "Turn decommissioned factory machines, heavy manufacturing equipment, and obsolete boilers into cash. Dismantling and crane loading included.",
+      "overview": {
+        "heading": "Riyadh's Leading Factory & Machinery Scrap Buyer",
+        "paragraphs": [
+          "Disposing of heavy industrial machinery can be a logistical nightmare. We specialize in buying and clearing decommissioned factory equipment, obsolete assembly lines, industrial boilers, heavy electric motors, and massive steel structures in Riyadh.",
+          "We provide a complete turnkey service: our engineers inspect the site, bring heavy cranes and plasma cutters to cut down structures, load our trailers, and pay you the agreed market cash value on the spot."
+        ]
+      },
+      "benefits": [
+        { "title": "Cranes & Heavy Equipment", "description": "We bring cranes, flatbeds, and cutting machinery to handle the largest industrial scrap." },
+        { "title": "Full Factory Clearance", "description": "We buy complete obsolete factory floors, warehouse shelving, and industrial complexes." },
+        { "title": "Technical Safety First", "description": "Our dismantling team is fully insured and trained to operate safely in active industrial environments." },
+        { "title": "Huge Instant Payouts", "description": "We have the financial capacity to purchase high-value industrial scrap with immediate cash payments." }
+      ],
+      "gallery": [
+        "/images/Machinery-Scrap-Buying-1-scaled.jpg",
+        "/images/Scrap-image-10-scaled.jpg",
+        "/images/Scrap-image-4-scaled.jpg",
+        "/images/AC-Scrap-Buying-1.jpg"
+      ],
+      "faq": [
+        { "question": "Do you buy old forklifts and heavy vehicles?", "answer": "Yes, we purchase old forklifts, warehouse machinery, tractors, and industrial vehicles as scrap metal." },
+        { "question": "Can you cut down large steel tanks?", "answer": "Yes, our team uses industrial plasma and gas torches to safely dismantle large fuel tanks, steel boilers, and warehouse frames." },
+        { "question": "How do we arrange a commercial site evaluation?", "answer": "Simply contact us via phone or WhatsApp. We will send an estimator to your factory or warehouse in Riyadh for a free inspection." }
+      ]
+    }
+  },
+  "blogPosts": {
+    "understanding-scrap-copper-prices-in-riyadh-2026": {
+      "meta": {
+        "title": "Understanding Scrap Copper Prices in Riyadh (2026)",
+        "description": "Discover how scrap copper is graded, what factors drive its price in Riyadh, and tips to maximize your cash payout when selling copper cables."
+      },
+      "heroTitle": "Understanding [Scrap Copper Prices] in Riyadh (2026)",
+      "date": "June 12, 2026",
+      "author": "Riyadh Scrap Buyer Team",
+      "featuredImage": "/images/Copper-Scrap-Buying-1-scaled.jpg",
+      "sections": [
+        { "type": "paragraph", "content": "Copper is often referred to as the king of scrap metals due to its excellent electrical conductivity, infinite recyclability, and high market value. In Riyadh, the demand for recycled copper remains strong, driven by construction developments, grid upgrades, and global recycling demands." },
+        { "type": "heading", "content": "How Copper Scrap is Graded" },
+        { "type": "paragraph", "content": "To get the best price for your scrap copper, it is essential to understand the grades scrap buyers look for:" },
+        { "type": "list", "items": [
+          "**Millberry / Bright Bare Copper:** The highest-grade copper. It consists of clean, unalloyed, uncoated, and bare copper wire thicker than 1.6mm. It must be free of insulation and paint.",
+          "**Copper No. 1:** Clean copper pipes, tubing, and heavy busbars. Minimal oxidation and no solder joints are permitted.",
+          "**Copper No. 2:** Copper wire or pipes that have paint, solder, tin coating, or slight corrosion. This also includes burnt copper wire.",
+          "**Insulated Copper Wire:** Cables that still have their plastic casing. Pricing depends on copper recovery (usually 45% to 80% copper inside)."
+        ] },
+        { "type": "highlight", "content": "Tip: Stripping the insulation off thick copper power cables before selling can increase your payout by up to 30%, as you avoid processing fee deductions." },
+        { "type": "heading", "content": "What Influences Copper Prices in Riyadh?" },
+        { "type": "paragraph", "content": "Local copper scrap prices are determined by the London Metal Exchange (LME) global index, local supply and demand in the Riyadh industrial areas (like Al Sullay), and exchange rates. Purity and weight are the main factors when our team evaluates your scrap copper on-site." }
+      ]
+    },
+    "how-to-safely-sell-old-air-conditioners-for-cash": {
+      "meta": {
+        "title": "How to Safely Sell Old Air Conditioners for Cash",
+        "description": "Learn the step-by-step guide to selling old split and central air conditioners in Riyadh, including why professional dismantling is essential."
+      },
+      "heroTitle": "How to Safely Sell [Old Air Conditioners] for Cash",
+      "date": "June 08, 2026",
+      "author": "Riyadh Scrap Buyer Team",
+      "featuredImage": "/images/AC-Scrap-Buying-2-scaled.jpg",
+      "sections": [
+        { "type": "paragraph", "content": "Riyadh's hot climate means that air conditioning units are vital. However, over time, AC units lose efficiency, break down, or become obsolete. Replacing them leaves you with heavy metal scrap that can be sold for excellent cash returns." },
+        { "type": "heading", "content": "Why Scrap AC Units Are Valuable" },
+        { "type": "paragraph", "content": "Air conditioners are packed with valuable materials. Even if the unit is completely non-functional, it contains:" },
+        { "type": "list", "items": [
+          "**Copper Tubing & Windings:** Found in the condenser coils and compressor motor.",
+          "**Aluminum Fins:** Wrapped around the copper tubes in the radiator grids.",
+          "**Heavy Steel Casing:** The outer cabinet is heavy-gauge galvanized steel.",
+          "**Electric Motors:** Contain high-grade copper windings."
+        ] },
+        { "type": "highlight", "content": "Warning: Air conditioning units contain refrigerants (Freon gas). Releasing these gases into the air is illegal and harmful. Always use a licensed scrap buyer who can dismantle and reclaim the gas safely." },
+        { "type": "heading", "content": "Step-by-Step Guide to Selling Your AC Scrap" },
+        { "type": "paragraph", "content": "First, take clear photos of the units (especially labels showing capacity). Second, call or WhatsApp our team for an estimate. Third, schedule a time for our crew to visit. We will safely disconnect the wiring, recover refrigerant, dismantle the heavy units from wall brackets, load them, and pay you cash on the spot." }
+      ]
+    },
+    "the-benefits-of-metal-recycling-for-riyadhs-environment": {
+      "meta": {
+        "title": "The Benefits of Metal Recycling for Riyadh's Environment",
+        "description": "Explore how local scrap recycling reduces landfills, saves energy, and aligns with Saudi Vision 2030 circular economy goals in Riyadh."
+      },
+      "heroTitle": "The Benefits of [Metal Recycling] for Riyadh",
+      "date": "May 30, 2026",
+      "author": "Riyadh Scrap Buyer Team",
+      "featuredImage": "/images/Scrap-image-4-scaled.jpg",
+      "sections": [
+        { "type": "paragraph", "content": "As Riyadh grows rapidly, waste management becomes a critical priority. Metal recycling plays a pivotal role in establishing a circular economy, conserving natural resources, and reducing environmental degradation in Saudi Arabia." },
+        { "type": "heading", "content": "Environmental Advantages of Scrap Metal Recycling" },
+        { "type": "paragraph", "content": "Recycling metals like copper, steel, and aluminum has a direct positive impact on our local environment:" },
+        { "type": "list", "items": [
+          "**Energy Savings:** Recycling aluminum uses 95% less energy than producing it from raw bauxite. Recycling copper saves 85% of the energy needed for mining.",
+          "**Landfill Reduction:** Scrap metal is extremely heavy and dense. By recycling old machinery and AC units, we prevent massive amounts of metal from filling up Riyadh's municipal landfills.",
+          "**Lower Carbon Footprint:** Manufacturing items from recycled scrap reduces industrial greenhouse gas emissions dramatically."
+        ] },
+        { "type": "highlight", "content": "Saudi Vision 2030: Riyadh is targeting a high rate of landfill diversion and circular recycling. By selling your residential or industrial scrap, you directly contribute to these environmental and national goals." },
+        { "type": "heading", "content": "How You Can Participate" },
+        { "type": "paragraph", "content": "Instead of leaving scrap copper cables, old steel shelves, or broken appliances to rust in your yard, contact a professional buyer. We provide free pickup, sort the metals, and route them to local industrial processing yards where they are melted down and forged into brand new materials." }
+      ]
+    }
+  },
+  "blogIndex": {
+    "title": "Our Blog & News | Scrap Metal Industry Insights",
+    "description": "Stay updated with the latest news, scrap pricing guides, and recycling tips in Riyadh. Read our blog posts on copper, aluminum, and AC scrap recycling.",
+    "heroTitle": "Our [Scrap Blog] & News",
+    "heroSubtitle": "Expert insights, pricing trends, and environmental advice on metal recycling and scrap buying in Riyadh.",
+    "subheading": "Latest Articles",
+    "subtext": "Read our latest news updates and guides to get the most value out of your scrap metals in Riyadh."
+  },
+  "aboutPage": {
+    "meta": {
+      "title": "About Us | Leading Scrap Metal Buyer in Riyadh",
+      "description": "Learn about Riyadh Scrap Buyer. With 10+ years of experience, we provide honest weights, free pickup, and top cash rates for residential and industrial scrap."
+    },
+    "heroTitle": "About [Riyadh Scrap Buyer]",
+    "heroSubtitle": "Riyadh's premier scrap purchasing and metal recycling partner. Committed to transparency, fair rates, and professional service.",
+    "storyHeading": "Our Story & Commitment",
+    "storyText1": "Founded in Riyadh over ten years ago, Riyadh Scrap Buyer has grown from a local metal merchant to Riyadh's most reliable full-service scrap collection and recycling enterprise. We serve residential, commercial, and industrial clients across all neighborhoods of Riyadh.",
+    "storyText2": "We specialize in purchasing high-value scrap materials, including copper cables, air conditioning units, aluminum frames, brass fixtures, transformers, obsolete machinery, and factory scrap. Our core belief is that metal recycling should be rewarding, clean, and completely stress-free for the seller.",
+    "missionTitle": "Our Mission",
+    "missionText": "To provide exceptional scrap collection services that offer sellers premium market rates while routing metals to circular recycling systems that conserve Saudi Arabia's resources.",
+    "visionTitle": "Our Vision",
+    "visionText": "To lead Riyadh's recycling sector in alignment with Saudi Vision 2030, introducing advanced, environmentally safe scrap processing methods and zero-waste landfill policies.",
+    "stats": [
+      { "number": "10+", "label": "Years Experience" },
+      { "number": "1,000+", "label": "Happy Customers" },
+      { "number": "8+", "label": "Scrap Services" },
+      { "number": "24/7", "label": "Support Available" }
+    ]
+  },
+  "privacyPage": {
+    "meta": {
+      "title": "Privacy Policy | Riyadh Scrap Buyer",
+      "description": "Privacy Policy for Riyadh Scrap Buyer. Learn how we collect, use, and protect your information when using our scrap buying services."
+    },
+    "heroTitle": "[Privacy Policy]",
+    "heroSubtitle": "Last Updated: June 15, 2026",
+    "content": {
+      "intro": "At Riyadh Scrap Buyer, we value your privacy and are committed to protecting your personal data. This Privacy Policy outlines how we collect, use, and safeguard your information when you visit our website or use our scrap pickup services in Riyadh.",
+      "sections": [
+        {
+          "title": "1. Information We Collect",
+          "text": "We collect information you provide directly to us, including your name, phone number, email address, physical location or neighborhood, and details (including photographs) of the scrap materials you wish to sell."
+        },
+        {
+          "title": "2. How We Use Your Information",
+          "text": "We use the collected information to respond to your inquiries, provide weight-based quotes, coordinate pickup schedules, complete cash transactions, and improve our customer service."
+        },
+        {
+          "title": "3. Information Sharing & Security",
+          "text": "We do not sell or lease your personal information to third parties. We implement secure data storage systems to prevent unauthorized access or disclosure of your contact and transaction details."
+        },
+        {
+          "title": "4. Cookies",
+          "text": "Our website uses basic cookies to enhance user experience, track language preferences (English/Arabic), and monitor website performance traffic."
+        },
+        {
+          "title": "5. Your Rights & Contact",
+          "text": "You have the right to request access to or deletion of your personal contact details from our records. For any questions, contact us via email at privacy@riyadhscrapbuyer.com or WhatsApp."
+        }
+      ]
+    }
+  },
+  "termsPage": {
+    "meta": {
+      "title": "Terms of Service | Riyadh Scrap Buyer",
+      "description": "Terms and Conditions of service for Riyadh Scrap Buyer. Understand pricing, dismantling, and pickup terms in Riyadh."
+    },
+    "heroTitle": "[Terms of Service]",
+    "heroSubtitle": "Effective Date: June 15, 2026",
+    "content": {
+      "intro": "Please read these Terms of Service carefully before utilizing our scrap purchasing, dismantling, and collection services. By requesting a pickup or submitting details, you agree to comply with these terms.",
+      "sections": [
+        {
+          "title": "1. Ownership of Scrap Materials",
+          "text": "By selling scrap materials to Riyadh Scrap Buyer, you warrant that you are the legal owner of the items or have explicit written authority from the owner to sell them. We do not purchase materials of questionable or illegal origin."
+        },
+        {
+          "title": "2. Pricing and Weight Evaluation",
+          "text": "All prices quoted are estimates until our team conducts an on-site inspection and weight measurement using certified scales. Prices are based on current market rates and material grading (purity)."
+        },
+        {
+          "title": "3. Dismantling & Site Access",
+          "text": "You agree to provide our crew safe access to the premises where the scrap is located. Our team handles dismantling (e.g. AC units, heavy machinery) with professional care, but you must ensure that utility lines (electricity, gas, water) are safely disconnected beforehand."
+        },
+        {
+          "title": "4. Payment Terms",
+          "text": "Payment is made in cash immediately upon completion of loading and weighing at the site, unless a different payment structure is explicitly agreed upon in writing for bulk commercial accounts."
+        },
+        {
+          "title": "5. Limitation of Liability",
+          "text": "Riyadh Scrap Buyer is not liable for pre-existing structural damage at the collection site or damages resulting from utility disconnect failures by the property owner."
+        }
+      ]
+    }
+  },
+  "shared": {
+    "breadcrumbHome": "Home",
+    "breadcrumbServices": "Services",
+    "breadcrumbBlog": "Blog",
+    "ctaHeading": "Ready to Sell Your Scrap?",
+    "ctaSubtext": "Contact us now for a free evaluation and instant cash payment in Riyadh.",
+    "ctaButtonCall": "Call Now",
+    "ctaButtonWhatsapp": "WhatsApp Chat",
+    "relatedServices": "Related Services",
+    "relatedArticles": "Related Articles",
+    "shareArticle": "Share This Article",
+    "readMore": "Read More",
+    "backToServices": "Back to Services",
+    "backToBlog": "Back to Blog"
   }
 }

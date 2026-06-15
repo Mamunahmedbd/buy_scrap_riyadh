@@ -11,6 +11,8 @@ interface MobileMenuProps {
     contact: string;
     directions: string;
     buttonCall: string;
+    about: string;
+    blog: string;
   };
   locale: string;
 }
@@ -53,6 +55,20 @@ export default function MobileMenu({ dict, locale }: MobileMenuProps) {
             className="text-white hover:text-secondary font-semibold text-sm transition-colors py-1 text-start"
           >
             {dict.services}
+          </Link>
+          <Link 
+            href={`${baseHref}/about`} 
+            onClick={closeMenu} 
+            className="text-white hover:text-secondary font-semibold text-sm transition-colors py-1 text-start"
+          >
+            {dict.about}
+          </Link>
+          <Link 
+            href={`${baseHref}/blog`} 
+            onClick={closeMenu} 
+            className="text-white hover:text-secondary font-semibold text-sm transition-colors py-1 text-start"
+          >
+            {dict.blog}
           </Link>
           <Link 
             href={`${baseHref}#gallery`} 

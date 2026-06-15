@@ -10,6 +10,8 @@ interface HeaderProps {
     contact: string;
     directions: string;
     buttonCall: string;
+    about: string;
+    blog: string;
   };
   locale: string;
 }
@@ -40,6 +42,18 @@ export default function Header({ dict, locale }: HeaderProps) {
             className="text-white/95 hover:text-secondary font-bold text-sm lg:text-base transition-colors duration-200"
           >
             {dict.services}
+          </Link>
+          <Link
+            href={`${baseHref}/about`}
+            className="text-white/95 hover:text-secondary font-bold text-sm lg:text-base transition-colors duration-200"
+          >
+            {dict.about}
+          </Link>
+          <Link
+            href={`${baseHref}/blog`}
+            className="text-white/95 hover:text-secondary font-bold text-sm lg:text-base transition-colors duration-200"
+          >
+            {dict.blog}
           </Link>
           <Link
             href={`${baseHref}#gallery`}

@@ -24,6 +24,12 @@ const newsImages = [
   '/images/Scrap-image-4-scaled.jpg',
 ] as const;
 
+const BLOG_SLUGS = [
+  'understanding-scrap-copper-prices-in-riyadh-2026',
+  'how-to-safely-sell-old-air-conditioners-for-cash',
+  'the-benefits-of-metal-recycling-for-riyadhs-environment',
+] as const;
+
 export default function LatestNewsSection({ dict, locale }: LatestNewsSectionProps) {
   const isRtl = locale === 'ar';
 
@@ -48,11 +54,7 @@ export default function LatestNewsSection({ dict, locale }: LatestNewsSectionPro
         {/* 3 Cards Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-start">
           {dict.cards.map((card, idx) => {
-            // Generate basic URL friendly slug from title
-            const slug = card.title
-              .toLowerCase()
-              .replace(/[^a-z0-9\s-]/g, '')
-              .replace(/\s+/g, '-');
+            const slug = BLOG_SLUGS[idx] || '';
 
             return (
               <article 
