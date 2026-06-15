@@ -15,6 +15,28 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ dict, locale }: HeroSectionProps) {
+  const isArabic = locale === 'ar';
+  const heroSlides = [
+    {
+      src: '/images/feature-image-1.jpg',
+      alt: isArabic ? 'عمليات شراء وتجميع السكراب في الرياض' : 'Scrap buying and collection operations in Riyadh',
+      caption: isArabic ? 'شراء السكراب والمعادن المستعملة داخل الرياض' : 'Scrap metal buying and collection in Riyadh',
+      position: 'object-center',
+    },
+    {
+      src: '/images/Copper-Scrap-Buying-1-scaled.jpg',
+      alt: isArabic ? 'شراء سكراب النحاس في الرياض' : 'Copper scrap buying service in Riyadh',
+      caption: isArabic ? 'نشتري النحاس والسكراب المعدني بأسعار مناسبة' : 'Copper and metal scrap purchased at competitive rates',
+      position: 'object-center',
+    },
+    {
+      src: '/images/Aluminum-Scrap-Buying-1-scaled.jpg',
+      alt: isArabic ? 'تجميع سكراب الألمنيوم والمعادن في الرياض' : 'Aluminum and metal scrap collection in Riyadh',
+      caption: isArabic ? 'استلام سريع لسكراب الألمنيوم والمعادن من موقعك' : 'Fast pickup for aluminum and mixed metal scrap',
+      position: 'object-center',
+    },
+  ];
+
   return (
     <section 
       className="relative w-full min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center py-16 px-4 bg-primary-dark overflow-hidden" 
@@ -24,7 +46,7 @@ export default function HeroSection({ dict, locale }: HeroSectionProps) {
       {/* Background Image with optimization */}
       <Image
         src="/images/background.jpg"
-        alt={locale === 'ar' ? 'ساحة خردة وسكراب في الرياض' : 'Scrap metal recycling yard in Riyadh'}
+        alt={isArabic ? 'ساحة خردة وسكراب في الرياض' : 'Scrap metal recycling yard in Riyadh'}
         fill
         priority
         sizes="100vw"
@@ -116,16 +138,44 @@ export default function HeroSection({ dict, locale }: HeroSectionProps) {
 
         </div>
 
-        {/* Right Side (Visual graphic/Image element) */}
-        <div className="lg:col-span-5 hidden lg:block relative h-[450px] w-full rounded-2xl overflow-hidden border-4 border-white/10 shadow-2xl">
-          <Image
-            src="/images/feature-image-1.jpg"
-            alt={locale === 'ar' ? 'عمليات تجميع السكراب بالرياض' : 'Scrap metal buyer operations in Riyadh'}
-            fill
-            sizes="(max-width: 1024px) 100vw, 40vw"
-            className="object-cover"
-          />
+        {/* Right Side (SEO-friendly image slider) */}
+        <div
+          className="hero-image-slider lg:col-span-5 relative h-[240px] sm:h-[320px] lg:h-[450px] w-full rounded-lg overflow-hidden border-4 border-white/10 shadow-2xl"
+          aria-label={isArabic ? 'صور خدمات شراء السكراب في الرياض' : 'Riyadh scrap buying service photos'}
+          role="list"
+        >
+          {heroSlides.map((slide, index) => (
+            <figure
+              key={slide.src}
+              className="hero-slide absolute inset-0"
+              itemScope
+              itemType="https://schema.org/ImageObject"
+              role="listitem"
+            >
+              <meta itemProp="contentUrl" content={slide.src} />
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                title={slide.caption}
+                fill
+                priority={index === 0}
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className={`object-cover ${slide.position}`}
+              />
+              <figcaption
+                itemProp="caption"
+                className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-primary-dark/90 via-primary-dark/70 to-transparent px-5 pb-5 pt-16 text-sm font-bold text-white"
+              >
+                {slide.caption}
+              </figcaption>
+            </figure>
+          ))}
           <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/40 to-transparent" />
+          <div className="absolute bottom-5 end-5 z-20 flex gap-2" aria-hidden="true">
+            {heroSlides.map((slide, index) => (
+              <span key={slide.src} className={`hero-slide-dot ${index === 0 ? 'hero-slide-dot-active' : ''}`} />
+            ))}
+          </div>
         </div>
 
       </div>

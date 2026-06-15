@@ -13,6 +13,7 @@ import '../globals.css';
 import TopBar from '../components/TopBar';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -88,6 +89,10 @@ export default async function RootLayout({ children, params }: LayoutProps) {
           <div className="flex-grow">{children}</div>
           <Footer dict={dict.footer} locale={lang} />
         </div>
+        <FloatingWhatsAppButton
+          label={dict.shared.ctaButtonWhatsapp}
+          phone={dict.topBar.whatsapp}
+        />
       </body>
     </html>
   );
