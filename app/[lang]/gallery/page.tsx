@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { locales } from '../../../i18n.config';
 import { getDictionary, hasLocale } from '../dictionaries';
 import { getGalleryData, type GalleryImage } from '../../_lib/gallery';
+import { buildPageMetadata, cleanSeoText, serializeJsonLd } from '../../seo';
 import Breadcrumb from '../../components/Breadcrumb';
 import PageHeroBanner from '../../components/PageHeroBanner';
 import CtaContactBanner from '../../components/CtaContactBanner';
@@ -13,14 +14,6 @@ interface PageProps {
   params: Promise<{
     lang: string;
   }>;
-}
-
-function cleanTitle(title: string) {
-  return title.replace(/[\[\]]/g, '');
-}
-
-function serializeJsonLd(schema: object) {
-  return JSON.stringify(schema).replace(/</g, '\\u003c');
 }
 
 function formatTemplate(
@@ -46,42 +39,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const dict = await getDictionary(lang);
   const galleryPage = dict.galleryPage;
-  const title = cleanTitle(galleryPage.heroTitle);
+  const title = cleanSeoText(galleryPage.heroTitle);
 
-  return {
+  return buildPageMetadata({
+    lang,
+    path: '/gallery',
     title: galleryPage.meta.title,
     description: galleryPage.meta.description,
-    alternates: {
-      canonical: `/${lang}/gallery`,
-      languages: {
-        en: '/en/gallery',
-        ar: '/ar/gallery',
-        'x-default': '/en/gallery',
-      },
-    },
-    openGraph: {
-      title: galleryPage.meta.title,
-      description: galleryPage.meta.description,
-      url: `https://riyadhscrapbuyer.com/${lang}/gallery`,
-      siteName: 'Riyadh Scrap Buyer',
-      locale: lang === 'ar' ? 'ar_SA' : 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: '/gallery/feature-image-1.jpg',
-          width: 1200,
-          height: 630,
-          alt: title,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: galleryPage.meta.title,
-      description: galleryPage.meta.description,
-      images: ['/gallery/feature-image-1.jpg'],
-    },
-  };
+    image: '/gallery/feature-image-1.jpg',
+    imageAlt: title,
+  });
 }
 
 export default async function GalleryPage({ params }: PageProps) {
@@ -94,7 +61,7 @@ export default async function GalleryPage({ params }: PageProps) {
   const dict = await getDictionary(lang);
   const galleryPage = dict.galleryPage;
   const galleryData = await getGalleryData();
-  const pageTitle = cleanTitle(galleryPage.heroTitle);
+  const pageTitle = cleanSeoText(galleryPage.heroTitle);
   const isRtl = lang === 'ar';
 
   const getCategoryLabel = (slug: string) =>

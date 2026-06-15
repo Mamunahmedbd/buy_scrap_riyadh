@@ -1,7 +1,13 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { hasLocale, getDictionary } from './dictionaries';
+import {
+  absoluteUrl,
+  buildPageMetadata,
+  localizedPath,
+  serializeJsonLd,
+} from '../seo';
 
-// Import all sections
 import HeroSection from '../components/HeroSection';
 import WhatWeBuySection from '../components/WhatWeBuySection';
 import WhyChooseUsSection from '../components/WhyChooseUsSection';
@@ -20,6 +26,25 @@ interface PageProps {
   params: Promise<{ lang: string }>;
 }
 
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { lang } = await params;
+
+  if (!hasLocale(lang)) {
+    return {};
+  }
+
+  const dict = await getDictionary(lang);
+
+  return buildPageMetadata({
+    lang,
+    title: dict.meta.title,
+    description: dict.meta.description,
+    keywords: dict.meta.keywords,
+    image: '/images/background.jpg',
+    imageAlt: 'Scrap metal recycling yard in Riyadh',
+  });
+}
+
 export default async function HomePage({ params }: PageProps) {
   const { lang } = await params;
 
@@ -28,15 +53,45 @@ export default async function HomePage({ params }: PageProps) {
   }
 
   const dict = await getDictionary(lang);
+  const serviceItems = [
+    dict.whatWeBuy.cards.ac.title,
+    dict.whatWeBuy.cards.copper.title,
+    dict.whatWeBuy.cards.aluminum.title,
+    dict.whatWeBuy.cards.brass.title,
+    dict.whatWeBuy.cards.cable.title,
+    dict.whatWeBuy.cards.computer.title,
+    dict.whatWeBuy.cards.electrical.title,
+    dict.whatWeBuy.cards.machinery.title,
+  ];
+  const homeUrl = absoluteUrl(localizedPath(lang));
+  const homeSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${homeUrl}#webpage`,
+    url: homeUrl,
+    name: dict.meta.title,
+    description: dict.meta.description,
+    inLanguage: lang,
+    isPartOf: {
+      '@id': 'https://riyadhscrapbuyer.com/#website',
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      name: dict.whatWeBuy.subtext,
+      itemListElement: serviceItems.map((name, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name,
+      })),
+    },
+  };
 
   return (
     <main>
-      <h1 className="sr-only">
-        {lang === 'ar' 
-          ? 'أفضل شركة شراء سكراب بالرياض ونقل مجاني بأعلى الأسعار' 
-          : 'Best Scrap Buyer Company in Riyadh - Free Pickup and Top Cash Prices'
-        }
-      </h1>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(homeSchema) }}
+      />
       <HeroSection dict={dict.hero} locale={lang} />
       <WhatWeBuySection dict={dict.whatWeBuy} locale={lang} />
       <WhyChooseUsSection dict={dict.whyChooseUs} locale={lang} />

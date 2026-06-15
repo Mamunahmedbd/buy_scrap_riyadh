@@ -1,83 +1,94 @@
 import { MetadataRoute } from 'next';
+import { locales } from '../i18n.config';
+import { getGalleryData } from './_lib/gallery';
+import {
+  absoluteUrl,
+  BLOG_SLUGS,
+  DEFAULT_OG_IMAGE,
+  SERVICE_IMAGES,
+  SERVICE_SLUGS,
+  localizedPath,
+  sitemapAlternates,
+} from './seo';
 
-const serviceSlugs = [
-  'ac-conditioner-scrap',
-  'copper-scrap',
-  'aluminum-scrap',
-  'brass-scrap',
-  'cables-wires-scrap',
-  'computer-electronic-scrap',
-  'electrical-panels-scrap',
-  'industrial-machinery-scrap',
-];
-
-const blogSlugs = [
-  'understanding-scrap-copper-prices-in-riyadh-2026',
-  'how-to-safely-sell-old-air-conditioners-for-cash',
-  'the-benefits-of-metal-recycling-for-riyadhs-environment',
-];
+const lastModified = new Date('2026-06-15T00:00:00+03:00');
 
 const staticPaths = [
-  { path: 'about', priority: 0.6 },
-  { path: 'gallery', priority: 0.7 },
-  { path: 'privacy', priority: 0.3 },
-  { path: 'terms', priority: 0.3 },
-  { path: 'blog', priority: 0.7 },
-];
+  { path: '', priority: 1.0, changeFrequency: 'weekly' },
+  { path: '/about', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/gallery', priority: 0.8, changeFrequency: 'weekly' },
+  { path: '/blog', priority: 0.7, changeFrequency: 'weekly' },
+  { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' },
+  { path: '/terms', priority: 0.3, changeFrequency: 'yearly' },
+] as const;
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const domain = 'https://riyadhscrapbuyer.com';
-  const locales = ['en', 'ar'];
-  
+function sitemapEntry({
+  lang,
+  path,
+  priority,
+  changeFrequency,
+  images,
+}: {
+  lang: string;
+  path: string;
+  priority: number;
+  changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'];
+  images?: string[];
+}): MetadataRoute.Sitemap[number] {
+  return {
+    url: absoluteUrl(localizedPath(lang, path)),
+    lastModified,
+    changeFrequency,
+    priority,
+    alternates: sitemapAlternates(path),
+    ...(images ? { images: images.map((image) => absoluteUrl(image)) } : {}),
+  };
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const galleryData = await getGalleryData();
+  const galleryImages = galleryData.images.slice(0, 50).map((image) => image.src);
   const entries: MetadataRoute.Sitemap = [];
 
-  // Homepages
-  entries.push({
-    url: `${domain}/en`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 1.0,
-  });
-  entries.push({
-    url: `${domain}/ar`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.9,
-  });
-
-  // Dynamic service paths
-  for (const lang of locales) {
-    for (const slug of serviceSlugs) {
-      entries.push({
-        url: `${domain}/${lang}/services/${slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.8,
-      });
-    }
-  }
-
-  // Dynamic blog posts
-  for (const lang of locales) {
-    for (const slug of blogSlugs) {
-      entries.push({
-        url: `${domain}/${lang}/blog/${slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.7,
-      });
-    }
-  }
-
-  // Static paths
   for (const lang of locales) {
     for (const item of staticPaths) {
-      entries.push({
-        url: `${domain}/${lang}/${item.path}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: item.priority,
-      });
+      entries.push(
+        sitemapEntry({
+          lang,
+          path: item.path,
+          priority: lang === 'ar' && item.path === '' ? 0.95 : item.priority,
+          changeFrequency: item.changeFrequency,
+          images:
+            item.path === '/gallery'
+              ? ['/gallery/feature-image-1.jpg', ...galleryImages]
+              : item.path === ''
+                ? [DEFAULT_OG_IMAGE, '/images/background.jpg']
+                : undefined,
+        })
+      );
+    }
+
+    for (const slug of SERVICE_SLUGS) {
+      entries.push(
+        sitemapEntry({
+          lang,
+          path: `/services/${slug}`,
+          priority: 0.85,
+          changeFrequency: 'weekly',
+          images: [SERVICE_IMAGES[slug]],
+        })
+      );
+    }
+
+    for (const slug of BLOG_SLUGS) {
+      entries.push(
+        sitemapEntry({
+          lang,
+          path: `/blog/${slug}`,
+          priority: 0.7,
+          changeFrequency: 'monthly',
+        })
+      );
     }
   }
 

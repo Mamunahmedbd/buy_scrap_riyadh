@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { locales } from '../../../i18n.config';
 import { getDictionary, hasLocale } from '../dictionaries';
+import { buildPageMetadata } from '../../seo';
 import Breadcrumb from '../../components/Breadcrumb';
 import PageHeroBanner from '../../components/PageHeroBanner';
 import CtaContactBanner from '../../components/CtaContactBanner';
@@ -10,6 +11,11 @@ interface PageProps {
   params: Promise<{
     lang: string;
   }>;
+}
+
+interface PolicySection {
+  title: string;
+  text: string;
 }
 
 export async function generateStaticParams() {
@@ -25,17 +31,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const dict = await getDictionary(lang);
   const privacyPage = dict.privacyPage;
 
-  return {
+  return buildPageMetadata({
+    lang,
+    path: '/privacy',
     title: privacyPage.meta.title,
     description: privacyPage.meta.description,
-    alternates: {
-      canonical: `/${lang}/privacy`,
-      languages: {
-        en: `/en/privacy`,
-        ar: `/ar/privacy`,
-      },
-    },
-  };
+    image: '/images/Scrap-image-10-scaled.jpg',
+    imageAlt: privacyPage.heroTitle.replace(/[\[\]]/g, ''),
+  });
 }
 
 export default async function PrivacyPage({ params }: PageProps) {
@@ -75,7 +78,7 @@ export default async function PrivacyPage({ params }: PageProps) {
 
           {/* Sections List */}
           <div className="flex flex-col gap-8 mt-4">
-            {privacyPage.content.sections.map((section: any, idx: number) => (
+            {(privacyPage.content.sections as PolicySection[]).map((section, idx) => (
               <div key={idx} className="flex flex-col gap-3">
                 <h2 className="text-xl sm:text-2xl font-bold text-primary-dark">
                   {section.title}

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { locales } from '../../../i18n.config';
 import { getDictionary, hasLocale } from '../dictionaries';
+import { buildPageMetadata } from '../../seo';
 import Breadcrumb from '../../components/Breadcrumb';
 import PageHeroBanner from '../../components/PageHeroBanner';
 import CtaContactBanner from '../../components/CtaContactBanner';
@@ -39,17 +40,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const dict = await getDictionary(lang);
   const blogIndex = dict.blogIndex;
 
-  return {
+  return buildPageMetadata({
+    lang,
+    path: '/blog',
     title: blogIndex.title,
     description: blogIndex.description,
-    alternates: {
-      canonical: `/${lang}/blog`,
-      languages: {
-        en: `/en/blog`,
-        ar: `/ar/blog`,
-      },
-    },
-  };
+    image: '/images/Copper-Scrap-Buying-1-scaled.jpg',
+    imageAlt: blogIndex.heroTitle.replace(/[\[\]]/g, ''),
+  });
 }
 
 export default async function BlogIndexPage({ params }: PageProps) {

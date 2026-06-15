@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import { locales } from '../../../i18n.config';
 import { getDictionary, hasLocale } from '../dictionaries';
+import { buildPageMetadata } from '../../seo';
 import Breadcrumb from '../../components/Breadcrumb';
 import PageHeroBanner from '../../components/PageHeroBanner';
 import CtaContactBanner from '../../components/CtaContactBanner';
@@ -12,6 +13,11 @@ interface PageProps {
   params: Promise<{
     lang: string;
   }>;
+}
+
+interface AboutStat {
+  number: string;
+  label: string;
 }
 
 export async function generateStaticParams() {
@@ -27,17 +33,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const dict = await getDictionary(lang);
   const aboutPage = dict.aboutPage;
 
-  return {
+  return buildPageMetadata({
+    lang,
+    path: '/about',
     title: aboutPage.meta.title,
     description: aboutPage.meta.description,
-    alternates: {
-      canonical: `/${lang}/about`,
-      languages: {
-        en: `/en/about`,
-        ar: `/ar/about`,
-      },
-    },
-  };
+    image: '/images/Scrap-image-10-scaled.jpg',
+    imageAlt: aboutPage.heroTitle.replace(/[\[\]]/g, ''),
+  });
 }
 
 export default async function AboutPage({ params }: PageProps) {
@@ -137,7 +140,7 @@ export default async function AboutPage({ params }: PageProps) {
       <section className="py-12 px-6 bg-primary-dark text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.01)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.01)_50%,rgba(255,255,255,0.01)_75%,transparent_75%,transparent)] bg-[length:30px_30px] opacity-10" />
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 relative z-10">
-          {aboutPage.stats.map((stat: any, idx: number) => (
+          {(aboutPage.stats as AboutStat[]).map((stat, idx) => (
             <div key={idx} className="flex flex-col items-center gap-1.5">
               <span className="text-3xl sm:text-4.5xl font-black text-secondary tracking-tight">
                 {stat.number}

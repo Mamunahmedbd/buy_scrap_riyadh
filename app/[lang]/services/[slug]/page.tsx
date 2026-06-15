@@ -3,6 +3,15 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import { locales } from '../../../../i18n.config';
 import { getDictionary, hasLocale } from '../../dictionaries';
+import {
+  absoluteUrl,
+  buildPageMetadata,
+  cleanSeoText,
+  serializeJsonLd,
+  SERVICE_IMAGES,
+  SERVICE_SLUGS,
+  SITE_URL,
+} from '../../../seo';
 import Breadcrumb from '../../../components/Breadcrumb';
 import PageHeroBanner from '../../../components/PageHeroBanner';
 import CtaContactBanner from '../../../components/CtaContactBanner';
@@ -17,20 +26,38 @@ interface PageProps {
   }>;
 }
 
-// Supported slugs for service detail pages
-const serviceSlugs = [
-  'ac-conditioner-scrap',
-  'copper-scrap',
-  'aluminum-scrap',
-  'brass-scrap',
-  'cables-wires-scrap',
-  'computer-electronic-scrap',
-  'electrical-panels-scrap',
-  'industrial-machinery-scrap',
-];
+type ServiceSlug = (typeof SERVICE_SLUGS)[number];
+
+interface ServiceBenefit {
+  title: string;
+  description: string;
+}
+
+interface ServiceDictionary {
+  meta: {
+    title: string;
+    description: string;
+  };
+  heroTitle: string;
+  heroSubtitle: string;
+  overview: {
+    heading: string;
+    paragraphs: string[];
+  };
+  benefits: ServiceBenefit[];
+  gallery: string[];
+  faq: {
+    question: string;
+    answer: string;
+  }[];
+}
+
+function isServiceSlug(slug: string): slug is ServiceSlug {
+  return (SERVICE_SLUGS as readonly string[]).includes(slug);
+}
 
 // Slugs mapping to hero background image
-const backgroundImageMapping: Record<string, string> = {
+const backgroundImageMapping: Record<ServiceSlug, string> = {
   'ac-conditioner-scrap': '/images/AC-Scrap-Buying-1.jpg',
   'copper-scrap': '/images/Copper-Scrap-Buying-1-scaled.jpg',
   'aluminum-scrap': '/images/Aluminum-Scrap-Buying-1-scaled.jpg',
@@ -45,7 +72,7 @@ const backgroundImageMapping: Record<string, string> = {
 export async function generateStaticParams() {
   const params: { lang: string; slug: string }[] = [];
   for (const lang of locales) {
-    for (const slug of serviceSlugs) {
+    for (const slug of SERVICE_SLUGS) {
       params.push({ lang, slug });
     }
   }
@@ -55,54 +82,39 @@ export async function generateStaticParams() {
 // SEO Metadata Generator
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { lang, slug } = await params;
-  if (!hasLocale(lang) || !serviceSlugs.includes(slug)) {
+  if (!hasLocale(lang) || !isServiceSlug(slug)) {
     return {};
   }
 
   const dict = await getDictionary(lang);
-  const serviceDict = (dict.services as any)[slug];
+  const serviceDict = (dict.services as Record<ServiceSlug, ServiceDictionary>)[slug];
 
   if (!serviceDict) {
     return {};
   }
 
-  return {
+  const image = SERVICE_IMAGES[slug] || '/images/main-logo.png';
+
+  return buildPageMetadata({
+    lang,
+    path: `/services/${slug}`,
     title: serviceDict.meta.title,
     description: serviceDict.meta.description,
-    alternates: {
-      canonical: `/${lang}/services/${slug}`,
-      languages: {
-        en: `/en/services/${slug}`,
-        ar: `/ar/services/${slug}`,
-      },
-    },
-    openGraph: {
-      title: serviceDict.meta.title,
-      description: serviceDict.meta.description,
-      url: `https://riyadhscrapbuyer.com/${lang}/services/${slug}`,
-      type: 'website',
-      images: [
-        {
-          url: backgroundImageMapping[slug] || '/images/main-logo.png',
-          width: 800,
-          height: 600,
-          alt: serviceDict.heroTitle.replace(/[\[\]]/g, ''),
-        },
-      ],
-    },
-  };
+    image,
+    imageAlt: cleanSeoText(serviceDict.heroTitle),
+  });
 }
 
 export default async function ServiceDetailPage({ params }: PageProps) {
   const { lang, slug } = await params;
 
   // Validation
-  if (!hasLocale(lang) || !serviceSlugs.includes(slug)) {
+  if (!hasLocale(lang) || !isServiceSlug(slug)) {
     notFound();
   }
 
   const dict = await getDictionary(lang);
-  const serviceDict = (dict.services as any)[slug];
+  const serviceDict = (dict.services as Record<ServiceSlug, ServiceDictionary>)[slug];
 
   if (!serviceDict) {
     notFound();
@@ -110,13 +122,19 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
   const isRtl = lang === 'ar';
   const bgImage = backgroundImageMapping[slug] || '/images/Scrap-image-10-scaled.jpg';
+  const serviceName = cleanSeoText(serviceDict.heroTitle);
+  const pageUrl = `${SITE_URL}/${lang}/services/${slug}`;
 
   // Construct JSON-LD Service Schema
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: serviceDict.heroTitle.replace(/[\[\]]/g, ''),
+    '@id': `${pageUrl}#service`,
+    name: serviceName,
     description: serviceDict.meta.description,
+    url: pageUrl,
+    image: absoluteUrl(bgImage),
+    serviceType: serviceName,
     provider: {
       '@type': 'LocalBusiness',
       name: isRtl ? 'شراء سكراب الرياض' : 'Riyadh Scrap Buyer',
@@ -133,6 +151,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       '@type': 'AdministrativeArea',
       name: 'Riyadh',
     },
+    inLanguage: lang,
   };
 
   return (
@@ -140,7 +159,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       {/* Dynamic Service Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceSchema) }}
       />
 
       {/* Hero Banner Section */}
@@ -156,7 +175,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         locale={lang}
         items={[
           { label: dict.shared.breadcrumbServices, href: '#services' },
-          { label: serviceDict.heroTitle.replace(/[\[\]]/g, '') },
+          { label: serviceName },
         ]}
       />
 
@@ -233,7 +252,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {serviceDict.benefits.map((benefit: any, idx: number) => (
+            {serviceDict.benefits.map((benefit, idx) => (
               <div
                 key={idx}
                 className="group flex flex-col p-6 rounded-2xl bg-white border border-gray-200/50 shadow-sm hover-lift transition-all duration-300 text-start"

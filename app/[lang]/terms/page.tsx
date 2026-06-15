@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { locales } from '../../../i18n.config';
 import { getDictionary, hasLocale } from '../dictionaries';
+import { buildPageMetadata } from '../../seo';
 import Breadcrumb from '../../components/Breadcrumb';
 import PageHeroBanner from '../../components/PageHeroBanner';
 import CtaContactBanner from '../../components/CtaContactBanner';
@@ -10,6 +11,11 @@ interface PageProps {
   params: Promise<{
     lang: string;
   }>;
+}
+
+interface TermsSection {
+  title: string;
+  text: string;
 }
 
 export async function generateStaticParams() {
@@ -25,17 +31,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const dict = await getDictionary(lang);
   const termsPage = dict.termsPage;
 
-  return {
+  return buildPageMetadata({
+    lang,
+    path: '/terms',
     title: termsPage.meta.title,
     description: termsPage.meta.description,
-    alternates: {
-      canonical: `/${lang}/terms`,
-      languages: {
-        en: `/en/terms`,
-        ar: `/ar/terms`,
-      },
-    },
-  };
+    image: '/images/Scrap-image-10-scaled.jpg',
+    imageAlt: termsPage.heroTitle.replace(/[\[\]]/g, ''),
+  });
 }
 
 export default async function TermsPage({ params }: PageProps) {
@@ -75,7 +78,7 @@ export default async function TermsPage({ params }: PageProps) {
 
           {/* Sections List */}
           <div className="flex flex-col gap-8 mt-4">
-            {termsPage.content.sections.map((section: any, idx: number) => (
+            {(termsPage.content.sections as TermsSection[]).map((section, idx) => (
               <div key={idx} className="flex flex-col gap-3">
                 <h2 className="text-xl sm:text-2xl font-bold text-primary-dark">
                   {section.title}

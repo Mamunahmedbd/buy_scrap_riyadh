@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { serializeJsonLd } from '../seo';
 
 interface FaqItem {
   question: string;
@@ -47,7 +48,7 @@ export default function FaqSection({ dict }: FaqSectionProps) {
     >
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
       />
 
       <div className="max-w-4xl mx-auto flex flex-col items-center">

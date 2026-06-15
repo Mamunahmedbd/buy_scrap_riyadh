@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { serializeJsonLd } from '../seo';
 
 interface BreadcrumbItem {
   label: string;
@@ -38,7 +39,7 @@ export default function Breadcrumb({ items, locale }: BreadcrumbProps) {
     <nav aria-label="Breadcrumb" className="w-full bg-white border-b border-gray-100 py-4 px-4 sm:px-6">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbList) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbList) }}
       />
       <div className="max-w-7xl mx-auto flex items-center flex-wrap gap-2 text-sm text-text-muted">
         {/* Home Link */}

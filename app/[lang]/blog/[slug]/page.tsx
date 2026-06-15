@@ -4,6 +4,13 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { locales } from '../../../../i18n.config';
 import { getDictionary, hasLocale } from '../../dictionaries';
+import {
+  absoluteUrl,
+  BLOG_PUBLISHED_DATES,
+  buildPageMetadata,
+  serializeJsonLd,
+  SITE_URL,
+} from '../../../seo';
 import Breadcrumb from '../../../components/Breadcrumb';
 import PageHeroBanner from '../../../components/PageHeroBanner';
 import CtaContactBanner from '../../../components/CtaContactBanner';
@@ -28,6 +35,30 @@ const newsImages = [
   '/images/Scrap-image-4-scaled.jpg',
 ] as const;
 
+type BlogSlug = (typeof BLOG_SLUGS)[number];
+
+type BlogSection =
+  | { type: 'paragraph'; content: string }
+  | { type: 'heading'; content: string }
+  | { type: 'list'; items: string[] }
+  | { type: 'highlight'; content: string };
+
+interface BlogPost {
+  meta: {
+    title: string;
+    description: string;
+  };
+  heroTitle: string;
+  date: string;
+  author: string;
+  featuredImage: string;
+  sections: BlogSection[];
+}
+
+function isBlogSlug(slug: string): slug is BlogSlug {
+  return (BLOG_SLUGS as readonly string[]).includes(slug);
+}
+
 export async function generateStaticParams() {
   const params: { lang: string; slug: string }[] = [];
   for (const lang of locales) {
@@ -40,80 +71,76 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { lang, slug } = await params;
-  if (!hasLocale(lang) || !BLOG_SLUGS.includes(slug as any)) {
+  if (!hasLocale(lang) || !isBlogSlug(slug)) {
     return {};
   }
 
   const dict = await getDictionary(lang);
-  const post = (dict.blogPosts as any)[slug];
+  const post = (dict.blogPosts as Record<BlogSlug, BlogPost>)[slug];
 
   if (!post) {
     return {};
   }
 
-  return {
+  const dates =
+    BLOG_PUBLISHED_DATES[slug] ||
+    BLOG_PUBLISHED_DATES['the-benefits-of-metal-recycling-for-riyadhs-environment'];
+
+  return buildPageMetadata({
+    lang,
+    path: `/blog/${slug}`,
     title: post.meta.title,
     description: post.meta.description,
-    alternates: {
-      canonical: `/${lang}/blog/${slug}`,
-      languages: {
-        en: `/en/blog/${slug}`,
-        ar: `/ar/blog/${slug}`,
-      },
-    },
-    openGraph: {
-      title: post.meta.title,
-      description: post.meta.description,
-      url: `https://riyadhscrapbuyer.com/${lang}/blog/${slug}`,
-      type: 'article',
-      publishedTime: slug.endsWith('2026') ? '2026-06-12T00:00:00Z' : '2026-06-08T00:00:00Z',
-      authors: [post.author],
-      images: [
-        {
-          url: post.featuredImage,
-          width: 800,
-          height: 600,
-          alt: post.meta.title,
-        },
-      ],
-    },
-  };
+    image: post.featuredImage,
+    imageAlt: post.meta.title,
+    type: 'article',
+    publishedTime: dates.published,
+    modifiedTime: dates.modified,
+    authors: [post.author],
+  });
 }
 
 export default async function BlogDetailPage({ params }: PageProps) {
   const { lang, slug } = await params;
 
-  if (!hasLocale(lang) || !BLOG_SLUGS.includes(slug as any)) {
+  if (!hasLocale(lang) || !isBlogSlug(slug)) {
     notFound();
   }
 
   const dict = await getDictionary(lang);
-  const post = (dict.blogPosts as any)[slug];
+  const post = (dict.blogPosts as Record<BlogSlug, BlogPost>)[slug];
 
   if (!post) {
     notFound();
   }
 
   const isRtl = lang === 'ar';
-  const postIndex = BLOG_SLUGS.indexOf(slug as any);
+  const postIndex = BLOG_SLUGS.indexOf(slug);
 
   // Find related articles (excluding the current one)
   const relatedIndices = [0, 1, 2].filter((idx) => idx !== postIndex).slice(0, 2);
+  const dates =
+    BLOG_PUBLISHED_DATES[slug] ||
+    BLOG_PUBLISHED_DATES['the-benefits-of-metal-recycling-for-riyadhs-environment'];
+  const shareUrl = `${SITE_URL}/${lang}/blog/${slug}`;
 
   // JSON-LD Article Schema
   const articleSchema = {
     '@context': 'https://schema.org',
-    '@type': 'NewsArticle',
+    '@type': 'Article',
+    '@id': `${shareUrl}#article`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': shareUrl,
+    },
     headline: post.meta.title,
-    image: [
-      `https://riyadhscrapbuyer.com${post.featuredImage}`
-    ],
-    datePublished: slug.endsWith('2026') ? '2026-06-12T08:00:00+03:00' : '2026-06-08T08:00:00+03:00',
-    dateModified: '2026-06-15T08:00:00+03:00',
+    image: [absoluteUrl(post.featuredImage)],
+    datePublished: dates.published,
+    dateModified: dates.modified,
     author: {
       '@type': 'Organization',
       name: post.author,
-      url: `https://riyadhscrapbuyer.com/${lang}`,
+      url: `${SITE_URL}/${lang}`,
     },
     publisher: {
       '@type': 'Organization',
@@ -124,9 +151,9 @@ export default async function BlogDetailPage({ params }: PageProps) {
       },
     },
     description: post.meta.description,
+    inLanguage: lang,
   };
 
-  const shareUrl = `https://riyadhscrapbuyer.com/${lang}/blog/${slug}`;
   const whatsappShareUrl = `https://wa.me/?text=${encodeURIComponent(`${post.meta.title} - ${shareUrl}`)}`;
 
   // Function to render content blocks cleanly with bracket parsing support
@@ -144,7 +171,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
     <main className="w-full">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleSchema) }}
       />
 
       {/* Hero Banner */}
@@ -182,7 +209,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
           {/* Article Sections Parser */}
           <div className="flex flex-col gap-6 text-text-dark text-base sm:text-lg leading-relaxed font-medium">
-            {post.sections.map((section: any, idx: number) => {
+            {post.sections.map((section, idx) => {
               switch (section.type) {
                 case 'paragraph':
                   return <p key={idx} className="text-text-muted">{renderTextWithLinks(section.content)}</p>;

@@ -53,10 +53,10 @@ export default function HeroSection({ dict, locale }: HeroSectionProps) {
           </div>
 
           {/* Main Heading */}
-          <h2 className="text-3.5xl sm:text-4.5xl md:text-5.5xl font-black text-white leading-tight uppercase">
+          <h1 className="text-3.5xl sm:text-4.5xl md:text-5.5xl font-black text-white leading-tight uppercase">
             {dict.heading} <br className="hidden md:inline" />
             <span className="text-secondary drop-shadow-md">{dict.headingAccent}</span>
-          </h2>
+          </h1>
 
           {/* Subtext description */}
           <p className="text-white/85 text-base md:text-lg max-w-xl leading-relaxed">

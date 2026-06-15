@@ -11,10 +11,7 @@ export default function PageHeroBanner({
   title,
   subtitle,
   backgroundImage = '/images/Scrap-image-10-scaled.jpg',
-  locale,
 }: PageHeroBannerProps) {
-  const isRtl = locale === 'ar';
-
   // Helper function to render text with highlighted sections inside brackets [like this]
   const renderHighlightedText = (text: string) => {
     const parts = text.split(/\[(.*?)\]/);
