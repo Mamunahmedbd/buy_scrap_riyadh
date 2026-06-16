@@ -15,26 +15,26 @@ export default function ServiceCard({ title, description, image, readMoreText, b
   const isRtl = locale === 'ar';
 
   return (
-    <article className="group flex flex-col bg-bg-card rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:border-secondary/30 hover:shadow-md transition-all duration-300">
+    <article className="group flex flex-col bg-bg-card rounded-2xl overflow-hidden border border-slate-100 card-premium">
       
       {/* Category Thumbnail Image */}
-      <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-gray-100 shrink-0">
+      <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-100 shrink-0">
         <Image
           src={image}
           alt={title}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-60 pointer-events-none" />
       </div>
 
       {/* Content details */}
       <div className="flex flex-col flex-grow p-5 md:p-6 text-start">
-        <h3 className="text-lg md:text-xl font-bold text-primary-dark group-hover:text-primary transition-colors duration-200 mb-2">
+        <h3 className="text-lg md:text-xl font-extrabold text-primary group-hover:text-secondary-dark transition-colors duration-200 mb-2">
           {title}
         </h3>
-        <p className="text-text-muted text-sm md:text-base leading-relaxed flex-grow mb-5">
+        <p className="text-text-muted text-sm md:text-base leading-relaxed flex-grow mb-5 font-medium">
           {description}
         </p>
 
@@ -43,7 +43,7 @@ export default function ServiceCard({ title, description, image, readMoreText, b
           {/* Primary Buy Now CTA */}
           <Link
             href={`tel:+966550000000`}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 bg-secondary hover:bg-secondary-light text-primary-dark text-[13px] sm:text-sm font-extrabold px-3 sm:px-4 py-2.5 rounded-lg transition-all duration-200 hover:scale-[1.02] shadow-sm whitespace-nowrap"
+            className="flex-1 inline-flex items-center justify-center gap-1.5 bg-secondary hover:bg-secondary-light text-primary-dark text-[13px] sm:text-sm font-black px-3 sm:px-4 py-2.5 rounded-xl transition-all duration-200 hover:scale-[1.03] shadow-sm whitespace-nowrap"
             aria-label={`${buyNowText} - ${title}`}
           >
             <svg className="w-3.5 h-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -55,12 +55,12 @@ export default function ServiceCard({ title, description, image, readMoreText, b
           {/* Secondary Read More link */}
           <Link
             href={`/${locale}/services/${slug}`}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 border border-primary/20 hover:border-primary/40 text-primary text-[13px] sm:text-sm font-bold px-3 sm:px-4 py-2.5 rounded-lg transition-all duration-200 hover:bg-primary/5 whitespace-nowrap"
+            className="flex-1 inline-flex items-center justify-center gap-1.5 border border-accent/20 hover:border-accent/40 text-accent-dark text-[13px] sm:text-sm font-bold px-3 sm:px-4 py-2.5 rounded-xl transition-all duration-200 hover:bg-accent/5 whitespace-nowrap"
             aria-label={`${readMoreText} - ${title}`}
           >
             <span className="truncate">{readMoreText}</span>
             <svg 
-              className={`w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 ${isRtl ? 'rotate-180' : ''}`}
+              className={`w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 ${isRtl ? 'rotate-180' : ''}`}
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24" 

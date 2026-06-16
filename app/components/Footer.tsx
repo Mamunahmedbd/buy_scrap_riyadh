@@ -126,12 +126,12 @@ export default function Footer({ dict, locale }: FooterProps) {
 
           {/* Column 2: Scrap types categories links */}
           <div className="lg:col-span-3 flex flex-col items-start gap-4">
-            <h3 className="text-base font-bold text-secondary tracking-wider uppercase border-b border-secondary/20 pb-1.5 w-full">
+            <h3 className="text-base font-extrabold text-white tracking-wider uppercase border-b border-white/10 pb-2.5 w-full relative after:absolute after:bottom-0 after:start-0 after:w-12 after:h-0.5 after:bg-secondary after:content-['']">
               {dict.cols.scrapTypes}
             </h3>
             <nav className="flex flex-col gap-2.5 text-sm" aria-label="Scrap Categories Footer Links">
               {scrapTypes.map((item, index) => (
-                <Link key={index} href={`${baseHref}/services/${item.slug}`} className="text-white/80 hover:text-secondary transition-colors duration-150">
+                <Link key={index} href={`${baseHref}/services/${item.slug}`} className="text-white/70 hover:text-secondary transition-all duration-200 hover:ps-1.5">
                   {item.name}
                 </Link>
               ))}
@@ -140,12 +140,12 @@ export default function Footer({ dict, locale }: FooterProps) {
 
           {/* Column 3: Regional areas served links */}
           <div className="lg:col-span-3 flex flex-col items-start gap-4">
-            <h3 className="text-base font-bold text-secondary tracking-wider uppercase border-b border-secondary/20 pb-1.5 w-full">
+            <h3 className="text-base font-extrabold text-white tracking-wider uppercase border-b border-white/10 pb-2.5 w-full relative after:absolute after:bottom-0 after:start-0 after:w-12 after:h-0.5 after:bg-secondary after:content-['']">
               {dict.cols.areas}
             </h3>
             <nav className="flex flex-col gap-2.5 text-sm" aria-label="Service Areas Footer Links">
               {serviceAreas.map((item, index) => (
-                <Link key={index} href={`${baseHref}/areas/${item.slug}`} className="text-white/80 hover:text-secondary transition-colors duration-150">
+                <Link key={index} href={`${baseHref}/areas/${item.slug}`} className="text-white/70 hover:text-secondary transition-all duration-200 hover:ps-1.5">
                   {item.name}
                 </Link>
               ))}
@@ -157,7 +157,7 @@ export default function Footer({ dict, locale }: FooterProps) {
             
             {/* Quick Links sub-column */}
             <div className="flex flex-col items-start gap-4 w-full">
-              <h3 className="text-base font-bold text-secondary tracking-wider uppercase border-b border-secondary/20 pb-1.5 w-full">
+              <h3 className="text-base font-extrabold text-white tracking-wider uppercase border-b border-white/10 pb-2.5 w-full relative after:absolute after:bottom-0 after:start-0 after:w-12 after:h-0.5 after:bg-secondary after:content-['']">
                 {dict.cols.quickLinks}
               </h3>
               <nav className="flex flex-col gap-2.5 text-sm" aria-label="Quick Navigation Footer Links">
@@ -174,7 +174,7 @@ export default function Footer({ dict, locale }: FooterProps) {
                         href={finalHref}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-white/80 hover:text-secondary transition-colors duration-150"
+                        className="text-white/70 hover:text-secondary transition-all duration-200 hover:ps-1.5"
                       >
                         {item.label}
                       </a>
@@ -185,7 +185,7 @@ export default function Footer({ dict, locale }: FooterProps) {
                     <Link
                       key={index}
                       href={finalHref}
-                      className="text-white/80 hover:text-secondary transition-colors duration-150"
+                      className="text-white/70 hover:text-secondary transition-all duration-200 hover:ps-1.5"
                     >
                       {item.label}
                     </Link>
@@ -196,12 +196,12 @@ export default function Footer({ dict, locale }: FooterProps) {
 
             {/* Latest Blog posts sub-column */}
             <div className="flex flex-col items-start gap-4 w-full">
-              <h3 className="text-base font-bold text-secondary tracking-wider uppercase border-b border-secondary/20 pb-1.5 w-full">
+              <h3 className="text-base font-extrabold text-white tracking-wider uppercase border-b border-white/10 pb-2.5 w-full relative after:absolute after:bottom-0 after:start-0 after:w-12 after:h-0.5 after:bg-secondary after:content-['']">
                 {dict.cols.blogs}
               </h3>
               <nav className="flex flex-col gap-3 text-sm" aria-label="Blog Footer Links">
                 {blogPosts.map((post, index) => (
-                  <Link key={index} href={`${baseHref}/blog/${post.slug}`} className="text-white/80 hover:text-secondary hover:underline transition-colors duration-150 line-clamp-2 leading-relaxed">
+                  <Link key={index} href={`${baseHref}/blog/${post.slug}`} className="text-white/70 hover:text-secondary transition-all duration-200 hover:ps-1.5 line-clamp-2 leading-relaxed">
                     {post.title}
                   </Link>
                 ))}

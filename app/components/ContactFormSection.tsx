@@ -135,50 +135,50 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
 
   return (
     <section 
-      className="w-full py-16 md:py-24 px-4 bg-white" 
+      className="w-full py-20 md:py-28 px-4 bg-white" 
       id="contact"
       aria-labelledby="contact-heading"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
         
         {/* Left Column: Direct Call details */}
         <div className="lg:col-span-5 flex flex-col items-start text-start gap-6">
-          <h2 id="contact-heading" className="text-3xl md:text-4.5xl font-black text-primary-dark leading-tight">
+          <h2 id="contact-heading" className="text-4xl md:text-5xl font-black text-primary leading-tight tracking-tight">
             {dict.heading}
           </h2>
           
-          <p className="text-text-muted text-base md:text-lg leading-relaxed">
+          <p className="text-text-muted text-base md:text-lg leading-relaxed font-medium">
             {dict.subtext}
           </p>
 
           <div className="flex flex-col gap-4 w-full mt-4">
             
             {/* Direct Phone link card */}
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
-              <span className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
+            <div className="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-secondary/20 hover:shadow-md transition-all duration-300 group">
+              <span className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-inner group-hover:scale-[1.04] transition-transform">
                 <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </span>
               <div>
-                <span className="block text-xs text-text-muted font-bold uppercase tracking-wider">
+                <span className="block text-xs text-text-muted font-extrabold uppercase tracking-wider">
                   {locale === 'ar' ? 'اتصال مباشر' : 'Call Us Directly'}
                 </span>
-                <a href={`tel:${formattedPhone}`} className="text-lg md:text-xl font-mono font-black text-primary-dark hover:text-secondary-dark transition-colors select-all">
+                <a href={`tel:${formattedPhone}`} className="text-lg md:text-xl font-mono font-black text-primary hover:text-secondary-dark transition-colors select-all">
                   {dict.phone}
                 </a>
               </div>
             </div>
 
             {/* Direct WhatsApp link card */}
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-whatsapp/5 border border-whatsapp/15">
-              <span className="w-12 h-12 rounded-full bg-whatsapp text-white flex items-center justify-center shrink-0">
+            <div className="flex items-center gap-4 p-5 rounded-2xl bg-whatsapp/5 border border-whatsapp/15 hover:border-whatsapp/30 hover:shadow-md transition-all duration-300 group">
+              <span className="w-12 h-12 rounded-full bg-whatsapp text-white flex items-center justify-center shrink-0 shadow-inner group-hover:scale-[1.04] transition-transform">
                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.76.46 3.48 1.332 5.006L2 22l5.184-1.36c1.468.8 3.12 1.228 4.82 1.228h.008c5.506 0 9.992-4.486 9.992-9.992C22.004 6.48 17.518 2 12.012 2zm0 18.294h-.006c-1.506 0-2.986-.406-4.278-1.176l-.308-.182-3.184.836.85-3.104-.2-.318c-.846-1.344-1.294-2.9-1.294-4.502 0-4.66 3.792-8.452 8.456-8.452 2.256 0 4.38.88 5.976 2.476a8.396 8.396 0 012.472 5.984c.002 4.66-3.792 8.454-8.458 8.454z"/>
                 </svg>
               </span>
               <div>
-                <span className="block text-xs text-text-muted font-bold uppercase tracking-wider">
+                <span className="block text-xs text-text-muted font-extrabold uppercase tracking-wider">
                   {locale === 'ar' ? 'محادثة فورية' : 'WhatsApp Chat'}
                 </span>
                 <a href={`https://wa.me/${formattedPhone}`} target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl font-mono font-black text-whatsapp hover:text-whatsapp-dark transition-colors">
@@ -200,24 +200,24 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
         </div>
 
         {/* Right Column: Contact form visual */}
-        <div className="lg:col-span-7 bg-gray-50 border border-gray-100 rounded-3xl p-6 md:p-8 shadow-sm">
+        <div className="lg:col-span-7 bg-slate-50 border border-slate-100 rounded-3xl p-6 md:p-8 shadow-sm card-premium hover:border-slate-200/50">
           
           {isSubmitted ? (
             <div className="flex flex-col items-center justify-center py-12 text-center gap-4 animate-fadeIn" id="form-success-banner">
-              <div className="w-16 h-16 rounded-full bg-whatsapp/15 text-whatsapp flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-accent/15 text-accent flex items-center justify-center border border-accent/25">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-xl md:text-2xl font-black text-primary-dark">
+              <h3 className="text-xl md:text-2xl font-black text-primary">
                 {locale === 'ar' ? 'تم الإرسال بنجاح!' : 'Submitted Successfully!'}
               </h3>
-              <p className="text-text-muted max-w-sm leading-relaxed">
+              <p className="text-text-muted max-w-sm leading-relaxed font-medium">
                 {dict.successMsg}
               </p>
               <button 
                 onClick={() => setIsSubmitted(false)}
-                className="mt-6 px-6 py-2 bg-primary text-white font-bold rounded-lg hover:bg-primary-light transition-colors text-sm cursor-pointer"
+                className="mt-6 px-6 py-2.5 bg-primary hover:bg-primary-light text-white font-extrabold rounded-xl transition-colors text-sm cursor-pointer shadow-md"
               >
                 {locale === 'ar' ? 'إرسال رد آخر' : 'Submit Another Request'}
               </button>
@@ -229,7 +229,7 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Name */}
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="name" className="text-xs font-bold text-primary-dark">
+                  <label htmlFor="name" className="text-xs font-extrabold text-primary">
                     {dict.labels.name}
                   </label>
                   <input
@@ -239,18 +239,18 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
                     value={formData.name}
                     onChange={handleChange}
                     placeholder={dict.placeholder.name}
-                    className={`w-full px-4 py-3 bg-white border rounded-xl text-sm focus:outline-none transition-all ${
+                    className={`w-full px-4 py-3 bg-white border rounded-xl text-sm focus:outline-none transition-all font-medium ${
                       errors.name 
                         ? 'border-red-500 focus:ring-1 focus:ring-red-500' 
-                        : 'border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary'
+                        : 'border-slate-200 focus:border-secondary focus:ring-1 focus:ring-secondary'
                     }`}
                   />
-                  {errors.name && <span className="text-red-500 text-xs font-medium">{errors.name}</span>}
+                  {errors.name && <span className="text-red-500 text-xs font-semibold">{errors.name}</span>}
                 </div>
 
                 {/* Phone */}
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="phone" className="text-xs font-bold text-primary-dark">
+                  <label htmlFor="phone" className="text-xs font-extrabold text-primary">
                     {dict.labels.phone}
                   </label>
                   <input
@@ -260,13 +260,13 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder={dict.placeholder.phone}
-                    className={`w-full px-4 py-3 bg-white border rounded-xl text-sm focus:outline-none transition-all ${
+                    className={`w-full px-4 py-3 bg-white border rounded-xl text-sm focus:outline-none transition-all font-medium ${
                       errors.phone 
                         ? 'border-red-500 focus:ring-1 focus:ring-red-500' 
-                        : 'border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary'
+                        : 'border-slate-200 focus:border-secondary focus:ring-1 focus:ring-secondary'
                     }`}
                   />
-                  {errors.phone && <span className="text-red-500 text-xs font-medium">{errors.phone}</span>}
+                  {errors.phone && <span className="text-red-500 text-xs font-semibold">{errors.phone}</span>}
                 </div>
               </div>
 
@@ -274,7 +274,7 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Email */}
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="email" className="text-xs font-bold text-primary-dark">
+                  <label htmlFor="email" className="text-xs font-extrabold text-primary">
                     {dict.labels.email}
                   </label>
                   <input
@@ -284,13 +284,13 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
                     value={formData.email}
                     onChange={handleChange}
                     placeholder={dict.placeholder.email}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                    className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-medium"
                   />
                 </div>
 
                 {/* Scrap Type */}
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="scrapType" className="text-xs font-bold text-primary-dark">
+                  <label htmlFor="scrapType" className="text-xs font-extrabold text-primary">
                     {dict.labels.scrapType}
                   </label>
                   <select
@@ -298,7 +298,7 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
                     name="scrapType"
                     value={formData.scrapType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-text-dark cursor-pointer"
+                    className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-text-dark cursor-pointer font-medium"
                   >
                     <option value="">{dict.placeholder.scrapType}</option>
                     {dict.options.map((opt, idx) => (
@@ -310,7 +310,7 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
 
               {/* Neighborhood Location */}
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="location" className="text-xs font-bold text-primary-dark">
+                <label htmlFor="location" className="text-xs font-extrabold text-primary">
                   {dict.labels.location}
                 </label>
                 <input
@@ -320,13 +320,13 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
                   value={formData.location}
                   onChange={handleChange}
                   placeholder={dict.placeholder.location}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                  className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-medium"
                 />
               </div>
 
               {/* Description Message Text */}
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="description" className="text-xs font-bold text-primary-dark">
+                <label htmlFor="description" className="text-xs font-extrabold text-primary">
                   {dict.labels.description}
                 </label>
                 <textarea
@@ -336,7 +336,7 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
                   value={formData.description}
                   onChange={handleChange}
                   placeholder={dict.placeholder.description}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-y"
+                  className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all resize-y font-medium"
                 />
               </div>
 
@@ -351,7 +351,7 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-secondary hover:bg-secondary-light text-primary-dark font-black py-4 rounded-xl text-base transition-all duration-200 shadow-md hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:pointer-events-none mt-2 cursor-pointer"
+                className="w-full bg-secondary hover:bg-secondary-light text-primary-dark font-black py-4.5 rounded-xl text-base transition-all duration-300 shadow-md hover:scale-[1.02] hover:shadow-secondary/20 disabled:opacity-50 disabled:pointer-events-none mt-2 cursor-pointer"
               >
                 {isSubmitting 
                   ? (locale === 'ar' ? 'جاري الإرسال...' : 'Submitting...') 

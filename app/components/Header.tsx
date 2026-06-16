@@ -21,11 +21,11 @@ export default function Header({ dict, locale }: HeaderProps) {
   const baseHref = `/${locale}`;
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-primary-dark/95 backdrop-blur-md border-b border-white/5 shadow-md" id="main-header">
+    <header className="sticky top-0 z-40 w-full bg-primary-dark/80 backdrop-blur-lg border-b border-white/10 shadow-lg" id="main-header">
       <div className="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between relative">
         
         {/* Company Logo */}
-        <Link href={baseHref} className="flex items-center gap-2" aria-label={`${SITE_NAME} Homepage`}>
+        <Link href={baseHref} className="flex items-center gap-2 transition-transform duration-300 hover:scale-[1.03]" aria-label={`${SITE_NAME} Homepage`}>
           <Image
             src="/images/white_logo.png"
             alt={locale === 'ar' ? 'شعار الرياض لنقل وشراء السكراب' : `${SITE_NAME} Logo`}
@@ -37,34 +37,34 @@ export default function Header({ dict, locale }: HeaderProps) {
         </Link>
 
         {/* Desktop Navigation Link Items */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Main Navigation">
+        <nav className="hidden md:flex items-center gap-5 lg:gap-7" aria-label="Main Navigation">
           <Link
             href={`${baseHref}#services`}
-            className="text-white/95 hover:text-secondary font-bold text-sm lg:text-base transition-colors duration-200"
+            className="text-white/90 hover:text-secondary font-bold text-sm lg:text-[15px] transition-colors duration-200 hover-underline-accent"
           >
             {dict.services}
           </Link>
           <Link
             href={`${baseHref}/about`}
-            className="text-white/95 hover:text-secondary font-bold text-sm lg:text-base transition-colors duration-200"
+            className="text-white/90 hover:text-secondary font-bold text-sm lg:text-[15px] transition-colors duration-200 hover-underline-accent"
           >
             {dict.about}
           </Link>
           <Link
             href={`${baseHref}/blog`}
-            className="text-white/95 hover:text-secondary font-bold text-sm lg:text-base transition-colors duration-200"
+            className="text-white/90 hover:text-secondary font-bold text-sm lg:text-[15px] transition-colors duration-200 hover-underline-accent"
           >
             {dict.blog}
           </Link>
           <Link
             href={`${baseHref}/gallery`}
-            className="text-white/95 hover:text-secondary font-bold text-sm lg:text-base transition-colors duration-200"
+            className="text-white/90 hover:text-secondary font-bold text-sm lg:text-[15px] transition-colors duration-200 hover-underline-accent"
           >
             {dict.gallery}
           </Link>
           <Link
             href={`${baseHref}#contact`}
-            className="text-white/95 hover:text-secondary font-bold text-sm lg:text-base transition-colors duration-200"
+            className="text-white/90 hover:text-secondary font-bold text-sm lg:text-[15px] transition-colors duration-200 hover-underline-accent"
           >
             {dict.contact}
           </Link>
@@ -72,7 +72,7 @@ export default function Header({ dict, locale }: HeaderProps) {
             href="https://maps.google.com/?q=Riyadh+Saudi+Arabia"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/95 hover:text-secondary font-bold text-sm lg:text-base transition-colors duration-200"
+            className="text-white/90 hover:text-secondary font-bold text-sm lg:text-[15px] transition-colors duration-200 hover-underline-accent"
           >
             {dict.directions}
           </a>
@@ -80,7 +80,7 @@ export default function Header({ dict, locale }: HeaderProps) {
             href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/95 hover:text-secondary font-bold text-sm lg:text-base transition-colors duration-200"
+            className="text-white/90 hover:text-secondary font-bold text-sm lg:text-[15px] transition-colors duration-200 hover-underline-accent"
           >
             {dict.review}
           </a>
@@ -90,7 +90,7 @@ export default function Header({ dict, locale }: HeaderProps) {
         <div className="flex items-center gap-4">
           <a
             href="tel:+966550000000"
-            className="hidden sm:flex items-center gap-2 bg-secondary hover:bg-secondary-light text-primary-dark font-extrabold px-4.5 py-2.5 rounded-lg text-sm transition-all duration-200 hover:scale-[1.02] shadow-md cursor-pointer"
+            className="hidden sm:flex items-center gap-2 bg-secondary hover:bg-secondary-light text-primary-dark font-black px-5 py-2.5 rounded-xl text-sm transition-all duration-300 hover:scale-[1.04] shadow-md cursor-pointer hover:shadow-secondary/20"
             aria-label="Call +966 55 000 0000"
           >
             <svg className="w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

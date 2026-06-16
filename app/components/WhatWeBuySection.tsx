@@ -40,19 +40,23 @@ const categoryMapping = [
 export default function WhatWeBuySection({ dict, locale }: WhatWeBuySectionProps) {
   return (
     <section 
-      className="w-full py-16 md:py-24 px-4 bg-gray-50 border-y border-gray-100" 
+      className="relative w-full py-20 md:py-28 px-4 bg-slate-50 border-y border-slate-100 overflow-hidden" 
       id="services"
       aria-labelledby="services-heading"
     >
-      <div className="max-w-7xl mx-auto text-center">
+      {/* Subtle decorative background glows */}
+      <div className="absolute top-1/4 -start-32 w-80 h-80 rounded-full bg-accent/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -end-32 w-80 h-80 rounded-full bg-secondary/5 blur-3xl pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto text-center">
         
         {/* Header Title */}
-        <h2 id="services-heading" className="text-3xl md:text-4.5xl font-black text-primary-dark mb-4">
-          {dict.heading} <span className="text-secondary">{dict.headingAccent}</span>
+        <h2 id="services-heading" className="text-4xl md:text-5xl font-black text-primary mb-4 tracking-tight">
+          {dict.heading} <span className="text-gradient-gold drop-shadow-sm">{dict.headingAccent}</span>
         </h2>
         
         {/* Short Subtext Description */}
-        <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12 md:mb-16">
+        <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12 md:mb-16 font-medium">
           {dict.subtext}
         </p>
 

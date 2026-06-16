@@ -62,7 +62,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             item.path === '/gallery'
               ? ['/gallery/feature-image-1.jpg', ...galleryImages]
               : item.path === ''
-                ? [DEFAULT_OG_IMAGE, '/images/background.jpg']
+                ? [DEFAULT_OG_IMAGE, '/background.jpg']
                 : undefined,
         })
       );
