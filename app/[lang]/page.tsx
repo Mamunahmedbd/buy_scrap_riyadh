@@ -94,14 +94,14 @@ export default async function HomePage({ params }: PageProps) {
       />
       <HeroSection dict={dict.hero} locale={lang} />
       <WhatWeBuySection dict={dict.whatWeBuy} locale={lang} />
+      <HowItWorksSection dict={dict.howItWorks} locale={lang} />
       <WhyChooseUsSection dict={dict.whyChooseUs} locale={lang} />
-      <VideoBanner dict={dict.videoBanner} locale={lang} />
       <ReviewsSection dict={dict.reviews} locale={lang} />
       <CtaBannerSection dict={dict.ctaBanner} locale={lang} />
       <AboutUsSection dict={dict.aboutUs} locale={lang} />
       <ServiceAreasSection dict={dict.serviceAreas} locale={lang} />
-      <HowItWorksSection dict={dict.howItWorks} locale={lang} />
       <ContactFormSection dict={dict.contactForm} locale={lang} />
+      <VideoBanner dict={dict.videoBanner} locale={lang} />
       <GallerySection dict={dict.gallery} locale={lang} />
       <FaqSection dict={dict.faq} locale={lang} />
       <LatestNewsSection dict={dict.latestNews} locale={lang} />

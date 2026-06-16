@@ -50,7 +50,7 @@ export default function HeroSection({ dict, locale }: HeroSectionProps) {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center opacity-20 select-none pointer-events-none"
+        className="object-cover object-center opacity-25 md:opacity-20 select-none pointer-events-none"
       />
 
       {/* Modern gradient overlay for seamless dark integration */}
