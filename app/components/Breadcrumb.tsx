@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { serializeJsonLd } from '../seo';
+import { serializeJsonLd, SITE_URL } from '../seo';
 
 interface BreadcrumbItem {
   label: string;
@@ -24,13 +24,13 @@ export default function Breadcrumb({ items, locale }: BreadcrumbProps) {
         '@type': 'ListItem',
         position: 1,
         name: homeLabel,
-        item: `https://riyadhscrapbuyer.com/${locale}`,
+        item: `${SITE_URL}/${locale}`,
       },
       ...items.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 2,
         name: item.label,
-        ...(item.href ? { item: `https://riyadhscrapbuyer.com/${locale}${item.href}` } : {}),
+        ...(item.href ? { item: `${SITE_URL}/${locale}${item.href}` } : {}),
       })),
     ],
   };

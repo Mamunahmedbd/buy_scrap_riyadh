@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { locales } from '../../../i18n.config';
 import { getDictionary, hasLocale } from '../dictionaries';
 import { getGalleryData, type GalleryImage } from '../../_lib/gallery';
-import { buildPageMetadata, cleanSeoText, serializeJsonLd } from '../../seo';
+import { buildPageMetadata, cleanSeoText, serializeJsonLd, SITE_URL, SITE_NAME } from '../../seo';
 import Breadcrumb from '../../components/Breadcrumb';
 import PageHeroBanner from '../../components/PageHeroBanner';
 import CtaContactBanner from '../../components/CtaContactBanner';
@@ -78,11 +78,11 @@ export default async function GalleryPage({ params }: PageProps) {
     '@type': 'ImageGallery',
     name: pageTitle,
     description: galleryPage.meta.description,
-    url: `https://riyadhscrapbuyer.com/${lang}/gallery`,
+    url: `${SITE_URL}/${lang}/gallery`,
     inLanguage: lang,
     image: galleryData.images.slice(0, 50).map((image) => ({
       '@type': 'ImageObject',
-      contentUrl: `https://riyadhscrapbuyer.com${image.src}`,
+      contentUrl: `${SITE_URL}${image.src}`,
       name: getImageCaption(image),
       caption: getImageCaption(image),
       representativeOfPage: false,
@@ -98,11 +98,11 @@ export default async function GalleryPage({ params }: PageProps) {
     '@type': 'CollectionPage',
     name: pageTitle,
     description: galleryPage.meta.description,
-    url: `https://riyadhscrapbuyer.com/${lang}/gallery`,
+    url: `${SITE_URL}/${lang}/gallery`,
     isPartOf: {
       '@type': 'WebSite',
-      name: 'Riyadh Scrap Buyer',
-      url: 'https://riyadhscrapbuyer.com',
+      name: SITE_NAME,
+      url: SITE_URL,
     },
   };
 

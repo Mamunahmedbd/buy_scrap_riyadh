@@ -73,7 +73,7 @@ export default async function HomePage({ params }: PageProps) {
     description: dict.meta.description,
     inLanguage: lang,
     isPartOf: {
-      '@id': 'https://riyadhscrapbuyer.com/#website',
+      '@id': 'https://riyadhscrappickup.com/#website',
     },
     mainEntity: {
       '@type': 'ItemList',

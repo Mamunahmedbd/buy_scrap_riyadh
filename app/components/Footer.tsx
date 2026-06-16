@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { SITE_NAME } from '../seo';
 
 interface QuickLink {
   label: string;
@@ -73,10 +74,10 @@ export default function Footer({ dict, locale }: FooterProps) {
           
           {/* Column 1: Company Logo & Direct Contact links */}
           <div className="lg:col-span-4 flex flex-col items-start gap-4">
-            <Link href={baseHref} aria-label="Riyadh Scrap Buyer Home Page">
+            <Link href={baseHref} aria-label={`${SITE_NAME} Home Page`}>
               <Image
                 src="/images/white_logo.png"
-                alt="Riyadh Scrap Buyer Logo"
+                alt={`${SITE_NAME} Logo`}
                 width={180}
                 height={50}
                 className="h-10 md:h-12 w-auto object-contain mb-2"
@@ -103,7 +104,7 @@ export default function Footer({ dict, locale }: FooterProps) {
             {/* Social Icons Row */}
             <div className="flex items-center gap-3 mt-3" aria-label="Follow us on social media">
               {/* Google */}
-              <a href="https://g.page/r/riyadh-scrap-buyer/review" target="_blank" rel="noopener noreferrer" aria-label="Review us on Google" className="w-9 h-9 rounded-full bg-white/10 hover:bg-secondary/20 hover:text-secondary flex items-center justify-center transition-all duration-200">
+              <a href="https://g.page/r/riyadh-scrap-pickup/review" target="_blank" rel="noopener noreferrer" aria-label="Review us on Google" className="w-9 h-9 rounded-full bg-white/10 hover:bg-secondary/20 hover:text-secondary flex items-center justify-center transition-all duration-200">
                 <svg className="w-4.5 h-4.5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
                 </svg>

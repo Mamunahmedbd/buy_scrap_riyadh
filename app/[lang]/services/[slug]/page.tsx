@@ -11,6 +11,8 @@ import {
   SERVICE_IMAGES,
   SERVICE_SLUGS,
   SITE_URL,
+  SITE_NAME,
+  SITE_LOGO,
 } from '../../../seo';
 import Breadcrumb from '../../../components/Breadcrumb';
 import PageHeroBanner from '../../../components/PageHeroBanner';
@@ -137,8 +139,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     serviceType: serviceName,
     provider: {
       '@type': 'LocalBusiness',
-      name: isRtl ? 'شراء سكراب الرياض' : 'Riyadh Scrap Buyer',
-      image: 'https://riyadhscrapbuyer.com/images/main-logo.png',
+      name: isRtl ? 'الرياض لنقل وشراء السكراب' : SITE_NAME,
+      image: absoluteUrl(SITE_LOGO),
       telephone: '+966 55 000 0000',
       priceRange: '$$',
       address: {

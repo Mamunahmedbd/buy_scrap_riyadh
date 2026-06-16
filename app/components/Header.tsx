@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileMenu from './MobileMenu';
+import { SITE_NAME } from '../seo';
 
 interface HeaderProps {
   dict: {
@@ -24,10 +25,10 @@ export default function Header({ dict, locale }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between relative">
         
         {/* Company Logo */}
-        <Link href={baseHref} className="flex items-center gap-2" aria-label="Riyadh Scrap Buyer Homepage">
+        <Link href={baseHref} className="flex items-center gap-2" aria-label={`${SITE_NAME} Homepage`}>
           <Image
             src="/images/white_logo.png"
-            alt={locale === 'ar' ? 'شعار شراء سكراب الرياض' : 'Riyadh Scrap Buyer Logo'}
+            alt={locale === 'ar' ? 'شعار الرياض لنقل وشراء السكراب' : `${SITE_NAME} Logo`}
             width={180}
             height={50}
             priority

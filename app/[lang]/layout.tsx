@@ -7,6 +7,7 @@ import {
   buildLocalBusinessSchema,
   buildPageMetadata,
   serializeJsonLd,
+  SITE_NAME,
 } from '../seo';
 import '../globals.css';
 
@@ -52,7 +53,7 @@ export async function generateMetadata({
     description: dict.meta.description,
     keywords: dict.meta.keywords,
     image: '/images/feature-image-1.jpg',
-    imageAlt: 'Riyadh Scrap Buyer scrap collection service',
+    imageAlt: `${SITE_NAME} scrap collection service`,
   });
 }
 

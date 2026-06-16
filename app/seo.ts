@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import type { Locale } from '../i18n.config';
 
-export const SITE_URL = 'https://riyadhscrapbuyer.com';
-export const SITE_NAME = 'Riyadh Scrap Buyer';
+export const SITE_URL = 'https://riyadhscrappickup.com';
+export const SITE_NAME = 'Riyadh Scrap Pickup';
 export const SITE_PHONE = '+966 55 000 0000';
 export const SITE_PHONE_TEL = '+966550000000';
 export const SITE_LOGO = '/images/main-logo.png';

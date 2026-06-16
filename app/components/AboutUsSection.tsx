@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { SITE_NAME } from '../seo';
 
 interface AboutUsSectionProps {
   dict: {
@@ -67,7 +68,7 @@ export default function AboutUsSection({ dict, locale }: AboutUsSectionProps) {
         <div className="lg:col-span-5 relative h-[300px] md:h-[400px] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10">
           <Image
             src="/images/Scrap-image-2-scaled.jpg"
-            alt={locale === 'ar' ? 'فريق شراء سكراب الرياض في الموقع' : 'Riyadh Scrap Buyer team working on site'}
+            alt={locale === 'ar' ? 'فريق الرياض لنقل وشراء السكراب في الموقع' : `${SITE_NAME} team working on site`}
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"
             className="object-cover"

@@ -10,6 +10,8 @@ import {
   buildPageMetadata,
   serializeJsonLd,
   SITE_URL,
+  SITE_NAME,
+  SITE_LOGO,
 } from '../../../seo';
 import Breadcrumb from '../../../components/Breadcrumb';
 import PageHeroBanner from '../../../components/PageHeroBanner';
@@ -144,10 +146,10 @@ export default async function BlogDetailPage({ params }: PageProps) {
     },
     publisher: {
       '@type': 'Organization',
-      name: isRtl ? 'شراء سكراب الرياض' : 'Riyadh Scrap Buyer',
+      name: isRtl ? 'الرياض لنقل وشراء السكراب' : SITE_NAME,
       logo: {
         '@type': 'ImageObject',
-        url: 'https://riyadhscrapbuyer.com/images/main-logo.png',
+        url: absoluteUrl(SITE_LOGO),
       },
     },
     description: post.meta.description,

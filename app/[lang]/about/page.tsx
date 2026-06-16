@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import { locales } from '../../../i18n.config';
 import { getDictionary, hasLocale } from '../dictionaries';
-import { buildPageMetadata } from '../../seo';
+import { buildPageMetadata, SITE_NAME } from '../../seo';
 import Breadcrumb from '../../components/Breadcrumb';
 import PageHeroBanner from '../../components/PageHeroBanner';
 import CtaContactBanner from '../../components/CtaContactBanner';
@@ -93,7 +93,7 @@ export default async function AboutPage({ params }: PageProps) {
             <div className="relative h-64 sm:h-96 rounded-3xl overflow-hidden shadow-lg border border-gray-100">
               <Image
                 src="/images/Scrap-image-4-scaled.jpg"
-                alt={isRtl ? 'شركة شراء سكراب بالرياض' : 'Riyadh Scrap Buyer Company'}
+                alt={isRtl ? 'شركة الرياض لنقل وشراء السكراب' : `${SITE_NAME} Company`}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 40vw"
