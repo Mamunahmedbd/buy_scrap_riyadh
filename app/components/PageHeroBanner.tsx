@@ -5,7 +5,7 @@ interface PageHeroBannerProps {
   subtitle?: string;
   backgroundImage?: string;
   backgroundPosition?: string;
-  variant?: 'default' | 'service';
+  variant?: 'default' | 'service' | 'blog' | 'policy' | 'about';
   locale: string;
 }
 
@@ -18,6 +18,10 @@ export default function PageHeroBanner({
   locale,
 }: PageHeroBannerProps) {
   const isServiceHero = variant === 'service';
+  const isBlogHero = variant === 'blog';
+  const isPolicyHero = variant === 'policy';
+  const isAboutHero = variant === 'about';
+  const showVisualDetails = isBlogHero || isPolicyHero || isAboutHero;
   const isRtl = locale === 'ar';
   const cleanTitle = title.replace(/[\[\]]/g, '');
 
@@ -41,6 +45,8 @@ export default function PageHeroBanner({
       className={`relative isolate flex items-center justify-center overflow-hidden bg-primary-dark px-4 text-white border-b border-white/10 ${
         isServiceHero
           ? 'min-h-[390px] py-20 sm:px-6 md:min-h-[470px] md:py-24'
+          : showVisualDetails
+          ? 'min-h-[35vh] py-16 sm:px-6 md:min-h-[42vh] md:py-20'
           : 'min-h-[30vh] py-12 md:min-h-[35vh]'
       }`}
     >
@@ -50,10 +56,14 @@ export default function PageHeroBanner({
             src={backgroundImage}
             alt={isServiceHero ? '' : cleanTitle}
             fill
-            preload
+            priority
             sizes="100vw"
             className={`object-cover select-none pointer-events-none ${
-              isServiceHero ? 'opacity-[0.72] saturate-[1.1] contrast-[1.05]' : 'opacity-20'
+              isServiceHero
+                ? 'opacity-[0.72] saturate-[1.1] contrast-[1.05]'
+                : showVisualDetails
+                ? 'opacity-[0.45] saturate-[1.15] contrast-[1.05]'
+                : 'opacity-20'
             }`}
             style={{ objectPosition: backgroundPosition }}
           />
@@ -64,6 +74,8 @@ export default function PageHeroBanner({
         className={`absolute inset-0 -z-20 ${
           isServiceHero
             ? 'bg-[linear-gradient(90deg,rgba(2,6,23,0.92)_0%,rgba(2,6,23,0.72)_38%,rgba(2,6,23,0.56)_100%)]'
+            : showVisualDetails
+            ? 'bg-[linear-gradient(180deg,rgba(2,6,23,0.85)_0%,rgba(2,6,23,0.65)_50%,rgba(2,6,23,0.92)_100%)]'
             : 'bg-gradient-to-b from-primary-dark/95 via-primary-dark/86 to-primary-dark'
         }`}
       />
@@ -75,7 +87,14 @@ export default function PageHeroBanner({
           <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-primary-dark to-transparent" />
         </>
       )}
-      {!isServiceHero && (
+      {showVisualDetails && (
+        <>
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(16,185,129,0.12),transparent_35%,rgba(245,158,11,0.1))]" />
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] opacity-20" />
+          <div className="absolute inset-x-0 bottom-0 -z-10 h-20 bg-gradient-to-t from-primary-dark to-transparent" />
+        </>
+      )}
+      {!isServiceHero && !showVisualDetails && (
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(45deg,rgba(255,255,255,0.01)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.01)_50%,rgba(255,255,255,0.01)_75%,transparent_75%,transparent)] bg-[length:30px_30px] opacity-10 pointer-events-none" />
       )}
 
@@ -87,6 +106,21 @@ export default function PageHeroBanner({
         {isServiceHero && (
           <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-white shadow-sm backdrop-blur-md">
             {isRtl ? 'خدمة شراء السكراب' : 'Scrap Buying Service'}
+          </span>
+        )}
+        {isBlogHero && (
+          <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-white shadow-sm backdrop-blur-md">
+            {isRtl ? 'مدونة السكراب والأخبار' : 'Scrap Blog & News'}
+          </span>
+        )}
+        {isPolicyHero && (
+          <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-white shadow-sm backdrop-blur-md">
+            {isRtl ? 'الشروط والسياسات' : 'Terms & Policies'}
+          </span>
+        )}
+        {isAboutHero && (
+          <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-white shadow-sm backdrop-blur-md">
+            {isRtl ? 'من نحن' : 'About Us'}
           </span>
         )}
 

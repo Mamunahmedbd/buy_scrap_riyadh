@@ -60,7 +60,8 @@ export default async function AboutPage({ params }: PageProps) {
       <PageHeroBanner
         title={aboutPage.heroTitle}
         subtitle={aboutPage.heroSubtitle}
-        backgroundImage="/background.png"
+        backgroundImage="/gallery/riyadh-scrap-yard-background.png"
+        variant="about"
         locale={lang}
       />
 

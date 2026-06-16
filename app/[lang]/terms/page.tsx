@@ -88,7 +88,8 @@ export default async function TermsPage({ params }: PageProps) {
       <PageHeroBanner
         title={termsPage.heroTitle}
         subtitle={termsPage.heroSubtitle}
-        backgroundImage="/background.png"
+        backgroundImage="/gallery/riyadh-scrap-yard-background.png"
+        variant="policy"
         locale={lang}
       />
 

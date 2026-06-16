@@ -181,6 +181,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
         title={post.heroTitle}
         subtitle={`${post.date} | ${post.author}`}
         backgroundImage={post.featuredImage}
+        variant="blog"
         locale={lang}
       />
 
