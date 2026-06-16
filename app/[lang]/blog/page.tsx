@@ -67,7 +67,7 @@ export default async function BlogIndexPage({ params }: PageProps) {
       <PageHeroBanner
         title={blogIndex.heroTitle}
         subtitle={blogIndex.heroSubtitle}
-        backgroundImage="/gallery/riyadh-scrap-yard-background.png"
+        backgroundImage="/background.png"
         variant="blog"
         locale={lang}
       />

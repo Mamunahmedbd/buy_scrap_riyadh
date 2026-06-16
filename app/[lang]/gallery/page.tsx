@@ -120,7 +120,8 @@ export default async function GalleryPage({ params }: PageProps) {
       <PageHeroBanner
         title={galleryPage.heroTitle}
         subtitle={galleryPage.heroSubtitle}
-        backgroundImage="/gallery/riyadh-scrap-yard-background.png"
+        backgroundImage="/background.png"
+        variant="about"
         locale={lang}
       />
 

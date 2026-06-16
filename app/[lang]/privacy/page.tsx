@@ -88,7 +88,7 @@ export default async function PrivacyPage({ params }: PageProps) {
       <PageHeroBanner
         title={privacyPage.heroTitle}
         subtitle={privacyPage.heroSubtitle}
-        backgroundImage="/gallery/riyadh-scrap-yard-background.png"
+        backgroundImage="/background.png"
         variant="policy"
         locale={lang}
       />
