@@ -129,18 +129,24 @@
     "buttonScrapNumber": "Registered No. 7005944660"
   },
   "serviceAreas": {
-    "heading": "Our Service Areas:",
-    "headingAccent": "Riyadh & Nearby",
-    "subtext": "We offer free on-site pickup and collection services throughout all districts of Riyadh. Here are the major areas we serve:",
+    "heading": "Our Service Area:",
+    "headingAccent": "Riyadh Only",
+    "subtext": "We offer free on-site pickup and collection services strictly within all districts of Riyadh city. Here are the major areas we serve:",
     "list": [
-      "Al Batha & Downtown",
-      "Al Olaya & Al Sulaimaniyah",
-      "Al Malaz & Rawdah",
-      "Al Naseem & Al Shifa",
-      "Al Aziziyah & Al Khaleej",
-      "Al Diriyah & North Riyadh",
-      "Al Sullay & Industrial Area",
-      "Al Kharj & Surrounding Regions"
+      "Al Olaya",
+      "Al Batha",
+      "Al Malaz",
+      "Al Diriyah",
+      "Al Yasmin",
+      "Hittin",
+      "Al Nakheel",
+      "Al Shifa",
+      "Al Rawdah",
+      "Al Naseem",
+      "Al Sulaymaniyah",
+      "Al Aqiq",
+      "Al Wurud",
+      "...and more"
     ],
     "mapAlt": "Riyadh Scrap Pickup Service Area Map"
   },
