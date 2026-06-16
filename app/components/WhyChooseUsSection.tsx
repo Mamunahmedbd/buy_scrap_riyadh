@@ -1,3 +1,5 @@
+import { SITE_PHONE, SITE_PHONE_TEL } from '../seo';
+
 interface WhyChooseUsSectionProps {
   dict: {
     heading: string;
@@ -10,6 +12,8 @@ interface WhyChooseUsSectionProps {
 }
 
 export default function WhyChooseUsSection({ dict, locale }: WhyChooseUsSectionProps) {
+  const isArabic = locale === 'ar';
+
   return (
     <section 
       className="w-full py-20 md:py-28 px-4 bg-white" 
@@ -24,18 +28,17 @@ export default function WhyChooseUsSection({ dict, locale }: WhyChooseUsSectionP
             <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-bl-full pointer-events-none" />
             
             <div className="flex justify-between items-center">
-              <span className="text-gradient-gold font-extrabold text-6xl leading-none">10+</span>
+              <span className="text-gradient-gold font-extrabold text-6xl leading-none">2019</span>
               <span className="text-xs font-black bg-secondary text-primary-dark px-4 py-1.5 rounded-full uppercase tracking-wider">
-                {locale === 'ar' ? 'أعوام الخبرة' : 'Years Experience'}
+                {isArabic ? 'سجل تجاري' : 'Registered Since'}
               </span>
             </div>
 
             <div className="my-6">
               <p className="text-white font-extrabold text-2.5xl leading-snug">
-                {locale === 'ar' 
-                  ? 'أمانة في الوزن وسرعة في العمل' 
-                  : 'Honest Weights, Quick On-Site Collections'
-                }
+                {isArabic
+                  ? 'مؤسسة مسجلة، وزن واضح، ونقل منظم'
+                  : 'Registered Establishment, Clear Weights, Organized Pickup'}
               </p>
             </div>
 
@@ -47,10 +50,10 @@ export default function WhyChooseUsSection({ dict, locale }: WhyChooseUsSectionP
               </span>
               <div>
                 <p className="text-sm font-extrabold text-white">
-                  {locale === 'ar' ? 'متاح بالواتساب ٢٤/٧' : 'WhatsApp Support 24/7'}
+                  {isArabic ? 'تواصل واتساب وخدمة مباشرة' : 'WhatsApp and Direct Support'}
                 </p>
                 <p className="text-xs text-white/70 font-mono">
-                  +966 55 000 0000
+                  {SITE_PHONE}
                 </p>
               </div>
             </div>
@@ -86,7 +89,7 @@ export default function WhyChooseUsSection({ dict, locale }: WhyChooseUsSectionP
 
           <div className="mt-4 w-full sm:w-auto">
             <a
-              href="tel:+966550000000"
+              href={`tel:${SITE_PHONE_TEL}`}
               className="inline-flex items-center justify-center gap-2.5 bg-secondary hover:bg-secondary-light text-primary-dark font-black px-8 py-4 rounded-xl text-base transition-all duration-300 shadow-lg hover:scale-[1.04] cursor-pointer hover:shadow-secondary/20"
             >
               <svg className="w-5 h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

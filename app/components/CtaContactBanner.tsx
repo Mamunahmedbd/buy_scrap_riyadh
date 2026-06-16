@@ -1,3 +1,5 @@
+import { SITE_PHONE_TEL } from '../seo';
+
 interface CtaContactBannerProps {
   dict: {
     ctaHeading: string;
@@ -11,9 +13,7 @@ interface CtaContactBannerProps {
 export default function CtaContactBanner({ dict, locale }: CtaContactBannerProps) {
   const isRtl = locale === 'ar';
   
-  // Clean phone number format for tel anchor
-  const phoneNumber = '+966550000000';
-  const whatsappUrl = `https://wa.me/966550000000?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/${SITE_PHONE_TEL.replace('+', '')}?text=${encodeURIComponent(
     isRtl 
       ? 'مرحباً، لدي سكراب أرغب في بيعه. يرجى التواصل معي.' 
       : 'Hello, I have scrap I want to sell. Please contact me.'
@@ -40,7 +40,7 @@ export default function CtaContactBanner({ dict, locale }: CtaContactBannerProps
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto shrink-0">
           {/* Call button */}
           <a
-            href={`tel:${phoneNumber}`}
+            href={`tel:${SITE_PHONE_TEL}`}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-light text-white font-extrabold px-7 py-3.5 rounded-xl text-base shadow-lg transition-all duration-200 hover:scale-[1.03] cursor-pointer"
           >
             <svg className="w-5 h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

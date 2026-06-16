@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { SITE_PHONE_TEL } from '../seo';
 
 interface HeroSectionProps {
   dict: {
@@ -102,7 +103,7 @@ export default function HeroSection({ dict, locale }: HeroSectionProps) {
           {/* CTAs Wrapper */}
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-6">
             <a
-              href="tel:+966550000000"
+              href={`tel:${SITE_PHONE_TEL}`}
               className="flex items-center justify-center gap-2.5 bg-secondary hover:bg-secondary-light text-primary-dark font-black px-8 py-4 rounded-xl text-base md:text-lg transition-all duration-300 shadow-lg hover:scale-[1.04] cursor-pointer hover:shadow-secondary/20"
             >
               <svg className="w-5 h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -112,7 +113,7 @@ export default function HeroSection({ dict, locale }: HeroSectionProps) {
             </a>
             
             <a
-              href="https://wa.me/966550000000"
+              href={`https://wa.me/${SITE_PHONE_TEL.replace('+', '')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2.5 bg-whatsapp hover:bg-whatsapp-dark text-white font-black px-8 py-4 rounded-xl text-base md:text-lg transition-all duration-300 shadow-lg hover:scale-[1.04] cursor-pointer hover:shadow-whatsapp/20"

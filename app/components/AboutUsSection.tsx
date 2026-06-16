@@ -1,5 +1,12 @@
 import Image from 'next/image';
-import { SITE_NAME } from '../seo';
+import {
+  SITE_LEGAL_NAME,
+  SITE_LEGAL_NAME_AR,
+  SITE_NAME,
+  SITE_PHONE_TEL,
+  SITE_REGISTRATION_DATE_DISPLAY,
+  SITE_REGISTRATION_NUMBER,
+} from '../seo';
 
 interface AboutUsSectionProps {
   dict: {
@@ -13,8 +20,26 @@ interface AboutUsSectionProps {
 }
 
 export default function AboutUsSection({ dict, locale }: AboutUsSectionProps) {
-  // Clean phone links
-  const callPhone = '+966550000000';
+  const callPhone = SITE_PHONE_TEL;
+  const isArabic = locale === 'ar';
+  const registrationFacts = [
+    {
+      label: isArabic ? 'الاسم النظامي' : 'Legal Name',
+      value: isArabic ? SITE_LEGAL_NAME_AR : SITE_LEGAL_NAME,
+    },
+    {
+      label: isArabic ? 'الرقم الوطني الموحد' : 'Unified National No.',
+      value: SITE_REGISTRATION_NUMBER,
+    },
+    {
+      label: isArabic ? 'تاريخ الإصدار' : 'Issue Date',
+      value: SITE_REGISTRATION_DATE_DISPLAY,
+    },
+    {
+      label: isArabic ? 'الحالة' : 'Status',
+      value: isArabic ? 'نشط' : 'Active',
+    },
+  ];
 
   return (
     <section 
@@ -42,6 +67,19 @@ export default function AboutUsSection({ dict, locale }: AboutUsSectionProps) {
             <p>{dict.paragraph1}</p>
             <p>{dict.paragraph2}</p>
           </div>
+
+          <dl className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+            {registrationFacts.map((fact) => (
+              <div key={fact.label} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+                <dt className="text-[11px] font-black uppercase tracking-wider text-secondary">
+                  {fact.label}
+                </dt>
+                <dd className="mt-1 text-sm font-extrabold text-white leading-snug">
+                  {fact.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4">

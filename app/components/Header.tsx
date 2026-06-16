@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileMenu from './MobileMenu';
-import { SITE_NAME } from '../seo';
+import { SITE_NAME, SITE_PHONE, SITE_PHONE_TEL, SITE_REVIEW_URL } from '../seo';
 
 interface HeaderProps {
   dict: {
@@ -77,7 +77,7 @@ export default function Header({ dict, locale }: HeaderProps) {
             {dict.directions}
           </a>
           <a
-            href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review"
+            href={SITE_REVIEW_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/90 hover:text-secondary font-bold text-sm lg:text-[15px] transition-colors duration-200 hover-underline-accent"
@@ -89,9 +89,9 @@ export default function Header({ dict, locale }: HeaderProps) {
         {/* Right Action Call Button & Hamburger wrapper */}
         <div className="flex items-center gap-4">
           <a
-            href="tel:+966550000000"
+            href={`tel:${SITE_PHONE_TEL}`}
             className="hidden sm:flex items-center gap-2 bg-secondary hover:bg-secondary-light text-primary-dark font-black px-5 py-2.5 rounded-xl text-sm transition-all duration-300 hover:scale-[1.04] shadow-md cursor-pointer hover:shadow-secondary/20"
-            aria-label="Call +966 55 000 0000"
+            aria-label={`Call ${SITE_PHONE}`}
           >
             <svg className="w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

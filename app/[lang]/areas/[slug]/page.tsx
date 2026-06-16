@@ -11,9 +11,16 @@ import {
   buildPageMetadata,
   cleanSeoText,
   serializeJsonLd,
+  SITE_EMAIL,
+  SITE_ENTITY_TYPE,
+  SITE_LEGAL_NAME,
+  SITE_LEGAL_NAME_AR,
   SITE_LOGO,
   SITE_NAME,
   SITE_PHONE,
+  SITE_REGISTRATION_DATE,
+  SITE_REGISTRATION_NUMBER,
+  SITE_STATUS,
   SITE_URL,
 } from '../../../seo';
 import Breadcrumb from '../../../components/Breadcrumb';
@@ -165,9 +172,17 @@ export default async function AreaDetailPage({ params }: PageProps) {
     provider: {
       '@type': ['LocalBusiness', 'RecyclingCenter'],
       name: isRtl ? 'شركة الرياض لنقل وشراء السكراب' : SITE_NAME,
+      legalName: isRtl ? SITE_LEGAL_NAME_AR : SITE_LEGAL_NAME,
       url: SITE_URL,
       logo: absoluteUrl(SITE_LOGO),
       telephone: SITE_PHONE,
+      email: SITE_EMAIL,
+      identifier: {
+        '@type': 'PropertyValue',
+        name: 'Saudi Unified National Number',
+        value: SITE_REGISTRATION_NUMBER,
+      },
+      foundingDate: SITE_REGISTRATION_DATE,
       priceRange: '$$',
       address: {
         '@type': 'PostalAddress',
@@ -175,6 +190,18 @@ export default async function AreaDetailPage({ params }: PageProps) {
         addressRegion: 'Riyadh Province',
         addressCountry: 'SA',
       },
+      additionalProperty: [
+        {
+          '@type': 'PropertyValue',
+          name: 'Commercial record status',
+          value: SITE_STATUS,
+        },
+        {
+          '@type': 'PropertyValue',
+          name: 'Entity type',
+          value: SITE_ENTITY_TYPE,
+        },
+      ],
     },
     areaServed: {
       '@type': 'Place',

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { SITE_PHONE_TEL } from '../seo';
 
 interface ServiceCardProps {
   title: string;
@@ -42,7 +43,7 @@ export default function ServiceCard({ title, description, image, readMoreText, b
         <div className="mt-auto flex flex-col sm:flex-row lg:flex-col xl:flex-row items-stretch gap-2.5 pt-2">
           {/* Primary Buy Now CTA */}
           <Link
-            href={`tel:+966550000000`}
+            href={`tel:${SITE_PHONE_TEL}`}
             className="flex-1 inline-flex items-center justify-center gap-1.5 bg-secondary hover:bg-secondary-light text-primary-dark text-[13px] sm:text-sm font-black px-3 sm:px-4 py-2.5 rounded-xl transition-all duration-200 hover:scale-[1.03] shadow-sm whitespace-nowrap"
             aria-label={`${buyNowText} - ${title}`}
           >

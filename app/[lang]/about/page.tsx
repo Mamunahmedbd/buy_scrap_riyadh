@@ -3,7 +3,16 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import { locales } from '../../../i18n.config';
 import { getDictionary, hasLocale } from '../dictionaries';
-import { buildPageMetadata, SITE_NAME } from '../../seo';
+import {
+  buildPageMetadata,
+  SITE_ENTITY_TYPE,
+  SITE_LEGAL_NAME,
+  SITE_LEGAL_NAME_AR,
+  SITE_NAME,
+  SITE_REGISTRATION_DATE_DISPLAY,
+  SITE_REGISTRATION_NUMBER,
+  SITE_STATUS,
+} from '../../seo';
 import Breadcrumb from '../../components/Breadcrumb';
 import PageHeroBanner from '../../components/PageHeroBanner';
 import CtaContactBanner from '../../components/CtaContactBanner';
@@ -53,6 +62,28 @@ export default async function AboutPage({ params }: PageProps) {
   const dict = await getDictionary(lang);
   const aboutPage = dict.aboutPage;
   const isRtl = lang === 'ar';
+  const registrationFacts = [
+    {
+      label: isRtl ? 'الاسم النظامي' : 'Legal registered name',
+      value: isRtl ? SITE_LEGAL_NAME_AR : SITE_LEGAL_NAME,
+    },
+    {
+      label: isRtl ? 'الرقم الوطني الموحد' : 'Unified national number',
+      value: SITE_REGISTRATION_NUMBER,
+    },
+    {
+      label: isRtl ? 'تاريخ إصدار السجل' : 'Registration issue date',
+      value: SITE_REGISTRATION_DATE_DISPLAY,
+    },
+    {
+      label: isRtl ? 'نوع الكيان' : 'Entity type',
+      value: isRtl ? 'مؤسسة' : SITE_ENTITY_TYPE,
+    },
+    {
+      label: isRtl ? 'حالة السجل' : 'Record status',
+      value: isRtl ? 'نشط' : SITE_STATUS,
+    },
+  ];
 
   return (
     <main className="w-full">
@@ -102,6 +133,38 @@ export default async function AboutPage({ params }: PageProps) {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Registration Facts Section */}
+      <section className="py-14 px-4 sm:px-6 bg-primary-dark text-white">
+        <div className="max-w-7xl mx-auto flex flex-col gap-8">
+          <div className="max-w-3xl text-start">
+            <span className="text-xs font-black text-secondary uppercase tracking-wider">
+              {isRtl ? 'بيانات السجل التجاري' : 'Commercial Registration Details'}
+            </span>
+            <h2 className="mt-3 text-2xl md:text-4xl font-black tracking-tight">
+              {isRtl ? 'معلومات موثقة من السجل التجاري' : 'Verified Company Information'}
+            </h2>
+            <p className="mt-3 text-white/75 text-sm md:text-base leading-relaxed font-medium">
+              {isRtl
+                ? 'تعمل خدمات شراء ونقل السكراب لدينا تحت مظلة مؤسسة مسجلة ونشطة في المملكة العربية السعودية، مما يمنح العملاء وضوحاً أكبر عند التعامل معنا في خدمات التقييم والنقل والدفع.'
+                : 'Our scrap buying and pickup services operate under an active registered Saudi establishment, giving customers clearer assurance when arranging evaluations, collection, and payment.'}
+            </p>
+          </div>
+
+          <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {registrationFacts.map((fact) => (
+              <div key={fact.label} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <dt className="text-[11px] font-black uppercase tracking-wider text-secondary">
+                  {fact.label}
+                </dt>
+                <dd className="mt-2 text-base font-extrabold leading-snug">
+                  {fact.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { SITE_PHONE_TEL, SITE_REVIEW_URL } from '../seo';
 
 interface MobileMenuProps {
   dict: {
@@ -94,7 +95,7 @@ export default function MobileMenu({ dict, locale }: MobileMenuProps) {
             {dict.directions}
           </a>
           <a
-            href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review"
+            href={SITE_REVIEW_URL}
             target="_blank"
             rel="noopener noreferrer"
             onClick={closeMenu}
@@ -104,7 +105,7 @@ export default function MobileMenu({ dict, locale }: MobileMenuProps) {
           </a>
           
           <a
-            href="tel:+966550000000"
+            href={`tel:${SITE_PHONE_TEL}`}
             className="w-full text-center bg-secondary text-primary-dark font-bold py-3 rounded-lg hover:bg-secondary-light transition-colors text-sm shadow-md"
             onClick={closeMenu}
           >

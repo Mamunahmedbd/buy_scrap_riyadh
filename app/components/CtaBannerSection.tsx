@@ -19,6 +19,9 @@ export default function CtaBannerSection({ dict }: CtaBannerSectionProps) {
       aria-label="Direct Phone Banner"
       id="cta-banner"
     >
+      {/* Dark overlay with tint */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/90 via-primary-dark/85 to-primary-dark/95 pointer-events-none" />
+
       {/* Background image overlay */}
       <Image
         src="/background-2.png"
@@ -27,9 +30,6 @@ export default function CtaBannerSection({ dict }: CtaBannerSectionProps) {
         sizes="100vw"
         className="object-cover object-center opacity-15 select-none pointer-events-none"
       />
-
-      {/* Dark overlay with tint */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/90 via-primary-dark/85 to-primary-dark/95 pointer-events-none" />
 
       {/* Glow highlight */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full glow-sphere-primary opacity-20 pointer-events-none" />

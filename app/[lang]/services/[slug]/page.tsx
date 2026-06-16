@@ -13,6 +13,14 @@ import {
   SITE_URL,
   SITE_NAME,
   SITE_LOGO,
+  SITE_EMAIL,
+  SITE_ENTITY_TYPE,
+  SITE_LEGAL_NAME,
+  SITE_LEGAL_NAME_AR,
+  SITE_PHONE,
+  SITE_REGISTRATION_DATE,
+  SITE_REGISTRATION_NUMBER,
+  SITE_STATUS,
 } from '../../../seo';
 import Breadcrumb from '../../../components/Breadcrumb';
 import PageHeroBanner from '../../../components/PageHeroBanner';
@@ -152,14 +160,34 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     provider: {
       '@type': 'LocalBusiness',
       name: isRtl ? 'الرياض لنقل وشراء السكراب' : SITE_NAME,
+      legalName: isRtl ? SITE_LEGAL_NAME_AR : SITE_LEGAL_NAME,
       image: absoluteUrl(SITE_LOGO),
-      telephone: '+966 55 000 0000',
+      telephone: SITE_PHONE,
+      email: SITE_EMAIL,
+      identifier: {
+        '@type': 'PropertyValue',
+        name: 'Saudi Unified National Number',
+        value: SITE_REGISTRATION_NUMBER,
+      },
+      foundingDate: SITE_REGISTRATION_DATE,
       priceRange: '$$',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Riyadh',
         addressCountry: 'SA',
       },
+      additionalProperty: [
+        {
+          '@type': 'PropertyValue',
+          name: 'Commercial record status',
+          value: SITE_STATUS,
+        },
+        {
+          '@type': 'PropertyValue',
+          name: 'Entity type',
+          value: SITE_ENTITY_TYPE,
+        },
+      ],
     },
     areaServed: {
       '@type': 'AdministrativeArea',

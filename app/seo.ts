@@ -3,10 +3,20 @@ import type { Locale } from '../i18n.config';
 
 export const SITE_URL = 'https://riyadhscrappickup.com';
 export const SITE_NAME = 'Riyadh Scrap Pickup';
-export const SITE_PHONE = '+966 55 000 0000';
-export const SITE_PHONE_TEL = '+966550000000';
+export const SITE_PHONE = '+966 55 823 0798';
+export const SITE_PHONE_TEL = '+966558230798';
+export const SITE_EMAIL = 'riyadhscrappickup@gmail.com';
+export const SITE_LEGAL_NAME = 'Khashm Al Fahad Contracting Establishment';
+export const SITE_LEGAL_NAME_AR = 'مؤسسة خشم الفهد للمقاولات';
+export const SITE_REGISTRATION_NUMBER = '7005944660';
+export const SITE_REGISTRATION_DATE = '2019-02-18';
+export const SITE_REGISTRATION_DATE_DISPLAY = '18/02/2019';
+export const SITE_ENTITY_TYPE = 'Establishment';
+export const SITE_STATUS = 'Active';
 export const SITE_LOGO = '/images/main-logo.png';
 export const DEFAULT_OG_IMAGE = '/images/feature-image-1.png';
+export const SITE_REVIEW_URL =
+  'https://www.google.com/search?q=Riyadh+Scrap+Pickup+Khashm+Al+Fahad+Contracting+Establishment+review';
 
 export const SERVICE_SLUGS = [
   'ac-conditioner-scrap',
@@ -247,11 +257,19 @@ export function buildLocalBusinessSchema(lang: Locale | string, description: str
         '@type': ['LocalBusiness', 'RecyclingCenter'],
         '@id': `${SITE_URL}/#local-business`,
         name: SITE_NAME,
+        legalName: SITE_LEGAL_NAME,
         url: SITE_URL,
         logo: absoluteUrl(SITE_LOGO),
         image: absoluteUrl(DEFAULT_OG_IMAGE),
         description,
         telephone: SITE_PHONE,
+        email: SITE_EMAIL,
+        identifier: {
+          '@type': 'PropertyValue',
+          name: 'Saudi Unified National Number',
+          value: SITE_REGISTRATION_NUMBER,
+        },
+        foundingDate: SITE_REGISTRATION_DATE,
         priceRange: '$$',
         address: {
           '@type': 'PostalAddress',
@@ -284,6 +302,18 @@ export function buildLocalBusinessSchema(lang: Locale | string, description: str
           closes: '22:00',
         },
         sameAs: [SITE_URL],
+        additionalProperty: [
+          {
+            '@type': 'PropertyValue',
+            name: 'Commercial record status',
+            value: SITE_STATUS,
+          },
+          {
+            '@type': 'PropertyValue',
+            name: 'Entity type',
+            value: SITE_ENTITY_TYPE,
+          },
+        ],
       },
     ],
   };

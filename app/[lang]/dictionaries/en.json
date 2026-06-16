@@ -6,8 +6,8 @@
   },
   "topBar": {
     "servingText": "Serving Riyadh & Nearby Areas",
-    "phone": "+966 55 000 0000",
-    "whatsapp": "+966 55 000 0000"
+    "phone": "+966 55 823 0798",
+    "whatsapp": "+966 55 823 0798"
   },
   "nav": {
     "review": "Write a Review",
@@ -78,10 +78,10 @@
   "whyChooseUs": {
     "heading": "Why Choose Our Scrap Buyer",
     "headingAccent": "Riyadh Services?",
-    "subtext": "We pride ourselves on providing the most reliable, clean, and fast scrap collection services in Riyadh. Our team handles everything from dismantling to loading, leaving you with zero hassle and instant cash in hand.",
+    "subtext": "We provide reliable, clean, and fast scrap collection services in Riyadh under an active registered establishment. Our team handles evaluation, sorting, dismantling support, loading, and payment with clear communication from start to finish.",
     "list": [
-      "Most Trusted & Licensed Scrap Buyer in Riyadh KSA",
-      "10+ Years of Experience in Metal & Scrap Recycling",
+      "Registered Saudi establishment with unified national number 7005944660",
+      "Commercial record issued on 18/02/2019 and currently active",
       "Easy, Hassle-Free On-Site Evaluation & Loading Process",
       "Eco-Friendly Disposal & Processing of Recyclables",
       "Fair, Weight-Based Transparent Market Pricing",
@@ -119,14 +119,14 @@
   "ctaBanner": {
     "heading": "SCRAP BUYER RIYADH KSA",
     "subtext": "Are you looking for a Reliable Scrap Buyer in Riyadh? How Can We Help?",
-    "buttonCall": "Call Us: +966 55 000 0000"
+    "buttonCall": "Call Us: +966 55 823 0798"
   },
   "aboutUs": {
     "heading": "About Us",
-    "paragraph1": "Riyadh Scrap Pickup is a premier scrap purchasing and recycling company operating across all neighborhoods of Riyadh, Saudi Arabia. With over a decade of experience, we have established ourselves as the most trusted partner for residential, commercial, and industrial scrap sellers.",
-    "paragraph2": "We specialize in buying old air conditioners, copper cables, aluminum fixtures, brass machinery, old computers, and demolition scrap. Our mission is to promote eco-friendly metal recycling while offering our clients competitive market prices and seamless, professional collection services.",
+    "paragraph1": "Riyadh Scrap Pickup is the public service brand for scrap buying, pickup, and metal recycling services operated under Khashm Al Fahad Contracting Establishment, a registered Saudi establishment with unified national number 7005944660.",
+    "paragraph2": "The establishment's commercial record was issued on 18/02/2019 and is active. We serve residential, commercial, and industrial customers across Riyadh with professional scrap evaluation, organized pickup, transparent weight-based pricing, and responsible recycling support.",
     "buttonCall": "Call Now",
-    "buttonScrapNumber": "Call: +966 (SCRAP) 0000"
+    "buttonScrapNumber": "Registered No. 7005944660"
   },
   "serviceAreas": {
     "heading": "Our Service Areas:",
@@ -1007,8 +1007,8 @@
   "contactForm": {
     "heading": "Get in Touch",
     "subtext": "Have scrap to sell? Reach out to us now for a fair, hassle-free evaluation and collection service.",
-    "phone": "+966 55 000 0000",
-    "whatsapp": "+966 55 000 0000",
+    "phone": "+966 55 823 0798",
+    "whatsapp": "+966 55 823 0798",
     "serviceArea": "Service Area: Servicing all of Riyadh & Nearby Areas",
     "labels": {
       "name": "Your Name *",
@@ -1021,7 +1021,7 @@
     },
     "placeholder": {
       "name": "Enter your name",
-      "phone": "e.g., +966 55 000 0000",
+      "phone": "e.g., +966 55 823 0798",
       "email": "e.g., mail@example.com",
       "scrapType": "Select scrap type...",
       "location": "e.g., Al Malaz, Riyadh",
@@ -1150,7 +1150,7 @@
     ]
   },
   "footer": {
-    "desc": "Riyadh's leading scrap buyer. Offering honest weight measurements, free pickups, and top cash rates for metal, AC, cables, machinery, and electrical scrap.",
+    "desc": "Professional scrap buying and pickup services in Riyadh operated under Khashm Al Fahad Contracting Establishment, unified national number 7005944660. We offer honest weights, organized collection, and fair cash rates for metal, AC, cables, machinery, and electrical scrap.",
     "cols": {
       "scrapTypes": "Scrap We Buy",
       "areas": "Service Areas",
@@ -1179,7 +1179,7 @@
         "href": "/#contact"
       }
     ],
-    "copyright": "© 2026 Riyadh Scrap Pickup. All rights reserved.",
+    "copyright": "© 2026 Riyadh Scrap Pickup. Operated by Khashm Al Fahad Contracting Establishment. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
   },
@@ -1795,34 +1795,34 @@
   },
   "aboutPage": {
     "meta": {
-      "title": "About Us | Leading Scrap Metal Buyer in Riyadh",
-      "description": "Learn about Riyadh Scrap Pickup. With 10+ years of experience, we provide honest weights, free pickup, and top cash rates for residential and industrial scrap."
+      "title": "About Us | Registered Scrap Buyer in Riyadh",
+      "description": "Learn about Riyadh Scrap Pickup, operated under Khashm Al Fahad Contracting Establishment, unified national number 7005944660, active since its commercial record issue date on 18/02/2019."
     },
     "heroTitle": "About [Riyadh Scrap Pickup]",
-    "heroSubtitle": "Riyadh's premier scrap purchasing and metal recycling partner. Committed to transparency, fair rates, and professional service.",
-    "storyHeading": "Our Story & Commitment",
-    "storyText1": "Founded in Riyadh over ten years ago, Riyadh Scrap Pickup has grown from a local metal merchant to Riyadh's most reliable full-service scrap collection and recycling enterprise. We serve residential, commercial, and industrial clients across all neighborhoods of Riyadh.",
-    "storyText2": "We specialize in purchasing high-value scrap materials, including copper cables, air conditioning units, aluminum frames, brass fixtures, transformers, obsolete machinery, and factory scrap. Our core belief is that metal recycling should be rewarding, clean, and completely stress-free for the seller.",
+    "heroSubtitle": "A professional Riyadh scrap buying and pickup service operated under Khashm Al Fahad Contracting Establishment, committed to transparent pricing, organized collection, and responsible recycling.",
+    "storyHeading": "Registered, Professional, and Built for Reliable Service",
+    "storyText1": "Riyadh Scrap Pickup provides scrap purchasing, pickup, and metal recycling support across Riyadh under Khashm Al Fahad Contracting Establishment. The establishment is registered in Saudi Arabia with unified national number 7005944660, commercial record issue date 18/02/2019, entity type Establishment, and active status.",
+    "storyText2": "We work with homeowners, shops, contractors, warehouses, workshops, offices, and industrial clients that need a clear and professional way to sell scrap. Our team buys and collects copper cables, AC scrap, aluminum, brass, electrical scrap, machinery, iron, steel, computers, and demolition metals with fair evaluation and organized loading.",
     "missionTitle": "Our Mission",
-    "missionText": "To provide exceptional scrap collection services that offer sellers premium market rates while routing metals to circular recycling systems that conserve Saudi Arabia's resources.",
+    "missionText": "To make scrap selling in Riyadh easier, safer, and more transparent by offering clear evaluations, fair weight-based prices, organized pickup, and responsible routing of recyclable metals.",
     "visionTitle": "Our Vision",
-    "visionText": "To lead Riyadh's recycling sector in alignment with Saudi Vision 2030, introducing advanced, environmentally safe scrap processing methods and zero-waste landfill policies.",
+    "visionText": "To be a trusted Riyadh scrap collection partner that supports Saudi Arabia's circular economy goals through professional service, responsible recycling, and long-term customer confidence.",
     "stats": [
       {
-        "number": "10+",
-        "label": "Years Experience"
+        "number": "2019",
+        "label": "Record Issued"
       },
       {
-        "number": "1,000+",
-        "label": "Happy Customers"
+        "number": "7005944660",
+        "label": "Unified National No."
       },
       {
         "number": "8+",
         "label": "Scrap Services"
       },
       {
-        "number": "24/7",
-        "label": "Support Available"
+        "number": "Active",
+        "label": "Record Status"
       }
     ]
   },
@@ -1882,7 +1882,7 @@
         },
         {
           "title": "9. Changes to This Privacy Policy & Contact Details",
-          "text": "We reserve the right to update this policy periodically to reflect changes in our operational procedures or Saudi regulatory mandates. For inquiries regarding your privacy rights, or to submit a data request, please contact our Data Protection Officer at privacy@riyadhscrappickup.com or via WhatsApp at +966 55 000 0000."
+          "text": "We reserve the right to update this policy periodically to reflect changes in our operational procedures or Saudi regulatory mandates. For inquiries regarding your privacy rights, or to submit a data request, please contact us at riyadhscrappickup@gmail.com or via WhatsApp at +966 55 823 0798."
         }
       ]
     }

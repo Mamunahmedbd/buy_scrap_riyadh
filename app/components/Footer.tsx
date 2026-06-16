@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { SITE_NAME } from '../seo';
+import { SITE_EMAIL, SITE_NAME, SITE_PHONE, SITE_PHONE_TEL } from '../seo';
 
 interface QuickLink {
   label: string;
@@ -71,17 +71,23 @@ export default function Footer({ dict, locale }: FooterProps) {
               {dict.desc}
             </p>
             <div className="flex flex-col gap-2 mt-2">
-              <a href="tel:+966550000000" className="flex items-center gap-2 text-sm hover:text-secondary font-mono transition-colors">
+              <a href={`tel:${SITE_PHONE_TEL}`} className="flex items-center gap-2 text-sm hover:text-secondary font-mono transition-colors">
                 <svg className="w-4.5 h-4.5 text-secondary shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span>+966 55 000 0000</span>
+                <span>{SITE_PHONE}</span>
               </a>
-              <a href="https://wa.me/966550000000" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-whatsapp transition-colors">
+              <a href={`https://wa.me/${SITE_PHONE_TEL.replace('+', '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-whatsapp transition-colors">
                 <svg className="w-4.5 h-4.5 text-whatsapp shrink-0" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.76.46 3.48 1.332 5.006L2 22l5.184-1.36c1.468.8 3.12 1.228 4.82 1.228h.008c5.506 0 9.992-4.486 9.992-9.992C22.004 6.48 17.518 2 12.012 2zm0 18.294h-.006c-1.506 0-2.986-.406-4.278-1.176l-.308-.182-3.184.836.85-3.104-.2-.318c-.846-1.344-1.294-2.9-1.294-4.502 0-4.66 3.792-8.452 8.456-8.452 2.256 0 4.38.88 5.976 2.476a8.396 8.396 0 012.472 5.984c.002 4.66-3.792 8.454-8.458 8.454z"/>
                 </svg>
                 <span>WhatsApp chat</span>
+              </a>
+              <a href={`mailto:${SITE_EMAIL}`} className="flex items-center gap-2 text-sm hover:text-secondary transition-colors break-all">
+                <svg className="w-4.5 h-4.5 text-secondary shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5A2.25 2.25 0 0119.5 19.5h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+                <span>{SITE_EMAIL}</span>
               </a>
             </div>
 
@@ -100,7 +106,7 @@ export default function Footer({ dict, locale }: FooterProps) {
                 </svg>
               </a>
               {/* WhatsApp */}
-              <a href="https://wa.me/966550000000" target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp" className="w-9 h-9 rounded-full bg-white/10 hover:bg-whatsapp/20 hover:text-whatsapp flex items-center justify-center transition-all duration-200">
+              <a href={`https://wa.me/${SITE_PHONE_TEL.replace('+', '')}`} target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp" className="w-9 h-9 rounded-full bg-white/10 hover:bg-whatsapp/20 hover:text-whatsapp flex items-center justify-center transition-all duration-200">
                 <svg className="w-4.5 h-4.5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.76.46 3.48 1.332 5.006L2 22l5.184-1.36c1.468.8 3.12 1.228 4.82 1.228h.008c5.506 0 9.992-4.486 9.992-9.992C22.004 6.48 17.518 2 12.012 2z"/>
                 </svg>
