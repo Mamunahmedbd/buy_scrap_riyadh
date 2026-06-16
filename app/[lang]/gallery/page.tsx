@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: '/gallery',
     title: galleryPage.meta.title,
     description: galleryPage.meta.description,
-    image: '/gallery/feature-image-1.jpg',
+    image: '/gallery/riyadh-scrap-pickup-service-featured.png',
     imageAlt: title,
   });
 }
@@ -120,7 +120,7 @@ export default async function GalleryPage({ params }: PageProps) {
       <PageHeroBanner
         title={galleryPage.heroTitle}
         subtitle={galleryPage.heroSubtitle}
-        backgroundImage="/gallery/background-2.jpg"
+        backgroundImage="/gallery/riyadh-scrap-yard-background.png"
         locale={lang}
       />
 
@@ -161,7 +161,7 @@ export default async function GalleryPage({ params }: PageProps) {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg">
               <Image
-                src="/gallery/feature-image-1.jpg"
+                src="/gallery/riyadh-scrap-pickup-service-featured.png"
                 alt={pageTitle}
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

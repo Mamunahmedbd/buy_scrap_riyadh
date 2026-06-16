@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: '/about',
     title: aboutPage.meta.title,
     description: aboutPage.meta.description,
-    image: '/images/Scrap-image-10-scaled.jpg',
+    image: '/background.png',
     imageAlt: aboutPage.heroTitle.replace(/[\[\]]/g, ''),
   });
 }
@@ -60,7 +60,7 @@ export default async function AboutPage({ params }: PageProps) {
       <PageHeroBanner
         title={aboutPage.heroTitle}
         subtitle={aboutPage.heroSubtitle}
-        backgroundImage="/images/Scrap-image-10-scaled.jpg"
+        backgroundImage="/background.png"
         locale={lang}
       />
 
@@ -92,7 +92,7 @@ export default async function AboutPage({ params }: PageProps) {
             <div className="absolute inset-0 bg-secondary/5 rounded-3xl filter blur-2xl -z-10" />
             <div className="relative h-64 sm:h-96 rounded-3xl overflow-hidden shadow-lg border border-gray-100">
               <Image
-                src="/images/Scrap-image-4-scaled.jpg"
+                src="/gallery/aluminum-scrap/aluminum-window-frame-scrap.png"
                 alt={isRtl ? 'شركة الرياض لنقل وشراء السكراب' : `${SITE_NAME} Company`}
                 fill
                 priority

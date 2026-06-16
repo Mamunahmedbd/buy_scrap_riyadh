@@ -3,6 +3,8 @@ import { locales } from '../i18n.config';
 import { getGalleryData } from './_lib/gallery';
 import {
   absoluteUrl,
+  AREA_IMAGES,
+  AREA_SLUGS,
   BLOG_SLUGS,
   DEFAULT_OG_IMAGE,
   SERVICE_IMAGES,
@@ -60,9 +62,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           changeFrequency: item.changeFrequency,
           images:
             item.path === '/gallery'
-              ? ['/gallery/feature-image-1.jpg', ...galleryImages]
+              ? ['/gallery/riyadh-scrap-pickup-service-featured.png', ...galleryImages]
               : item.path === ''
-                ? [DEFAULT_OG_IMAGE, '/background.jpg']
+                ? [DEFAULT_OG_IMAGE, '/background.png']
                 : undefined,
         })
       );
@@ -76,6 +78,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           priority: 0.85,
           changeFrequency: 'weekly',
           images: [SERVICE_IMAGES[slug]],
+        })
+      );
+    }
+
+    for (const slug of AREA_SLUGS) {
+      entries.push(
+        sitemapEntry({
+          lang,
+          path: `/areas/${slug}`,
+          priority: 0.75,
+          changeFrequency: 'weekly',
+          images: [AREA_IMAGES[slug]],
         })
       );
     }

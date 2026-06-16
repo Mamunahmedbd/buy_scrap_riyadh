@@ -18,19 +18,19 @@ export default function HeroSection({ dict, locale }: HeroSectionProps) {
   const isArabic = locale === 'ar';
   const heroSlides = [
     {
-      src: '/images/feature-image-1.jpg',
+      src: '/images/feature-image-1.png',
       alt: isArabic ? 'عمليات شراء وتجميع السكراب في الرياض' : 'Scrap buying and collection operations in Riyadh',
       caption: isArabic ? 'شراء السكراب والمعادن المستعملة داخل الرياض' : 'Scrap metal buying and collection in Riyadh',
       position: 'object-center',
     },
     {
-      src: '/images/Copper-Scrap-Buying-1-scaled.jpg',
+      src: '/gallery/copper-scrap/copper-pipes-plumbing-scrap-riyadh.png',
       alt: isArabic ? 'شراء سكراب النحاس في الرياض' : 'Copper scrap buying service in Riyadh',
       caption: isArabic ? 'نشتري النحاس والسكراب المعدني بأسعار مناسبة' : 'Copper and metal scrap purchased at competitive rates',
       position: 'object-center',
     },
     {
-      src: '/images/Aluminum-Scrap-Buying-1-scaled.jpg',
+      src: '/gallery/aluminum-scrap/aluminum-window-frame-scrap.png',
       alt: isArabic ? 'تجميع سكراب الألمنيوم والمعادن في الرياض' : 'Aluminum and metal scrap collection in Riyadh',
       caption: isArabic ? 'استلام سريع لسكراب الألمنيوم والمعادن من موقعك' : 'Fast pickup for aluminum and mixed metal scrap',
       position: 'object-center',
@@ -45,7 +45,7 @@ export default function HeroSection({ dict, locale }: HeroSectionProps) {
     >
       {/* Background Image with optimization */}
       <Image
-        src="/background.jpg"
+        src="/background.png"
         alt={isArabic ? 'ساحة خردة وسكراب في الرياض' : 'Scrap metal recycling yard in Riyadh'}
         fill
         priority

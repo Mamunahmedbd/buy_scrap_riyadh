@@ -32,9 +32,9 @@ const BLOG_SLUGS = [
 ] as const;
 
 const newsImages = [
-  '/images/Copper-Scrap-Buying-1-scaled.jpg',
-  '/images/AC-Scrap-Buying-2-scaled.jpg',
-  '/images/Scrap-image-4-scaled.jpg',
+  '/gallery/copper-scrap/copper-pipes-plumbing-scrap-riyadh.png',
+  '/gallery/ac-scrap/used-split-ac-scrap-units.png',
+  '/gallery/aluminum-scrap/aluminum-window-frame-scrap.png',
 ] as const;
 
 type BlogSlug = (typeof BLOG_SLUGS)[number];
@@ -297,7 +297,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
               {relatedIndices.map((idx) => {
                 const card = dict.latestNews.cards[idx];
                 const slug = BLOG_SLUGS[idx] || '';
-                const image = newsImages[idx] || '/images/Scrap-image-10-scaled.jpg';
+                const image = newsImages[idx] || '/background-2.png';
 
                 return (
                   <article

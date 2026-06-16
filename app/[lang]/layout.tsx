@@ -52,7 +52,7 @@ export async function generateMetadata({
     title: dict.meta.title,
     description: dict.meta.description,
     keywords: dict.meta.keywords,
-    image: '/images/feature-image-1.jpg',
+    image: '/images/feature-image-1.png',
     imageAlt: `${SITE_NAME} scrap collection service`,
   });
 }

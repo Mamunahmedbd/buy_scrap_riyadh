@@ -71,7 +71,7 @@ export default function AboutUsSection({ dict, locale }: AboutUsSectionProps) {
         {/* Right Side: Image Showcase */}
         <div className="lg:col-span-5 relative h-[300px] md:h-[420px] w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
           <Image
-            src="/images/Scrap-image-2-scaled.jpg"
+            src="/gallery/cable-wire-scrap/electrical-wiring-scrap-bulk-riyadh.png"
             alt={locale === 'ar' ? 'فريق الرياض لنقل وشراء السكراب في الموقع' : `${SITE_NAME} team working on site`}
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"

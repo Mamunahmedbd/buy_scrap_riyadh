@@ -6,7 +6,7 @@ export const SITE_NAME = 'Riyadh Scrap Pickup';
 export const SITE_PHONE = '+966 55 000 0000';
 export const SITE_PHONE_TEL = '+966550000000';
 export const SITE_LOGO = '/images/main-logo.png';
-export const DEFAULT_OG_IMAGE = '/images/feature-image-1.jpg';
+export const DEFAULT_OG_IMAGE = '/images/feature-image-1.png';
 
 export const SERVICE_SLUGS = [
   'ac-conditioner-scrap',
@@ -19,6 +19,17 @@ export const SERVICE_SLUGS = [
   'industrial-machinery-scrap',
 ] as const;
 
+export const AREA_SLUGS = [
+  'al-batha',
+  'al-olaya',
+  'al-malaz',
+  'al-naseem',
+  'al-aziziyah',
+  'al-diriyah',
+  'al-sullay',
+  'al-kharj',
+] as const;
+
 export const BLOG_SLUGS = [
   'understanding-scrap-copper-prices-in-riyadh-2026',
   'how-to-safely-sell-old-air-conditioners-for-cash',
@@ -26,14 +37,25 @@ export const BLOG_SLUGS = [
 ] as const;
 
 export const SERVICE_IMAGES: Record<(typeof SERVICE_SLUGS)[number], string> = {
-  'ac-conditioner-scrap': '/images/AC-Scrap-Buying-1.jpg',
-  'copper-scrap': '/images/Copper-Scrap-Buying-1-scaled.jpg',
-  'aluminum-scrap': '/images/Aluminum-Scrap-Buying-1-scaled.jpg',
-  'brass-scrap': '/images/Brass-Scrap-Buying-1-scaled.jpg',
-  'cables-wires-scrap': '/images/Cable-Wire-Scrap-Buying-1-scaled.jpg',
-  'computer-electronic-scrap': '/images/Computer-Scrap-Buying-2.jpg',
-  'electrical-panels-scrap': '/images/Electrical-Scrap-Buying-1-scaled.jpg',
-  'industrial-machinery-scrap': '/images/Machinery-Scrap-Buying-1-scaled.jpg',
+  'ac-conditioner-scrap': '/gallery/ac-scrap/ac-scrap-dismantling-riyadh.png',
+  'copper-scrap': '/gallery/copper-scrap/copper-pipes-plumbing-scrap-riyadh.png',
+  'aluminum-scrap': '/gallery/aluminum-scrap/aluminum-window-frame-scrap.png',
+  'brass-scrap': '/gallery/brass-scrap/brass-valves-plumbing-scrap.png',
+  'cables-wires-scrap': '/gallery/cable-wire-scrap/copper-cable-wire-scrap-collection.png',
+  'computer-electronic-scrap': '/gallery/computer-scrap/computer-motherboard-e-waste-recycling.png',
+  'electrical-panels-scrap': '/gallery/electrical-scrap/electrical-panel-switchboard-scrap-riyadh.png',
+  'industrial-machinery-scrap': '/gallery/machinery-scrap/dismantled-industrial-factory-machinery-scrap.png',
+};
+
+export const AREA_IMAGES: Record<(typeof AREA_SLUGS)[number], string> = {
+  'al-batha': '/gallery/demolition-scrap/building-demolition-scrap-metal-riyadh.png',
+  'al-olaya': '/gallery/computer-scrap/computer-motherboard-e-waste-recycling.png',
+  'al-malaz': '/gallery/ac-scrap/ac-scrap-dismantling-riyadh.png',
+  'al-naseem': '/gallery/aluminum-scrap/aluminum-window-frame-scrap.png',
+  'al-aziziyah': '/gallery/cable-wire-scrap/copper-cable-wire-scrap-collection.png',
+  'al-diriyah': '/gallery/copper-scrap/copper-pipes-plumbing-scrap-riyadh.png',
+  'al-sullay': '/gallery/machinery-scrap/dismantled-industrial-factory-machinery-scrap.png',
+  'al-kharj': '/gallery/old-iron-steel-scrap/aged-iron-rebar-stockpile.jpg',
 };
 
 export const BLOG_PUBLISHED_DATES: Record<

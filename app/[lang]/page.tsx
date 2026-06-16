@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: dict.meta.title,
     description: dict.meta.description,
     keywords: dict.meta.keywords,
-    image: '/background.jpg',
+    image: '/background.png',
     imageAlt: 'Scrap metal recycling yard in Riyadh',
   });
 }

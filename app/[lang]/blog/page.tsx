@@ -22,9 +22,9 @@ const BLOG_SLUGS = [
 ] as const;
 
 const newsImages = [
-  '/images/Copper-Scrap-Buying-1-scaled.jpg',
-  '/images/AC-Scrap-Buying-2-scaled.jpg',
-  '/images/Scrap-image-4-scaled.jpg',
+  '/gallery/copper-scrap/copper-pipes-plumbing-scrap-riyadh.png',
+  '/gallery/ac-scrap/used-split-ac-scrap-units.png',
+  '/gallery/aluminum-scrap/aluminum-window-frame-scrap.png',
 ] as const;
 
 export async function generateStaticParams() {
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: '/blog',
     title: blogIndex.title,
     description: blogIndex.description,
-    image: '/images/Copper-Scrap-Buying-1-scaled.jpg',
+    image: '/gallery/copper-scrap/copper-pipes-plumbing-scrap-riyadh.png',
     imageAlt: blogIndex.heroTitle.replace(/[\[\]]/g, ''),
   });
 }
@@ -67,7 +67,7 @@ export default async function BlogIndexPage({ params }: PageProps) {
       <PageHeroBanner
         title={blogIndex.heroTitle}
         subtitle={blogIndex.heroSubtitle}
-        backgroundImage="/images/Scrap-image-10-scaled.jpg"
+        backgroundImage="/background.png"
         locale={lang}
       />
 
@@ -97,7 +97,7 @@ export default async function BlogIndexPage({ params }: PageProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {dict.latestNews.cards.map((card, idx) => {
               const slug = BLOG_SLUGS[idx] || '';
-              const image = newsImages[idx] || '/images/Scrap-image-10-scaled.jpg';
+              const image = newsImages[idx] || '/background-2.png';
 
               return (
                 <article

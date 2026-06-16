@@ -27,14 +27,14 @@ interface WhatWeBuySectionProps {
 }
 
 const categoryMapping = [
-  { key: 'ac', image: '/images/AC-Scrap-Buying-1.jpg', slug: 'ac-conditioner-scrap' },
-  { key: 'copper', image: '/images/Copper-Scrap-Buying-1-scaled.jpg', slug: 'copper-scrap' },
-  { key: 'aluminum', image: '/images/Aluminum-Scrap-Buying-1-scaled.jpg', slug: 'aluminum-scrap' },
-  { key: 'brass', image: '/images/Brass-Scrap-Buying-1-scaled.jpg', slug: 'brass-scrap' },
-  { key: 'cable', image: '/images/Cable-Wire-Scrap-Buying-1-scaled.jpg', slug: 'cables-wires-scrap' },
-  { key: 'computer', image: '/images/Computer-Scrap-Buying-2.jpg', slug: 'computer-electronic-scrap' },
-  { key: 'electrical', image: '/images/Electrical-Scrap-Buying-1-scaled.jpg', slug: 'electrical-panels-scrap' },
-  { key: 'machinery', image: '/images/Machinery-Scrap-Buying-1-scaled.jpg', slug: 'industrial-machinery-scrap' },
+  { key: 'ac', image: '/gallery/ac-scrap/ac-scrap-dismantling-riyadh.png', slug: 'ac-conditioner-scrap' },
+  { key: 'copper', image: '/gallery/copper-scrap/copper-pipes-plumbing-scrap-riyadh.png', slug: 'copper-scrap' },
+  { key: 'aluminum', image: '/gallery/aluminum-scrap/aluminum-window-frame-scrap.png', slug: 'aluminum-scrap' },
+  { key: 'brass', image: '/gallery/brass-scrap/brass-valves-plumbing-scrap.png', slug: 'brass-scrap' },
+  { key: 'cable', image: '/gallery/cable-wire-scrap/copper-cable-wire-scrap-collection.png', slug: 'cables-wires-scrap' },
+  { key: 'computer', image: '/gallery/computer-scrap/computer-motherboard-e-waste-recycling.png', slug: 'computer-electronic-scrap' },
+  { key: 'electrical', image: '/gallery/electrical-scrap/electrical-panel-switchboard-scrap-riyadh.png', slug: 'electrical-panels-scrap' },
+  { key: 'machinery', image: '/gallery/machinery-scrap/dismantled-industrial-factory-machinery-scrap.png', slug: 'industrial-machinery-scrap' },
 ] as const;
 
 export default function WhatWeBuySection({ dict, locale }: WhatWeBuySectionProps) {

@@ -60,14 +60,25 @@ function isServiceSlug(slug: string): slug is ServiceSlug {
 
 // Slugs mapping to hero background image
 const backgroundImageMapping: Record<ServiceSlug, string> = {
-  'ac-conditioner-scrap': '/images/AC-Scrap-Buying-1.jpg',
-  'copper-scrap': '/images/Copper-Scrap-Buying-1-scaled.jpg',
-  'aluminum-scrap': '/images/Aluminum-Scrap-Buying-1-scaled.jpg',
-  'brass-scrap': '/images/Brass-Scrap-Buying-1-scaled.jpg',
-  'cables-wires-scrap': '/images/Cable-Wire-Scrap-Buying-1-scaled.jpg',
-  'computer-electronic-scrap': '/images/Computer-Scrap-Buying-2.jpg',
-  'electrical-panels-scrap': '/images/Electrical-Scrap-Buying-1-scaled.jpg',
-  'industrial-machinery-scrap': '/images/Machinery-Scrap-Buying-1-scaled.jpg',
+  'ac-conditioner-scrap': '/images/AC-Scrap-Buying-1-scaled.png',
+  'copper-scrap': '/images/Copper-Scrap-Buying-2-scaled.png',
+  'aluminum-scrap': '/images/Copper-Scrap-Buying-1-scaled.png',
+  'brass-scrap': '/gallery/brass-scrap/mixed-yellow-brass-scrap-fittings.png',
+  'cables-wires-scrap': '/images/Cable-Wire-Scrap-Buying-1-scaled.png',
+  'computer-electronic-scrap': '/gallery/computer-scrap/old-desktop-pc-electronic-scrap.png',
+  'electrical-panels-scrap': '/gallery/electrical-scrap/industrial-electrical-control-panel-scrap.png',
+  'industrial-machinery-scrap': '/gallery/machinery-scrap/assorted-manufacturing-machinery-scrap-heap.jpg',
+};
+
+const backgroundPositionMapping: Record<ServiceSlug, string> = {
+  'ac-conditioner-scrap': 'center 52%',
+  'copper-scrap': 'center 54%',
+  'aluminum-scrap': 'center 54%',
+  'brass-scrap': 'center 50%',
+  'cables-wires-scrap': 'center 48%',
+  'computer-electronic-scrap': 'center 48%',
+  'electrical-panels-scrap': 'center 56%',
+  'industrial-machinery-scrap': 'center 58%',
 };
 
 // Generate static routes for all locales and slugs
@@ -123,7 +134,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   }
 
   const isRtl = lang === 'ar';
-  const bgImage = backgroundImageMapping[slug] || '/images/Scrap-image-10-scaled.jpg';
+  const bgImage = backgroundImageMapping[slug] || '/background.png';
+  const bgPosition = backgroundPositionMapping[slug] || 'center';
   const serviceName = cleanSeoText(serviceDict.heroTitle);
   const pageUrl = `${SITE_URL}/${lang}/services/${slug}`;
 
@@ -169,6 +181,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         title={serviceDict.heroTitle}
         subtitle={serviceDict.heroSubtitle}
         backgroundImage={bgImage}
+        backgroundPosition={bgPosition}
+        variant="service"
         locale={lang}
       />
 

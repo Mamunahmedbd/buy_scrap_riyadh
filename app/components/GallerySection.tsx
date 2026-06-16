@@ -12,12 +12,12 @@ interface GallerySectionProps {
 }
 
 const galleryImages = [
-  { src: '/images/Scrap-image-1.jpg', altEn: 'Assorted scrap metal sorting', altAr: 'فرز خردة المعادن المتنوعة' },
-  { src: '/images/Scrap-image-3.jpg', altEn: 'Industrial copper tubes scrap', altAr: 'خردة أنابيب النحاس الصناعية' },
-  { src: '/images/Scrap-image-5.jpg', altEn: 'Computer scrap motherboards', altAr: 'لوحات خردة الكمبيوتر الإلكترونية' },
-  { src: '/images/Scrap-image-6-scaled.jpg', altEn: 'Brass valves scrap collection', altAr: 'تجميع خردة صمامات النحاس' },
-  { src: '/images/Scrap-image-7-scaled.jpg', altEn: 'Heavy machinery dismantling scrap', altAr: 'سكراب تفكيك المكائن الثقيلة' },
-  { src: '/images/Scrap-image-9-scaled.jpg', altEn: 'Aluminum sheets scrap processing', altAr: 'معالجة سكراب صفائح الألمنيوم' },
+  { src: '/gallery/aluminum-scrap/bulk-aluminum-profiles-scrap.png', altEn: 'Assorted scrap metal sorting', altAr: 'فرز خردة المعادن المتنوعة' },
+  { src: '/gallery/copper-scrap/copper-pipes-plumbing-scrap-riyadh.png', altEn: 'Industrial copper tubes scrap', altAr: 'خردة أنابيب النحاس الصناعية' },
+  { src: '/gallery/computer-scrap/computer-motherboard-e-waste-recycling.png', altEn: 'Computer scrap motherboards', altAr: 'لوحات خردة الكمبيوتر الإلكترونية' },
+  { src: '/gallery/brass-scrap/brass-valves-plumbing-scrap.png', altEn: 'Brass valves scrap collection', altAr: 'تجميع خردة صمامات النحاس' },
+  { src: '/gallery/machinery-scrap/dismantled-industrial-factory-machinery-scrap.png', altEn: 'Heavy machinery dismantling scrap', altAr: 'سكراب تفكيك المكائن الثقيلة' },
+  { src: '/gallery/aluminum-scrap/aluminum-window-frame-scrap.png', altEn: 'Aluminum sheets scrap processing', altAr: 'معالجة سكراب صفائح الألمنيوم' },
 ] as const;
 
 export default function GallerySection({ dict, locale }: GallerySectionProps) {

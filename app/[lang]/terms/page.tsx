@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: '/terms',
     title: termsPage.meta.title,
     description: termsPage.meta.description,
-    image: '/images/Scrap-image-10-scaled.jpg',
+    image: '/background.png',
     imageAlt: termsPage.heroTitle.replace(/[\[\]]/g, ''),
   });
 }
@@ -88,7 +88,7 @@ export default async function TermsPage({ params }: PageProps) {
       <PageHeroBanner
         title={termsPage.heroTitle}
         subtitle={termsPage.heroSubtitle}
-        backgroundImage="/images/Scrap-image-10-scaled.jpg"
+        backgroundImage="/background.png"
         locale={lang}
       />
 

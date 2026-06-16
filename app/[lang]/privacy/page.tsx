@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: '/privacy',
     title: privacyPage.meta.title,
     description: privacyPage.meta.description,
-    image: '/images/Scrap-image-10-scaled.jpg',
+    image: '/background.png',
     imageAlt: privacyPage.heroTitle.replace(/[\[\]]/g, ''),
   });
 }
@@ -88,7 +88,7 @@ export default async function PrivacyPage({ params }: PageProps) {
       <PageHeroBanner
         title={privacyPage.heroTitle}
         subtitle={privacyPage.heroSubtitle}
-        backgroundImage="/images/Scrap-image-10-scaled.jpg"
+        backgroundImage="/background.png"
         locale={lang}
       />
 

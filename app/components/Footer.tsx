@@ -13,7 +13,6 @@ interface FooterProps {
     cols: {
       scrapTypes: string;
       areas: string;
-      blogs: string;
       quickLinks: string;
     };
     quickLinks: QuickLink[];
@@ -48,21 +47,6 @@ export default function Footer({ dict, locale }: FooterProps) {
     { name: locale === 'ar' ? 'الدرعية وشمال الرياض' : 'Al Diriyah & North Riyadh', slug: 'al-diriyah' },
     { name: locale === 'ar' ? 'السلي والمنطقة الصناعية' : 'Al Sullay & Industrial', slug: 'al-sullay' },
     { name: locale === 'ar' ? 'الخرج والمناطق المجاورة' : 'Al Kharj & Surrounding', slug: 'al-kharj' },
-  ];
-
-  const blogPosts = [
-    {
-      title: locale === 'ar' ? 'فهم أسعار سكراب النحاس في الرياض' : 'Understanding Copper Scrap Prices',
-      slug: 'understanding-scrap-copper-prices-in-riyadh-2026',
-    },
-    {
-      title: locale === 'ar' ? 'كيف تبيع مكيفات الهواء القديمة والتالفة؟' : 'How to Safely Sell Old AC Units',
-      slug: 'how-to-safely-sell-old-air-conditioners-for-cash',
-    },
-    {
-      title: locale === 'ar' ? 'فوائد إعادة تدوير المعادن بالرياض' : 'Benefits of Metal Recycling in Riyadh',
-      slug: 'the-benefits-of-metal-recycling-for-riyadhs-environment',
-    },
   ];
 
   return (
@@ -152,10 +136,8 @@ export default function Footer({ dict, locale }: FooterProps) {
             </nav>
           </div>
 
-          {/* Column 4: Quick Links + Latest Blog posts */}
-          <div className="lg:col-span-2 flex flex-col items-start gap-8">
-            
-            {/* Quick Links sub-column */}
+          {/* Column 4: Quick Links */}
+          <div className="lg:col-span-2 flex flex-col items-start gap-4">
             <div className="flex flex-col items-start gap-4 w-full">
               <h3 className="text-base font-extrabold text-white tracking-wider uppercase border-b border-white/10 pb-2.5 w-full relative after:absolute after:bottom-0 after:start-0 after:w-12 after:h-0.5 after:bg-secondary after:content-['']">
                 {dict.cols.quickLinks}
@@ -194,20 +176,6 @@ export default function Footer({ dict, locale }: FooterProps) {
               </nav>
             </div>
 
-            {/* Latest Blog posts sub-column */}
-            <div className="flex flex-col items-start gap-4 w-full">
-              <h3 className="text-base font-extrabold text-white tracking-wider uppercase border-b border-white/10 pb-2.5 w-full relative after:absolute after:bottom-0 after:start-0 after:w-12 after:h-0.5 after:bg-secondary after:content-['']">
-                {dict.cols.blogs}
-              </h3>
-              <nav className="flex flex-col gap-3 text-sm" aria-label="Blog Footer Links">
-                {blogPosts.map((post, index) => (
-                  <Link key={index} href={`${baseHref}/blog/${post.slug}`} className="text-white/70 hover:text-secondary transition-all duration-200 hover:ps-1.5 line-clamp-2 leading-relaxed">
-                    {post.title}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-
           </div>
 
         </div>
@@ -232,4 +200,3 @@ export default function Footer({ dict, locale }: FooterProps) {
     </footer>
   );
 }
-

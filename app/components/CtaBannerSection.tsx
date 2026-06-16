@@ -21,7 +21,7 @@ export default function CtaBannerSection({ dict }: CtaBannerSectionProps) {
     >
       {/* Background image overlay */}
       <Image
-        src="/background-2.jpg"
+        src="/background-2.png"
         alt="Scrap metal recycling yard in Riyadh"
         fill
         sizes="100vw"

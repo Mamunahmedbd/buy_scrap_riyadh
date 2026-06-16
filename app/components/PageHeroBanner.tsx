@@ -4,14 +4,23 @@ interface PageHeroBannerProps {
   title: string;
   subtitle?: string;
   backgroundImage?: string;
+  backgroundPosition?: string;
+  variant?: 'default' | 'service';
   locale: string;
 }
 
 export default function PageHeroBanner({
   title,
   subtitle,
-  backgroundImage = '/images/Scrap-image-10-scaled.jpg',
+  backgroundImage = '/background.png',
+  backgroundPosition = 'center',
+  variant = 'default',
+  locale,
 }: PageHeroBannerProps) {
+  const isServiceHero = variant === 'service';
+  const isRtl = locale === 'ar';
+  const cleanTitle = title.replace(/[\[\]]/g, '');
+
   // Helper function to render text with highlighted sections inside brackets [like this]
   const renderHighlightedText = (text: string) => {
     const parts = text.split(/\[(.*?)\]/);
@@ -28,40 +37,77 @@ export default function PageHeroBanner({
   };
 
   return (
-    <section className="relative min-h-[30vh] md:min-h-[35vh] flex items-center justify-center bg-primary-dark text-white overflow-hidden py-12 px-4 border-b border-white/5">
-      {/* Background Image with Overlay */}
+    <section
+      className={`relative isolate flex items-center justify-center overflow-hidden bg-primary-dark px-4 text-white border-b border-white/10 ${
+        isServiceHero
+          ? 'min-h-[390px] py-20 sm:px-6 md:min-h-[470px] md:py-24'
+          : 'min-h-[30vh] py-12 md:min-h-[35vh]'
+      }`}
+    >
       {backgroundImage && (
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 -z-30">
           <Image
             src={backgroundImage}
-            alt={title.replace(/[\[\]]/g, '')}
+            alt={isServiceHero ? '' : cleanTitle}
             fill
-            priority
+            preload
             sizes="100vw"
-            className="object-cover opacity-15 select-none pointer-events-none"
+            className={`object-cover select-none pointer-events-none ${
+              isServiceHero ? 'opacity-[0.72] saturate-[1.1] contrast-[1.05]' : 'opacity-20'
+            }`}
+            style={{ objectPosition: backgroundPosition }}
           />
-          {/* Radial dark gradient for focus & premium feel */}
-          <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/95 via-primary-dark/85 to-primary-dark" />
         </div>
       )}
 
-      {/* Decorative Blur Spheres (similar to main hero) */}
-      <div className="absolute top-1/4 -left-20 w-72 h-72 bg-secondary/10 rounded-full filter blur-[80px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-primary-light/30 rounded-full filter blur-[80px] pointer-events-none" />
+      <div
+        className={`absolute inset-0 -z-20 ${
+          isServiceHero
+            ? 'bg-[linear-gradient(90deg,rgba(2,6,23,0.92)_0%,rgba(2,6,23,0.72)_38%,rgba(2,6,23,0.56)_100%)]'
+            : 'bg-gradient-to-b from-primary-dark/95 via-primary-dark/86 to-primary-dark'
+        }`}
+      />
+      {isServiceHero && (
+        <>
+          <div className="absolute inset-0 -z-20 bg-[linear-gradient(180deg,rgba(2,6,23,0.78)_0%,rgba(2,6,23,0.18)_45%,rgba(2,6,23,0.88)_100%)]" />
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(115deg,rgba(245,158,11,0.22),transparent_28%,rgba(15,23,42,0.14)_70%,rgba(16,185,129,0.16))]" />
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:72px_72px] opacity-30" />
+          <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-primary-dark to-transparent" />
+        </>
+      )}
+      {!isServiceHero && (
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(45deg,rgba(255,255,255,0.01)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.01)_50%,rgba(255,255,255,0.01)_75%,transparent_75%,transparent)] bg-[length:30px_30px] opacity-10 pointer-events-none" />
+      )}
 
-      {/* Pattern Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.01)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.01)_50%,rgba(255,255,255,0.01)_75%,transparent_75%,transparent)] bg-[length:30px_30px] opacity-10 pointer-events-none" />
+      <div
+        className={`relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center ${
+          isServiceHero ? 'gap-5' : 'gap-4'
+        }`}
+      >
+        {isServiceHero && (
+          <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-white shadow-sm backdrop-blur-md">
+            {isRtl ? 'خدمة شراء السكراب' : 'Scrap Buying Service'}
+          </span>
+        )}
 
-      {/* Content Container */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col gap-4">
-        {/* Title */}
-        <h1 className="text-3xl sm:text-4.5xl md:text-5xl font-black tracking-tight leading-tight md:leading-snug">
+        <h1
+          className={`font-black tracking-tight text-white drop-shadow-sm ${
+            isServiceHero
+              ? 'max-w-5xl text-4xl leading-tight sm:text-5xl md:text-6xl lg:text-7xl'
+              : 'text-3xl leading-tight sm:text-4.5xl md:text-5xl md:leading-snug'
+          }`}
+        >
           {renderHighlightedText(title)}
         </h1>
 
-        {/* Subtitle */}
         {subtitle && (
-          <p className="text-white/80 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
+          <p
+            className={`mx-auto leading-relaxed drop-shadow-sm ${
+              isServiceHero
+                ? 'max-w-3xl text-base font-semibold text-white/90 sm:text-lg md:text-xl'
+                : 'max-w-2xl text-sm font-medium text-white/80 sm:text-base md:text-lg'
+            }`}
+          >
             {subtitle}
           </p>
         )}
