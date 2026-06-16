@@ -698,32 +698,60 @@
   "privacyPage": {
     "meta": {
       "title": "Privacy Policy | Riyadh Scrap Pickup",
-      "description": "Privacy Policy for Riyadh Scrap Pickup. Learn how we collect, use, and protect your information when using our scrap buying and pickup services."
+      "description": "Privacy Policy for Riyadh Scrap Pickup. Learn how we collect, use, and protect your personal data in Riyadh under Saudi PDPL regulations."
     },
     "heroTitle": "[Privacy Policy]",
-    "heroSubtitle": "Last Updated: June 15, 2026",
+    "heroSubtitle": "Last Updated: June 16, 2026",
+    "sidebar": {
+      "title": "Document Information",
+      "updated": "Last Updated",
+      "status": "Official Policy",
+      "jurisdiction": "Jurisdiction",
+      "saudiArabia": "Kingdom of Saudi Arabia",
+      "quickFacts": "Quick Takeaways",
+      "fact1": "Compliant with Saudi Personal Data Protection Law (PDPL).",
+      "fact2": "Data collected solely for scrap evaluations, logistics & anti-theft checks.",
+      "fact3": "We never sell, lease, or rent your personal contact information.",
+      "fact4": "Secure local data storage with advanced cybersecurity protocols."
+    },
     "content": {
-      "intro": "At Riyadh Scrap Pickup, we value your privacy and are committed to protecting your personal data. This Privacy Policy outlines how we collect, use, and safeguard your information when you visit our website or use our scrap pickup services in Riyadh.",
+      "intro": "At Riyadh Scrap Pickup, we value your privacy and are committed to protecting your personal data. This Privacy Policy outlines how we collect, use, process, and safeguard your information when you visit our website, communicate with us, or utilize our scrap purchasing and pickup services in Riyadh.",
       "sections": [
         {
-          "title": "1. Information We Collect",
-          "text": "We collect information you provide directly to us, including your name, phone number, email address, physical location or neighborhood, and details (including photographs) of the scrap materials you wish to sell."
+          "title": "1. Regulatory Framework & Compliance (Saudi PDPL)",
+          "text": "Riyadh Scrap Pickup ('we', 'us', or 'our') operates in strict compliance with the Kingdom of Saudi Arabia's Personal Data Protection Law (PDPL) enacted by Royal Decree No. M/197. We serve as the data controller for the personal information processed during your interactions with our website and our commercial scrap metal collection services in Riyadh and neighboring regions."
         },
         {
-          "title": "2. How We Use Your Information",
-          "text": "We use the collected information to respond to your inquiries, provide weight-based quotes, coordinate pickup schedules, complete cash transactions, and improve our customer service."
+          "title": "2. Personal Data We Collect",
+          "text": "To provide accurate scrap evaluations and coordinate heavy logistics, we collect specific categories of personal data:\n\n• Identity & Contact Details: Full name, active mobile number (WhatsApp-enabled), and email address.\n\n• Location Data: Precise geographic coordinates, neighborhood name, and address details in Riyadh to route our collection trucks.\n\n• Scrap Asset Materials: Detailed descriptions, lists, and uploaded photographs of your scrap assets (e.g., air conditioners, copper cables, industrial machinery) to estimate market value.\n\n• Official Verification Data: To comply with local anti-theft laws, we may require a copy of your Saudi National ID or Iqama (Resident Identity card) for transaction invoices."
         },
         {
-          "title": "3. Information Sharing & Security",
-          "text": "We do not sell or lease your personal information to third parties. We implement secure data storage systems to prevent unauthorized access or disclosure of your contact and transaction details."
+          "title": "3. Methods of Information Collection",
+          "text": "We gather personal data through direct interactions, including:\n\n• Inquiries submitted via our online contact and scrap valuation forms.\n\n• Direct communication via WhatsApp chat, text messages, or phone calls.\n\n• On-site appraisals and physical weight evaluations conducted by our field representatives.\n\n• Automatically collected technical data, such as IP addresses, browser types, and language preferences, through standard analytics tools."
         },
         {
-          "title": "4. Cookies",
-          "text": "Our website uses basic cookies to enhance user experience, track language preferences (English/Arabic), and monitor website performance traffic."
+          "title": "4. Legal Grounds and Purposes of Processing",
+          "text": "We process your personal information under the following legal bases:\n\n• Contract Performance: To provide on-site scrap evaluation, dismantling, transport, and financial settlement.\n\n• Legal Compliance: To verify ownership and register transaction logs with Riyadh municipal authorities and security agencies in compliance with Saudi commercial and anti-theft regulations.\n\n• Legitimate Business Interests: To optimize our fleet routes, perform service quality checks, and enhance website responsiveness."
         },
         {
-          "title": "5. Your Rights & Contact",
-          "text": "You have the right to request access to or deletion of your personal contact details from our records. For any questions, contact us via email at privacy@riyadhscrappickup.com or WhatsApp."
+          "title": "5. Data Protection and Cybersecurity Safeguards",
+          "text": "We prioritize the security of your data. We implement robust technical, organizational, and physical security measures designed to protect your personal data against unauthorized access, loss, alteration, or disclosure. All digital communications are encrypted, and physical copies of transaction records are stored in secure facilities at our Riyadh operations center. Access to your personal data is restricted to authorized personnel who require it to complete your service request."
+        },
+        {
+          "title": "6. Data Retention and Disposal",
+          "text": "Your personal data is retained only as long as necessary to fulfill the purposes outlined in this policy or to comply with statutory retention periods under Saudi commercial and tax laws (typically up to ten years for commercial transaction logs). Upon the expiration of the retention period, or upon a valid deletion request, your personal data will be securely destroyed or permanently anonymized so it can no longer be associated with you."
+        },
+        {
+          "title": "7. Third-Party Data Disclosures",
+          "text": "We do not sell, rent, or trade your personal data to commercial third parties. We may disclose your information under strict confidentiality to:\n\n• Riyadh municipal authorities and the Ministry of Environment, Water, and Agriculture (MEWA) to certify proper disposal of industrial waste or refrigerants.\n\n• Law enforcement or national security authorities, strictly when required by Saudi laws, to verify the legal provenance of metal scrap and prevent theft or illegal scrap trade."
+        },
+        {
+          "title": "8. Your Rights Under the Saudi PDPL",
+          "text": "Under the Saudi Personal Data Protection Law, you hold specific statutory rights regarding your personal data:\n\n• Right to be Informed: The right to know the legal basis and purpose of our data collection.\n\n• Right of Access: The right to request a copy of the personal data we hold about you.\n\n• Right to Rectification: The right to update or correct inaccurate or incomplete personal data.\n\n• Right to Destruction: The right to request the deletion of your personal data when no longer needed for processing, subject to local regulatory retention mandates."
+        },
+        {
+          "title": "9. Changes to This Privacy Policy & Contact Details",
+          "text": "We reserve the right to update this policy periodically to reflect changes in our operational procedures or Saudi regulatory mandates. For inquiries regarding your privacy rights, or to submit a data request, please contact our Data Protection Officer at privacy@riyadhscrappickup.com or via WhatsApp at +966 55 000 0000."
         }
       ]
     }
@@ -731,32 +759,60 @@
   "termsPage": {
     "meta": {
       "title": "Terms of Service | Riyadh Scrap Pickup",
-      "description": "Terms and Conditions of service for Riyadh Scrap Pickup. Understand pricing, dismantling, and pickup terms in Riyadh."
+      "description": "Terms and Conditions of service for Riyadh Scrap Pickup. Understand scrap ownership, dismantling, site access, and pickup terms in Riyadh."
     },
     "heroTitle": "[Terms of Service]",
-    "heroSubtitle": "Effective Date: June 15, 2026",
+    "heroSubtitle": "Effective Date: June 16, 2026",
+    "sidebar": {
+      "title": "Terms Overview",
+      "updated": "Effective Date",
+      "status": "Official Terms",
+      "jurisdiction": "Governing Law",
+      "saudiArabia": "Kingdom of Saudi Arabia",
+      "quickFacts": "Key Agreement Points",
+      "fact1": "Sellers must verify scrap ownership with valid Saudi ID/Iqama.",
+      "fact2": "Weights measured on calibrated digital scales at pickup site.",
+      "fact3": "Utility lines (water, gas, electricity) must be disconnected by client.",
+      "fact4": "Spot cash for residents; bank transfer/VAT invoices for corporations."
+    },
     "content": {
-      "intro": "Please read these Terms of Service carefully before utilizing our scrap purchasing, dismantling, and collection services. By requesting a pickup or submitting details, you agree to comply with these terms.",
+      "intro": "Please read these Terms of Service carefully before utilizing our scrap purchasing, dismantling, and collection services. By requesting a pickup, submitting details, or scheduling an evaluation, you agree to comply with and be bound by these terms.",
       "sections": [
         {
-          "title": "1. Ownership of Scrap Materials",
-          "text": "By selling scrap materials to Riyadh Scrap Pickup, you warrant that you are the legal owner of the items or have explicit written authority from the owner to sell them. We do not purchase materials of questionable or illegal origin."
+          "title": "1. Scope of Agreement & Service Offerings",
+          "text": "These Terms of Service govern your relationship with Riyadh Scrap Pickup regarding our scrap purchasing, dismantling, rigging, and transport services. Our services are available to individual residents, commercial businesses, and industrial enterprises within the municipal boundaries of Riyadh, Saudi Arabia. By requesting a valuation, scheduling a pickup, or engaging our crew, you agree to be bound by these terms in their entirety."
         },
         {
-          "title": "2. Pricing and Weight Evaluation",
-          "text": "All prices quoted are estimates until our team conducts an on-site inspection and weight measurement using certified scales. Prices are based on current market rates and material grading (purity)."
+          "title": "2. Ownership Warranties & Anti-Theft Verification",
+          "text": "To maintain the integrity of our recycling supply chain and comply with the laws of the Kingdom of Saudi Arabia, the seller represents and warrants that they are the absolute legal owner of the scrap materials offered for sale, or possess explicit, written, and notarized authorization from the legal owner. Sellers must present a valid Saudi National ID or Iqama (Resident Identity card) for verification. Riyadh Scrap Pickup maintains a zero-tolerance policy for stolen metals. We reserve the absolute right to refuse service and report any suspicious materials or fraudulent ownership claims to the Riyadh Police and security authorities."
         },
         {
-          "title": "3. Dismantling & Site Access",
-          "text": "You agree to provide our crew safe access to the premises where the scrap is located. Our team handles dismantling (e.g. AC units, heavy machinery) with professional care, but you must ensure that utility lines (electricity, gas, water) are safely disconnected beforehand."
+          "title": "3. Weight, Evaluation & Pricing Integrity",
+          "text": "All price estimates provided via phone, email, or WhatsApp are preliminary projections based on market rates and seller descriptions. The final purchase price is established only after our on-site team performs a physical inspection and weighs the metals using certified, calibrated digital scales. Prices are indexed against daily national and global scrap metal market rates. We guarantee transparent weight measurements. If a price agreement cannot be reached on-site, either party may cancel the transaction without liability before loading commences."
         },
         {
-          "title": "4. Payment Terms",
-          "text": "Payment is made in cash immediately upon completion of loading and weighing at the site, unless a different payment structure is explicitly agreed upon in writing for bulk commercial accounts."
+          "title": "4. Site Access, Logistics & Safety Requirements",
+          "text": "The seller must provide our transport vehicles and rigging personnel safe, unobstructed access to the premises where the scrap is stored. It is the seller's responsibility to obtain any necessary building permissions, landlord consents, or gated-community clearance prior to our arrival. Our team will perform loading and transport in a professional and safe manner, but the seller must ensure that the access pathway is clear of structural hazards and valuable personal property."
         },
         {
-          "title": "5. Limitation of Liability",
-          "text": "Riyadh Scrap Pickup is not liable for pre-existing structural damage at the collection site or damages resulting from utility disconnect failures by the property owner."
+          "title": "5. Utility Disconnections & Dismantling Liabilities",
+          "text": "For safety reasons, prior to our crew commencing any dismantling work on scrap assets—including but not limited to split air conditioners, central HVAC units, industrial machinery, backup generators, and electrical panels—the seller MUST ensure that all associated utilities (electricity, water, gas, refrigerant lines) are fully disconnected and capped by certified technicians. Riyadh Scrap Pickup is not liable for structural damage, electrical short circuits, water leaks, gas leaks, or environmental hazards arising from the seller's failure to verify utility disconnection."
+        },
+        {
+          "title": "6. Payment Structure and Financial Settlements",
+          "text": "Financial settlements are conducted immediately upon completion of loading and weight verification at the site. For residential accounts, payments are typically completed in cash on the spot, subject to statutory cash transaction limits under Saudi anti-money laundering (AML) regulations. For commercial and industrial accounts, payment is settled via bank transfer to a verified corporate bank account, or as agreed in writing. If applicable under ZATCA regulations, tax-registered commercial sellers must provide a compliant VAT invoice."
+        },
+        {
+          "title": "7. Environmental Safety and Waste Management Compliance",
+          "text": "Riyadh Scrap Pickup is dedicated to environmental sustainability. All scrap metals and electronic waste are processed and recycled in compliance with the rules of the Ministry of Environment, Water, and Agriculture (MEWA) and local Riyadh waste management directives. We do not purchase or transport hazardous chemicals, toxic waste, or pressurized cylinders unless certified empty and safe. We recover and dispose of air conditioning refrigerants safely to prevent atmospheric damage."
+        },
+        {
+          "title": "8. Indemnification & Limitation of Liability",
+          "text": "The seller agrees to indemnify, defend, and hold harmless Riyadh Scrap Pickup, its directors, officers, employees, and subcontractors from any claims, losses, damages, liabilities, and expenses (including legal fees) arising from: (a) breach of ownership warranties, (b) pre-existing structural or environmental contamination at the pickup site, or (c) failure to disconnect utility lines. Our maximum aggregate liability for any operational claim during services shall not exceed the net scrap purchase value of the transaction."
+        },
+        {
+          "title": "9. Governing Law & Dispute Resolution",
+          "text": "These Terms of Service, and all transactions arising from them, shall be governed by and construed in accordance with the laws of the Kingdom of Saudi Arabia. Any dispute, controversy, or claim arising out of or in connection with these terms, including their validity or termination, that cannot be resolved amicably, shall be submitted to the exclusive jurisdiction of the competent courts in Riyadh, Saudi Arabia."
         }
       ]
     }
