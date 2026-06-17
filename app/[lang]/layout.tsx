@@ -16,6 +16,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
 import LanguageSelectionModal from '../components/LanguageSelectionModal';
+import ScrollBehaviorManager from '../components/ScrollBehaviorManager';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -96,6 +97,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
           phone={dict.topBar.whatsapp}
         />
         <LanguageSelectionModal />
+        <ScrollBehaviorManager />
       </body>
     </html>
   );
