@@ -17,6 +17,9 @@ import Footer from '../components/Footer';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
 import LanguageSelectionModal from '../components/LanguageSelectionModal';
 import ScrollBehaviorManager from '../components/ScrollBehaviorManager';
+import GoogleTagManager from '../components/GoogleTagManager';
+import GTMClickTracker from '../components/GTMClickTracker';
+import { getGtmId } from '../_lib/gtm';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -72,9 +75,12 @@ export default async function RootLayout({ children, params }: LayoutProps) {
   const fontStyle = isRtl ? cairo.style.fontFamily : inter.style.fontFamily;
   const localBusinessSchema = buildLocalBusinessSchema(lang, dict.meta.description);
 
+  const gtmId = getGtmId();
+
   return (
-    <html lang={lang} dir={dir} className="scroll-smooth">
+    <html lang={lang} dir={dir} className="scroll-smooth" data-scroll-behavior="smooth">
       <head>
+        <GoogleTagManager />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -86,6 +92,18 @@ export default async function RootLayout({ children, params }: LayoutProps) {
         className="font-sans antialiased text-text-dark bg-bg-light"
         style={{ '--font-sans': fontStyle } as React.CSSProperties}
       >
+        <GTMClickTracker />
+        {/* Google Tag Manager (noscript) */}
+        {gtmId && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
+        )}
         <div className="flex flex-col min-h-screen">
           <TopBar dict={dict.topBar} locale={lang} />
           <Header dict={dict.nav} locale={lang} />

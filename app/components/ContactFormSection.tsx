@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackContactFormSubmit, trackWhatsAppClick } from '../_lib/gtm';
 
 interface ContactFormSectionProps {
   dict: {
@@ -101,6 +102,8 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
 
       if (response.ok && data.success) {
         setIsSubmitted(true);
+        // Track GTM Form Submission
+        trackContactFormSubmit(formData.scrapType, formData.location);
         // Reset Form
         setFormData({
           name: '',
@@ -164,7 +167,7 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
                 <span className="block text-xs text-text-muted font-extrabold uppercase tracking-wider">
                   {locale === 'ar' ? 'اتصال مباشر' : 'Call Us Directly'}
                 </span>
-                <a href={`tel:${formattedPhone}`} className="text-lg md:text-xl font-mono font-black text-primary hover:text-secondary-dark transition-colors select-all">
+                <a href={`tel:${formattedPhone}`} data-gtm-call="cta_banner" className="text-lg md:text-xl font-mono font-black text-primary hover:text-secondary-dark transition-colors select-all">
                   {dict.phone}
                 </a>
               </div>
@@ -181,7 +184,13 @@ export default function ContactFormSection({ dict, locale }: ContactFormSectionP
                 <span className="block text-xs text-text-muted font-extrabold uppercase tracking-wider">
                   {locale === 'ar' ? 'محادثة فورية' : 'WhatsApp Chat'}
                 </span>
-                <a href={`https://wa.me/${formattedPhone}`} target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl font-mono font-black text-whatsapp hover:text-whatsapp-dark transition-colors">
+                <a
+                  href={`https://wa.me/${formattedPhone}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick('cta_banner')}
+                  className="text-lg md:text-xl font-mono font-black text-whatsapp hover:text-whatsapp-dark transition-colors"
+                >
                   {dict.whatsapp}
                 </a>
               </div>

@@ -30,6 +30,7 @@ export default function TopBar({ dict, locale }: TopBarProps) {
           {/* Phone Link */}
           <a
             href={`tel:${formattedPhone}`}
+            data-gtm-call="top_bar"
             className="flex items-center gap-1.5 hover:text-secondary transition-colors duration-200 shrink-0"
             aria-label={`Call us at ${dict.phone}`}
           >
@@ -44,6 +45,7 @@ export default function TopBar({ dict, locale }: TopBarProps) {
             href={`https://wa.me/${formattedPhone}`}
             target="_blank"
             rel="noopener noreferrer"
+            data-gtm-whatsapp="top_bar"
             className="flex items-center gap-1.5 hover:text-whatsapp transition-colors duration-200 shrink-0"
             aria-label="Chat with us on WhatsApp"
           >

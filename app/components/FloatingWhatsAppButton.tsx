@@ -20,6 +20,8 @@ export default function FloatingWhatsAppButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
+      data-gtm-whatsapp="floating_button"
+
       className="floating-whatsapp group fixed bottom-4 end-4 sm:bottom-6 sm:end-6 z-50 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-whatsapp/15 shadow-[0_8px_24px_rgba(37,211,102,0.2)] transition-all duration-300 hover:scale-105 hover:-translate-y-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-secondary"
     >
       <span className="floating-whatsapp-pulse-1 absolute inset-0 rounded-full bg-whatsapp/25" aria-hidden="true" />

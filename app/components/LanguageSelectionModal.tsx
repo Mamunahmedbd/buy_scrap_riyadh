@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { getCookie, setCookie } from 'cookies-next';
 import { locales } from '../../i18n.config';
+import { trackLanguageSwitch } from '../_lib/gtm';
 
 export default function LanguageSelectionModal() {
   const pathname = usePathname();
@@ -31,6 +32,9 @@ export default function LanguageSelectionModal() {
   if (!isOpen) return null;
 
   const selectLanguage = (newLocale: 'en' | 'ar') => {
+    // Track GTM language switch
+    trackLanguageSwitch(newLocale);
+
     setCookie('preferred-lang', newLocale, { maxAge: 60 * 60 * 24 * 365, path: '/' });
     setIsOpen(false);
 
@@ -96,8 +100,14 @@ export default function LanguageSelectionModal() {
               </span>
             )}
             
-            <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-2xl shadow-inner border border-white/10 group-hover:scale-110 transition-transform">
-              🇬🇧
+            <div className="relative w-16 h-11 rounded-lg overflow-hidden shadow-lg shadow-black/30 border border-white/15 group-hover:scale-110 transition-transform">
+              <Image
+                src="/flags/gb.svg"
+                alt="English"
+                fill
+                sizes="64px"
+                className="object-cover"
+              />
             </div>
             
             <div className="flex flex-col gap-1">
@@ -125,8 +135,14 @@ export default function LanguageSelectionModal() {
               </span>
             )}
             
-            <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-2xl shadow-inner border border-white/10 group-hover:scale-110 transition-transform">
-              🇸🇦
+            <div className="relative w-16 h-11 rounded-lg overflow-hidden shadow-lg shadow-black/30 border border-white/15 group-hover:scale-110 transition-transform">
+              <Image
+                src="/flags/sa.svg"
+                alt="العربية"
+                fill
+                sizes="64px"
+                className="object-cover"
+              />
             </div>
             
             <div className="flex flex-col gap-1">

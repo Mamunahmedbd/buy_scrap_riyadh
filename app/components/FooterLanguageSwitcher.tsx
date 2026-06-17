@@ -3,6 +3,7 @@
 import { usePathname, useRouter } from 'next/navigation';
 import { setCookie } from 'cookies-next';
 import { locales } from '../../i18n.config';
+import { trackLanguageSwitch } from '../_lib/gtm';
 
 export default function FooterLanguageSwitcher({ locale }: { locale: string }) {
   const pathname = usePathname();
@@ -10,6 +11,10 @@ export default function FooterLanguageSwitcher({ locale }: { locale: string }) {
 
   const switchLocale = (newLocale: string) => {
     if (newLocale === locale) return;
+
+    // Track GTM language switch
+    trackLanguageSwitch(newLocale);
+
     setCookie('preferred-lang', newLocale, { maxAge: 60 * 60 * 24 * 365, path: '/' });
 
     const segments = pathname.split('/');
