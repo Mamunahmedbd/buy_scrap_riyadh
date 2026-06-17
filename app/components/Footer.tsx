@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import FooterLanguageSwitcher from './FooterLanguageSwitcher';
 import { SITE_EMAIL, SITE_NAME, SITE_PHONE, SITE_PHONE_TEL } from '../seo';
 
 interface QuickLink {
@@ -192,13 +193,15 @@ export default function Footer({ dict, locale }: FooterProps) {
         {/* Bottom copyright & Policy bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs md:text-sm text-white/60">
           <p>{dict.copyright}</p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <Link href={`${baseHref}/privacy`} className="hover:text-secondary transition-colors">
               {dict.privacyPolicy}
             </Link>
             <Link href={`${baseHref}/terms`} className="hover:text-secondary transition-colors">
               {dict.termsOfService}
             </Link>
+            <span className="hidden sm:inline text-white/20">|</span>
+            <FooterLanguageSwitcher locale={locale} />
           </div>
         </div>
 

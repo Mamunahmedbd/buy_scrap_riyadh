@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileMenu from './MobileMenu';
+import LanguageSwitcher from './LanguageSwitcher';
 import { SITE_NAME, SITE_PHONE, SITE_PHONE_TEL, SITE_REVIEW_URL } from '../seo';
 
 interface HeaderProps {
@@ -88,6 +89,11 @@ export default function Header({ dict, locale }: HeaderProps) {
 
         {/* Right Action Call Button & Hamburger wrapper */}
         <div className="flex items-center gap-4">
+          {/* Desktop Language Switcher */}
+          <div className="hidden md:flex items-center">
+            <LanguageSwitcher locale={locale} />
+          </div>
+
           <a
             href={`tel:${SITE_PHONE_TEL}`}
             className="hidden sm:flex items-center gap-2 bg-secondary hover:bg-secondary-light text-primary-dark font-black px-5 py-2.5 rounded-xl text-sm transition-all duration-300 hover:scale-[1.04] shadow-md cursor-pointer hover:shadow-secondary/20"

@@ -15,6 +15,7 @@ import TopBar from '../components/TopBar';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
+import LanguageSelectionModal from '../components/LanguageSelectionModal';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -94,6 +95,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
           label={dict.shared.ctaButtonWhatsapp}
           phone={dict.topBar.whatsapp}
         />
+        <LanguageSelectionModal />
       </body>
     </html>
   );
