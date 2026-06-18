@@ -24,16 +24,16 @@ export default function Header({ dict, locale }: HeaderProps) {
   return (
     <header className="sticky top-0 z-40 w-full bg-primary-dark/80 backdrop-blur-lg border-b border-white/10 shadow-lg" id="main-header">
       <div className="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between relative">
-        
+
         {/* Company Logo */}
-        <Link href={baseHref} className="flex items-center gap-2 transition-transform duration-300 hover:scale-[1.03]" aria-label={`${SITE_NAME} Homepage`}>
+        <Link href={baseHref} className="flex items-center gap-2 transition-transform duration-300 hover:scale-[1.03] overflow-hidden" aria-label={`${SITE_NAME} Homepage`}>
           <Image
-            src="/images/white_logo.png"
+            src="/Logo.svg"
             alt={locale === 'ar' ? 'شعار الرياض لنقل وشراء السكراب' : `${SITE_NAME} Logo`}
-            width={180}
-            height={50}
+            width={200}
+            height={200}
             priority
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-28 md:h-32 -my-8 md:-my-10 w-auto object-contain"
           />
         </Link>
 

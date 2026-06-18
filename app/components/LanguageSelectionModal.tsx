@@ -61,12 +61,12 @@ export default function LanguageSelectionModal() {
         <div className="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-accent/10 blur-3xl pointer-events-none" />
 
         {/* Company Logo */}
-        <div className="relative w-[180px] h-[50px] mb-2 animate-bounce-subtle">
+        <div className="relative w-[240px] h-[100px] -my-6 mb-2 animate-bounce-subtle">
           <Image
-            src="/images/white_logo.png"
+            src="/Logo White.svg"
             alt="Riyadh Scrap Pickup Logo"
             fill
-            sizes="180px"
+            sizes="240px"
             priority
             className="object-contain"
           />

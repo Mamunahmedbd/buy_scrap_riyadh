@@ -59,13 +59,13 @@ export default function Footer({ dict, locale }: FooterProps) {
           
           {/* Column 1: Company Logo & Direct Contact links */}
           <div className="lg:col-span-4 flex flex-col items-start gap-4">
-            <Link href={baseHref} aria-label={`${SITE_NAME} Home Page`}>
+            <Link href={baseHref} aria-label={`${SITE_NAME} Home Page`} className="overflow-hidden block">
               <Image
-                src="/images/white_logo.png"
+                src="/Logo White.svg"
                 alt={`${SITE_NAME} Logo`}
-                width={180}
-                height={50}
-                className="h-10 md:h-12 w-auto object-contain mb-2"
+                width={200}
+                height={200}
+                className="h-28 md:h-32 -my-8 md:-my-10 w-auto object-contain mb-2"
               />
             </Link>
             <p className="text-white/80 text-sm leading-relaxed max-w-sm">

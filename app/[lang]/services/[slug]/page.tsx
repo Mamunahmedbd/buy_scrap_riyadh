@@ -114,7 +114,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
-  const image = SERVICE_IMAGES[slug] || '/images/main-logo.png';
+  const image = SERVICE_IMAGES[slug] || '/Logo.svg';
 
   return buildPageMetadata({
     lang,
