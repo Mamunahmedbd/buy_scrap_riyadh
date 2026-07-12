@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Inter, Cairo } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, getDictionary } from './dictionaries';
 import { locales } from '../../i18n.config';
@@ -20,18 +19,6 @@ import ScrollBehaviorManager from '../components/ScrollBehaviorManager';
 import GoogleTagManager from '../components/GoogleTagManager';
 import GTMClickTracker from '../components/GTMClickTracker';
 import { getGtmId } from '../_lib/gtm';
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-});
-
-const cairo = Cairo({
-  subsets: ['arabic'],
-  display: 'swap',
-  variable: '--font-cairo',
-});
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ lang: locale }));
@@ -72,7 +59,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
   const dict = await getDictionary(lang);
   const isRtl = lang === 'ar';
   const dir = isRtl ? 'rtl' : 'ltr';
-  const fontStyle = isRtl ? cairo.style.fontFamily : inter.style.fontFamily;
+  const fontStyle = isRtl ? 'Cairo, sans-serif' : 'Inter, sans-serif';
   const localBusinessSchema = buildLocalBusinessSchema(lang, dict.meta.description);
 
   const gtmId = getGtmId();
@@ -80,6 +67,13 @@ export default async function RootLayout({ children, params }: LayoutProps) {
   return (
     <html lang={lang} dir={dir} className="scroll-smooth" data-scroll-behavior="smooth">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:wght@100..900&display=swap"
+          rel="stylesheet"
+        />
         <GoogleTagManager />
         <script
           type="application/ld+json"
