@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import FooterLanguageSwitcher from './FooterLanguageSwitcher';
-import { SITE_EMAIL, SITE_NAME, SITE_PHONE, SITE_PHONE_TEL } from '../seo';
+import { SITE_EMAIL, SITE_NAME, SITE_PHONE, SITE_PHONE_TEL, SITE_SOCIAL_LINKS } from '../seo';
 
 interface QuickLink {
   label: string;
@@ -93,15 +93,21 @@ export default function Footer({ dict, locale }: FooterProps) {
             </div>
 
             {/* Social Icons Row */}
-            <div className="flex items-center gap-3 mt-3" aria-label="Follow us on social media">
+            <div className="flex flex-wrap items-center gap-3 mt-3" aria-label="Follow us on social media">
               {/* Google */}
               <a href="https://g.page/r/riyadh-scrap-pickup/review" target="_blank" rel="noopener noreferrer" aria-label="Review us on Google" className="w-9 h-9 rounded-full bg-white/10 hover:bg-secondary/20 hover:text-secondary flex items-center justify-center transition-all duration-200">
                 <svg className="w-4.5 h-4.5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
                 </svg>
               </a>
+              {/* Facebook */}
+              <a href={SITE_SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" className="w-9 h-9 rounded-full bg-white/10 hover:bg-blue-600/20 hover:text-blue-400 flex items-center justify-center transition-all duration-200">
+                <svg className="w-4.5 h-4.5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
+                </svg>
+              </a>
               {/* YouTube */}
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Watch us on YouTube" className="w-9 h-9 rounded-full bg-white/10 hover:bg-red-500/20 hover:text-red-400 flex items-center justify-center transition-all duration-200">
+              <a href={SITE_SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" aria-label="Watch us on YouTube" className="w-9 h-9 rounded-full bg-white/10 hover:bg-red-500/20 hover:text-red-400 flex items-center justify-center transition-all duration-200">
                 <svg className="w-4.5 h-4.5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                 </svg>

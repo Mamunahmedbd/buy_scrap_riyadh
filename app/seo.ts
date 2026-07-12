@@ -18,6 +18,11 @@ export const DEFAULT_OG_IMAGE = '/images/feature-image-1.png';
 export const SITE_REVIEW_URL =
   'https://www.google.com/search?q=Riyadh+Scrap+Pickup+Khashm+Al+Fahad+Contracting+Establishment+review';
 
+export const SITE_SOCIAL_LINKS = {
+  facebook: 'https://www.facebook.com/riyadhscrappickup/',
+  youtube: 'https://www.youtube.com/@RiyadhScrapPickup',
+};
+
 export const SERVICE_SLUGS = [
   'ac-conditioner-scrap',
   'copper-scrap',
@@ -302,7 +307,11 @@ export function buildLocalBusinessSchema(lang: Locale | string, description: str
           opens: '06:00',
           closes: '22:00',
         },
-        sameAs: [SITE_URL],
+        sameAs: [
+          SITE_URL,
+          SITE_SOCIAL_LINKS.facebook,
+          SITE_SOCIAL_LINKS.youtube,
+        ],
         additionalProperty: [
           {
             '@type': 'PropertyValue',
