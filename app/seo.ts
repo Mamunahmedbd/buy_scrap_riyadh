@@ -107,11 +107,11 @@ export function localizedPath(lang: Locale | string, path = '') {
 
 export function localeAlternates(lang: Locale | string, path = '') {
   return {
-    canonical: localizedPath(lang, path),
+    canonical: absoluteUrl(localizedPath(lang, path)),
     languages: {
-      en: localizedPath('en', path),
-      ar: localizedPath('ar', path),
-      'x-default': localizedPath('en', path),
+      en: absoluteUrl(localizedPath('en', path)),
+      ar: absoluteUrl(localizedPath('ar', path)),
+      'x-default': absoluteUrl(localizedPath('en', path)),
     },
   };
 }
@@ -186,10 +186,10 @@ export function buildPageMetadata({
       type,
       ...(type === 'article'
         ? {
-            publishedTime,
-            modifiedTime,
-            authors,
-          }
+          publishedTime,
+          modifiedTime,
+          authors,
+        }
         : {}),
       images: [
         {
