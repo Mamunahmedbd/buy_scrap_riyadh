@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: dict.meta.title,
     description: dict.meta.description,
     keywords: dict.meta.keywords,
-    image: '/images/feature-image-1.png',
+    image: '/images/og-image.jpg',
     imageAlt: 'Scrap metal recycling yard in Riyadh',
   });
 }
@@ -64,7 +64,7 @@ export default async function HomePage({ params }: PageProps) {
     dict.whatWeBuy.cards.machinery.title,
   ];
   const homeUrl = absoluteUrl(localizedPath(lang));
-  const primaryImageUrl = absoluteUrl('/images/feature-image-1.png');
+  const primaryImageUrl = absoluteUrl('/images/og-image.jpg');
   const homeSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',

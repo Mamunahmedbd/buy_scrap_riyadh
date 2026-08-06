@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: '/about',
     title: aboutPage.meta.title,
     description: aboutPage.meta.description,
-    image: '/images/feature-image-1.png',
+    image: '/images/og-image.jpg',
     imageAlt: aboutPage.heroTitle.replace(/[\[\]]/g, ''),
   });
 }

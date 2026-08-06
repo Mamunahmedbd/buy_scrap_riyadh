@@ -14,7 +14,7 @@ export const SITE_REGISTRATION_DATE_DISPLAY = '18/02/2019';
 export const SITE_ENTITY_TYPE = 'Establishment';
 export const SITE_STATUS = 'Active';
 export const SITE_LOGO = '/Logo.svg';
-export const DEFAULT_OG_IMAGE = '/images/feature-image-1.png';
+export const DEFAULT_OG_IMAGE = '/images/og-image.jpg';
 export const SITE_REVIEW_URL =
   'https://www.google.com/search?q=Riyadh+Scrap+Pickup+Khashm+Al+Fahad+Contracting+Establishment+review';
 
