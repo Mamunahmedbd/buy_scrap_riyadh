@@ -199,7 +199,7 @@ export function buildPageMetadata({
           width: 1024,
           height: 1024,
           alt: imageAlt,
-          type: 'image/jpeg',
+          // type: 'image/jpeg',
         },
         {
           url: imageUrl,
@@ -207,7 +207,7 @@ export function buildPageMetadata({
           width: 1200,
           height: 630,
           alt: imageAlt,
-          type: imageUrl.endsWith('.jpg') || imageUrl.endsWith('.jpeg') ? 'image/jpeg' : imageUrl.endsWith('.webp') ? 'image/webp' : 'image/png',
+          // type: imageUrl.endsWith('.jpg') || imageUrl.endsWith('.jpeg') ? 'image/jpeg' : imageUrl.endsWith('.webp') ? 'image/webp' : 'image/png',
         },
       ],
     },
