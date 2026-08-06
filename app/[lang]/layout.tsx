@@ -17,6 +17,7 @@ import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
 import LanguageSelectionModal from '../components/LanguageSelectionModal';
 import ScrollBehaviorManager from '../components/ScrollBehaviorManager';
 import GoogleTagManager from '../components/GoogleTagManager';
+import GoogleAnalytics from '../components/GoogleAnalytics';
 import GTMClickTracker from '../components/GTMClickTracker';
 import { getGtmId } from '../_lib/gtm';
 
@@ -75,6 +76,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
           rel="stylesheet"
         />
         <GoogleTagManager />
+        <GoogleAnalytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
