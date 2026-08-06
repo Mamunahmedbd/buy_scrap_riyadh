@@ -193,14 +193,14 @@ export function buildPageMetadata({
         }
         : {}),
       images: [
-        // {
-        //   url: squareImageUrl,
-        //   secureUrl: squareImageUrl,
-        //   width: 1024,
-        //   height: 1024,
-        //   alt: imageAlt,
-        //   type: 'image/jpeg',
-        // },
+        {
+          url: squareImageUrl,
+          secureUrl: squareImageUrl,
+          width: 1024,
+          height: 1024,
+          alt: imageAlt,
+          // type: 'image/jpeg',
+        },
         {
           url: imageUrl,
           secureUrl: imageUrl,
