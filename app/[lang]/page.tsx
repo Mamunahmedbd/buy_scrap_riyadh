@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: dict.meta.title,
     description: dict.meta.description,
     keywords: dict.meta.keywords,
-    image: '/background.png',
+    image: '/images/feature-image-1.png',
     imageAlt: 'Scrap metal recycling yard in Riyadh',
   });
 }
@@ -64,6 +64,7 @@ export default async function HomePage({ params }: PageProps) {
     dict.whatWeBuy.cards.machinery.title,
   ];
   const homeUrl = absoluteUrl(localizedPath(lang));
+  const primaryImageUrl = absoluteUrl('/images/feature-image-1.png');
   const homeSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -72,6 +73,18 @@ export default async function HomePage({ params }: PageProps) {
     name: dict.meta.title,
     description: dict.meta.description,
     inLanguage: lang,
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      '@id': `${homeUrl}#primaryimage`,
+      url: primaryImageUrl,
+      contentUrl: primaryImageUrl,
+      width: 1200,
+      height: 630,
+      caption: dict.meta.title,
+    },
+    image: {
+      '@id': `${homeUrl}#primaryimage`,
+    },
     isPartOf: {
       '@id': 'https://riyadhscrappickup.com/#website',
     },

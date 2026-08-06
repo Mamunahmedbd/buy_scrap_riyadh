@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { SITE_PHONE_TEL } from '../seo';
+import { SITE_PHONE_TEL, absoluteUrl } from '../seo';
 
 interface HeroSectionProps {
   dict: {
@@ -153,7 +153,8 @@ export default function HeroSection({ dict, locale }: HeroSectionProps) {
               itemType="https://schema.org/ImageObject"
               role="listitem"
             >
-              <meta itemProp="contentUrl" content={slide.src} />
+              <meta itemProp="contentUrl" content={absoluteUrl(slide.src)} />
+              <meta itemProp="url" content={absoluteUrl(slide.src)} />
               <Image
                 src={slide.src}
                 alt={slide.alt}

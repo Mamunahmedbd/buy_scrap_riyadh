@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: '/privacy',
     title: privacyPage.meta.title,
     description: privacyPage.meta.description,
-    image: '/background.png',
+    image: '/images/feature-image-1.png',
     imageAlt: privacyPage.heroTitle.replace(/[\[\]]/g, ''),
   });
 }

@@ -194,9 +194,11 @@ export function buildPageMetadata({
       images: [
         {
           url: imageUrl,
+          secureUrl: imageUrl,
           width: 1200,
           height: 630,
           alt: imageAlt,
+          type: imageUrl.endsWith('.jpg') || imageUrl.endsWith('.jpeg') ? 'image/jpeg' : imageUrl.endsWith('.webp') ? 'image/webp' : 'image/png',
         },
       ],
     },
@@ -208,19 +210,28 @@ export function buildPageMetadata({
         {
           url: imageUrl,
           alt: imageAlt,
+          width: 1200,
+          height: 630,
         },
       ],
     },
     robots: {
       index: true,
       follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
       googleBot: {
         index: true,
         follow: true,
-        'max-video-preview': -1,
         'max-image-preview': 'large',
         'max-snippet': -1,
+        'max-video-preview': -1,
       },
+    },
+    other: {
+      thumbnail: imageUrl,
+      image_src: imageUrl,
     },
     manifest: '/favicon/site.webmanifest',
     icons: {

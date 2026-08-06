@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: '/terms',
     title: termsPage.meta.title,
     description: termsPage.meta.description,
-    image: '/background.png',
+    image: '/images/feature-image-1.png',
     imageAlt: termsPage.heroTitle.replace(/[\[\]]/g, ''),
   });
 }
