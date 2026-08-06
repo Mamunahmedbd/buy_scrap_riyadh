@@ -1,7 +1,7 @@
 import Script from 'next/script';
 
 export const getGaId = (): string => {
-  return process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-T2E7F5RB4M';
+  return process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-LXPD33F8E2';
 };
 
 export default function GoogleAnalytics() {
