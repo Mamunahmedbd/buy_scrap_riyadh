@@ -201,19 +201,22 @@ export function buildPageMetadata({
         }
         : {}),
       images: [
-        {
-          url: squareImageUrl,
-          secureUrl: squareImageUrl,
-          width: 1024,
-          height: 1024,
-          alt: imageAlt,
-          type: 'image/png',
-        },
+        // Wide image FIRST — WhatsApp reads only the first og:image and requires
+        // a landscape aspect ratio (≥1.91:1). Putting the square image first was
+        // causing WhatsApp to skip the preview entirely. Facebook supports both.
         {
           url: wideImageUrl,
           secureUrl: wideImageUrl,
           width: 1200,
           height: 630,
+          alt: imageAlt,
+          type: 'image/png',
+        },
+        {
+          url: squareImageUrl,
+          secureUrl: squareImageUrl,
+          width: 1024,
+          height: 1024,
           alt: imageAlt,
           type: 'image/png',
         },
