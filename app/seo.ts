@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import type { Locale } from '../i18n.config';
 
-export const SITE_URL = 'https://riyadhscrappickup.com';
+export const SITE_URL = 'https://www.riyadhscrappickup.com';
 export const SITE_NAME = 'Riyadh Scrap Pickup';
 export const SITE_PHONE = '+966 55 823 0798';
 export const SITE_PHONE_TEL = '+966558230798';
@@ -15,6 +15,9 @@ export const SITE_ENTITY_TYPE = 'Establishment';
 export const SITE_STATUS = 'Active';
 export const SITE_LOGO = '/Logo.svg';
 export const DEFAULT_OG_IMAGE = '/images/og-image-square.png';
+export const DEFAULT_OG_IMAGE_WIDE = '/images/og-image.png';
+export const OG_IMAGE_URL = `${SITE_URL}/images/og-image.png`;
+export const OG_IMAGE_SQUARE_URL = `${SITE_URL}/images/og-image-square.png`;
 export const SITE_REVIEW_URL =
   'https://www.google.com/search?q=Riyadh+Scrap+Pickup+Khashm+Al+Fahad+Contracting+Establishment+review';
 
@@ -157,8 +160,13 @@ export function buildPageMetadata({
 }): Metadata {
   const canonicalPath = localizedPath(lang, path);
   const fullUrl = absoluteUrl(canonicalPath);
+  // Use explicit absolute www URLs — the non-www domain has no DNS record,
+  // so OG scrapers (Facebook, WhatsApp, Twitter) cannot resolve relative/non-www image URLs.
+  // absoluteUrl() prepends SITE_URL which already has www, but squareImageUrl & wideImageUrl
+  // are hardcoded constants to guarantee the www is never stripped by Next.js metadataBase.
   const imageUrl = absoluteUrl(image);
-  const squareImageUrl = absoluteUrl('/images/og-image-square.png');
+  const squareImageUrl = OG_IMAGE_SQUARE_URL;  // https://www.riyadhscrappickup.com/images/og-image-square.png
+  const wideImageUrl = image !== DEFAULT_OG_IMAGE ? imageUrl : OG_IMAGE_URL; // https://www.riyadhscrappickup.com/images/og-image.png
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -199,15 +207,15 @@ export function buildPageMetadata({
           width: 1024,
           height: 1024,
           alt: imageAlt,
-          // type: 'image/jpeg',
+          type: 'image/png',
         },
         {
-          url: imageUrl,
-          secureUrl: imageUrl,
+          url: wideImageUrl,
+          secureUrl: wideImageUrl,
           width: 1200,
           height: 630,
           alt: imageAlt,
-          // type: imageUrl.endsWith('.jpg') || imageUrl.endsWith('.jpeg') ? 'image/jpeg' : imageUrl.endsWith('.webp') ? 'image/webp' : 'image/png',
+          type: 'image/png',
         },
       ],
     },
@@ -217,7 +225,7 @@ export function buildPageMetadata({
       description,
       images: [
         {
-          url: squareImageUrl,
+          url: squareImageUrl,  // hardcoded www absolute URL — never drops www
           alt: imageAlt,
           width: 1024,
           height: 1024,
@@ -239,8 +247,8 @@ export function buildPageMetadata({
       },
     },
     other: {
-      thumbnail: squareImageUrl,
-      image_src: squareImageUrl,
+      thumbnail: squareImageUrl,   // www absolute URL
+      image_src: squareImageUrl,    // www absolute URL
     },
     manifest: '/favicon/site.webmanifest',
     icons: {

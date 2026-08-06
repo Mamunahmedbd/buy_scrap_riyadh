@@ -26,44 +26,24 @@ interface PageProps {
   params: Promise<{ lang: string }>;
 }
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Riyadh Scrap Buyer",
-    description:
-      "Riyadh Scrap Buyer is a scrap metal recycling company in Riyadh, Saudi Arabia. We buy scrap metal from individuals and businesses in Riyadh. We offer competitive prices for scrap metal and provide fast and reliable service.",
-    url: "/",
-    images: [
-      {
-        url: "/images/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Riyadh Scrap Buyer",
-      },
-    ],
-  },
-};
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { lang } = await params;
 
-// export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-//   const { lang } = await params;
+  if (!hasLocale(lang)) {
+    return {};
+  }
 
-//   if (!hasLocale(lang)) {
-//     return {};
-//   }
+  const dict = await getDictionary(lang);
 
-//   const dict = await getDictionary(lang);
-
-//   return buildPageMetadata({
-//     lang,
-//     title: dict.meta.title,
-//     description: dict.meta.description,
-//     keywords: dict.meta.keywords,
-//     image: '/images/og-image.png',
-//     imageAlt: 'Riyadh Scrap Buyer',
-//   });
-// }
+  return buildPageMetadata({
+    lang,
+    title: dict.meta.title,
+    description: dict.meta.description,
+    keywords: dict.meta.keywords,
+    image: '/images/og-image.png',
+    imageAlt: 'Riyadh Scrap Buyer',
+  });
+}
 
 export default async function HomePage({ params }: PageProps) {
   const { lang } = await params;
@@ -106,7 +86,7 @@ export default async function HomePage({ params }: PageProps) {
       '@id': `${homeUrl}#primaryimage`,
     },
     isPartOf: {
-      '@id': 'https://riyadhscrappickup.com/#website',
+      '@id': 'https://www.riyadhscrappickup.com/#website',
     },
     mainEntity: {
       '@type': 'ItemList',
