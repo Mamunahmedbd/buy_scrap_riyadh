@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: '/privacy',
     title: privacyPage.meta.title,
     description: privacyPage.meta.description,
-    image: '/images/og-image.jpg',
+    image: '/images/og-image.png',
     imageAlt: privacyPage.heroTitle.replace(/[\[\]]/g, ''),
   });
 }
@@ -103,7 +103,7 @@ export default async function PrivacyPage({ params }: PageProps) {
       <section className="py-16 md:py-24 px-4 sm:px-6 bg-white text-start">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
+
             {/* Main Content (Left Column in LTR, Right Column in RTL) */}
             <div className="lg:col-span-8 flex flex-col gap-8 order-first">
               {/* Intro statement */}
@@ -128,7 +128,7 @@ export default async function PrivacyPage({ params }: PageProps) {
 
             {/* Sidebar (Right Column in LTR, Left Column in RTL) */}
             <aside className="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24 h-fit order-last lg:order-none">
-              
+
               {/* Table of Contents */}
               <div className="bg-white border border-gray-200/80 rounded-2xl p-6 shadow-sm">
                 <h3 className="text-base font-black text-primary-dark mb-4 pb-2 border-b border-gray-100">
@@ -201,7 +201,7 @@ export default async function PrivacyPage({ params }: PageProps) {
               <PrintButton label={isRtl ? 'طباعة / حفظ PDF' : 'Print / Save PDF'} />
 
             </aside>
-            
+
           </div>
         </div>
       </section>
