@@ -14,7 +14,7 @@ export const SITE_REGISTRATION_DATE_DISPLAY = '18/02/2019';
 export const SITE_ENTITY_TYPE = 'Establishment';
 export const SITE_STATUS = 'Active';
 export const SITE_LOGO = '/Logo.svg';
-export const DEFAULT_OG_IMAGE = '/images/og-image.jpg';
+export const DEFAULT_OG_IMAGE = '/images/og-image-square.jpg';
 export const SITE_REVIEW_URL =
   'https://www.google.com/search?q=Riyadh+Scrap+Pickup+Khashm+Al+Fahad+Contracting+Establishment+review';
 
@@ -158,6 +158,7 @@ export function buildPageMetadata({
   const canonicalPath = localizedPath(lang, path);
   const fullUrl = absoluteUrl(canonicalPath);
   const imageUrl = absoluteUrl(image);
+  const squareImageUrl = absoluteUrl('/images/og-image-square.jpg');
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -193,6 +194,14 @@ export function buildPageMetadata({
         : {}),
       images: [
         {
+          url: squareImageUrl,
+          secureUrl: squareImageUrl,
+          width: 1024,
+          height: 1024,
+          alt: imageAlt,
+          type: 'image/jpeg',
+        },
+        {
           url: imageUrl,
           secureUrl: imageUrl,
           width: 1200,
@@ -208,10 +217,10 @@ export function buildPageMetadata({
       description,
       images: [
         {
-          url: imageUrl,
+          url: squareImageUrl,
           alt: imageAlt,
-          width: 1200,
-          height: 630,
+          width: 1024,
+          height: 1024,
         },
       ],
     },
@@ -230,8 +239,8 @@ export function buildPageMetadata({
       },
     },
     other: {
-      thumbnail: imageUrl,
-      image_src: imageUrl,
+      thumbnail: squareImageUrl,
+      image_src: squareImageUrl,
     },
     manifest: '/favicon/site.webmanifest',
     icons: {
